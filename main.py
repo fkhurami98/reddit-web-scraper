@@ -4,7 +4,8 @@ from pprint import pprint
 import random
 import json
 from playwright.sync_api import sync_playwright, TimeoutError
-
+from urllib.parse import urlparse
+import re
 
 def get_reddit_page(url):
     """
@@ -26,7 +27,7 @@ def get_reddit_page(url):
         try:
             accept_button = page.wait_for_selector(
                 "shreddit-interactable-element#accept-all-cookies-button button",
-                timeout=20*1000,
+                timeout=20 * 1000,
             )
             accept_button.click()
         except TimeoutError:
@@ -146,47 +147,74 @@ def extract_individual_post_info(html_code):
 
     return post_info
 
+def sanitize_url_for_filename(url):
+    """
+    Sanitizes a URL to create a valid filename by replacing characters that are not allowed in filenames with underscores.
 
-if __name__ == "__main__":
-    # Call the function to visit a reddit page
-    html = get_reddit_page(url="https://www.reddit.com")
+    Args:
+        url (str): The URL to be sanitized.
 
-    # Parse the larger HTML page using BeautifulSoup
+    Returns:
+        str: The sanitized filename.
+    """
+    # Use the urlparse function to get the path from the URL
+    path = urlparse(url).path
+
+    # Replace characters that are not allowed in filenames with underscores
+    return re.sub(r"[^a-zA-Z0-9-_.]", "_", path)
+
+
+def scrape_reddit_url(url):
+    """
+    Scrapes data from a given Reddit URL.
+
+    Args:
+        url (str): The URL of the Reddit page to scrape.
+
+    Returns:
+        None
+    """
+    html = get_reddit_page(url)
     post_elements = parse_reddit_html(html)
-
-    # List to store the dictionaries of extracted post information
     post_data_list = []
 
-    # Loop through all the post elements found
     for post_element in post_elements:
-        # Extract post information
         post_data = extract_post_metadata(post_element)
 
-        # Append the dictionary to the list
-        post_data_list.append(post_data)
+        try:
+            with open("posts_metadata.json", "r") as file:
+                existing_post_data_list = json.load(file)
+        except FileNotFoundError:
+            existing_post_data_list = []
 
-    # Read post_data_list from the JSON file (if it exists)
-    try:
-        with open("posts_metadata.json", "r") as file:
-            existing_post_data_list = json.load(file)
-    except FileNotFoundError:
-        existing_post_data_list = []
-
-    # Append extracted individual post info to the post_data_list
-    for post_data in post_data_list:
         permalink = post_data["Permalink"]
         print(f"Extracting HTML from {permalink}")
         html_content = get_reddit_page(permalink)
         data = extract_individual_post_info(html_content)
-        post_data.update(data)  # Append individual post info to the existing data
+        post_data.update(data)
         pprint(post_data)
         time.sleep(30)
 
-    # Combine the existing and new post_data_lists
+        post_data_list.append(post_data)
+
     combined_post_data_list = existing_post_data_list + post_data_list
 
-    # Write the combined post_data_list to the JSON file
-    with open("posts_metadata.json", "w") as json_file:
+    filename = sanitize_url_for_filename(url)  # Sanitize URL for use as a filename
+
+    with open(f"data_{filename}.json", "w") as json_file:
         json.dump(combined_post_data_list, json_file, indent=4)
 
 
+if __name__ == "__main__":
+    # List of Reddit URLs to scrape
+    reddit_urls = [
+        "https://www.reddit.com",
+        "https://www.reddit.com/r/python/",
+        "https://www.reddit.com/r/AmItheAsshole/",
+        # Add more URLs here as needed
+    ]
+
+    for url in reddit_urls:
+        scrape_reddit_url(url)
+
+#Accept button not found or timed out bug, still appearing even if it is found
