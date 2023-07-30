@@ -3,6 +3,7 @@ from playwright.sync_api import sync_playwright
 from playwright.sync_api import TimeoutError
 from pprint import pprint
 import random
+import json
 
 
 def get_reddit_page(url):
@@ -136,11 +137,12 @@ if __name__ == '__main__':
         # Append the dictionary to the list
         post_data_list.append(post_data)
     
-    
     # Print the extracted information for each post
     for post_data in post_data_list:
         print("--------------")
         for key, value in post_data.items():
             print(f"{key}: {value}")
-
-
+    
+    # Write post_data_list to a JSON file
+    with open("posts_metadata.json", "w") as json_file:
+        json.dump(post_data_list, json_file, indent=4)
