@@ -8,21 +8,15 @@ from urllib.parse import urlparse
 import re
 
 def get_reddit_page(url):
-    """
-    Visits a reddit page using playwright and extracts the html.
-
-    Args:
-        url (str): The url of the reddit page for scraping.
-
-    Returns:
-        str: A string containing the html of the reddit page.
-    """
     with sync_playwright() as p:
         browser = p.chromium.launch()
         context = browser.new_context(user_agent=get_random_user_agent())
         page = context.new_page()
 
-        page.goto(url)
+        try:
+            page.goto(url, timeout=60 * 1000)  # Increase the timeout to 60 seconds
+        except TimeoutError:
+            print("Page navigation timed out.")
 
         try:
             accept_button = page.wait_for_selector(
@@ -33,9 +27,7 @@ def get_reddit_page(url):
         except TimeoutError:
             print("Accept button not found or timed out.")
 
-        # Wait for the page to load after clicking the button
         page.wait_for_load_state("networkidle")
-
         html = page.content()
 
         browser.close()
@@ -218,3 +210,4 @@ if __name__ == "__main__":
         scrape_reddit_url(url)
 
 #Accept button not found or timed out bug, still appearing even if it is found
+# Get comments frm each 
