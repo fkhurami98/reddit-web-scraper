@@ -1,29 +1,41 @@
 from bs4 import BeautifulSoup
-import requests
+from playwright.sync_api import sync_playwright
 
-# The URL of the web page you want to fetch
-url = "https://www.reddit.com"
-headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36"
-}
+def get_reddit_homepage():
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        context = browser.new_context(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36")
+        page = context.new_page()
+
+        page.goto("https://www.reddit.com")
+        page.wait_for_load_state("networkidle")
+
+        # Click on the "Accept all" button with the specified ID
+        button_selector = 'shreddit-interactable-element#accept-all-cookies-button button'
+        timeout_ms = 10000  # 10 seconds
+        page.click(button_selector, timeout=timeout_ms)
+
+        # Wait for the page to load after clicking the button
+        page.wait_for_load_state("networkidle")
+
+        html = page.content()
+
+        browser.close()
+
+        return html
 
 
-# Sending a GET request with a User-Agent header to mimic a web browser
-response = requests.get(url, headers=headers)
-print(response.status_code)
-# Check if the request was successful (status code 200)
-if response.status_code == 200:
-    # Get the HTML content from the response
-    html = response.text
-else:
-    print("Failed to fetch the page:", response.status_code)
-    exit()
+
+html = get_reddit_homepage()
+
+with open('homepage.html', 'w') as f:
+    f.write(html)
 
 # Parse the larger HTML page using BeautifulSoup
 soup = BeautifulSoup(html, 'html.parser')
 
 # Find all elements with the shreddit-post class (the provided HTML snippet)
-post_elements = soup.find_all('div', {'class': 'rpBJOHq2PR60pnwJlUyP0'})
+post_elements = soup.find_all('shreddit-post')
 
 # Loop through all the post elements found
 for post_element in post_elements:
@@ -36,12 +48,14 @@ for post_element in post_elements:
     post_title_elem = soup_post.find('h3', {'class': '_eYtD2XCVieq6emjKBH3m'})
     post_title = post_title_elem.text.strip() if post_title_elem else "N/A"
 
+    # Extracting permalink to full post
     permalink_elem = soup_post.find('a', {'class': 'SQnoC3ObvgnGjWt90zD9Z'})
     permalink = "https://www.reddit.com" + permalink_elem['href'] if permalink_elem else "N/A"
     subreddit = permalink.split('/')[4] if permalink != "N/A" else "N/A"
 
-    author_elem = soup_post.find('a', {'class': '_2tbHP6ZydRpjI44J3syuqC _23wugcdiaj44hdfugIAlnX oQctV4n0yUb0uiHDdGnmE'})
-    author = author_elem.text.strip() if author_elem else "N/A"
+    # Extracting post author
+    author_elem = soup_post.find('a', class_='_2tbHP6ZydRpjI44J3syuqC _23wugcdiaj44hdfugIAlnX oQctV4n0yUb0uiHDdGnmE')
+    author = author_elem.text if author_elem else "N/A"
 
     # Extracting the number of comments
     comment_count_elem = soup_post.find('span', {'class': 'FHCV02u6Cp2zYL0fhQPsO'})
