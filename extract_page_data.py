@@ -133,41 +133,50 @@ def sanitize_url_for_filename(url):
     # Replace characters that are not allowed in filenames with underscores
     return re.sub(r"[^a-zA-Z0-9-_.]", "_", path)
 
+def scrape_reddit_urls(urls, max_retry=3, retry_delay=5):
+    for reddit_url in urls:
+        output_file_json = f"{sanitize_url_for_filename(reddit_url)}.json"
+        output_file_html = f"{sanitize_url_for_filename(reddit_url)}.html"
+
+        retry_count = 0
+        homepage_post_list = []
+
+        while retry_count < max_retry:
+            try:
+                save_reddit_html_to_file(reddit_url, output_file_html)
+
+                html_data = read_html_file(output_file_html)
+                post_elements = parse_reddit_html(html_data)
+
+                homepage_post_list = []
+                for element in post_elements:
+                    post_data = extract_post_metadata(element)
+                    homepage_post_list.append(post_data)
+
+                if homepage_post_list:
+                    break
+            except Exception as e:
+                print(f"An error occurred while scraping: {e}")
+
+            retry_count += 1
+            print(f"Retry {retry_count}/{max_retry}. Retrying in {retry_delay} seconds...")
+            time.sleep(retry_delay)
+
+        if homepage_post_list:
+            print(f"Scraped {reddit_url}:")
+            print(homepage_post_list)
+            # Save the post list as JSON
+            with open(output_file_json, "w", encoding="utf-8") as json_file:
+                json.dump(homepage_post_list, json_file, indent=4)
+        else:
+            print(f"Failed to scrape {reddit_url} even after retries.")
+
 
 if __name__ == "__main__":
-    reddit_url = "https://www.reddit.com/r/Python/"
-    output_file_json = f"{sanitize_url_for_filename(reddit_url)}.json"
-    output_file_html = f"{sanitize_url_for_filename(reddit_url)}.html"
+    reddit_urls = [
+        "https://www.reddit.com/r/Python/",
+        "https://www.reddit.com/r/programming/",
+        # Add more Reddit URLs here
+    ]
 
-    max_retry = 3
-    retry_count = 0
-    homepage_post_list = []
-
-    while retry_count < max_retry:
-        try:
-            save_reddit_html_to_file(reddit_url, output_file_html)
-
-            html_data = read_html_file(output_file_html)
-            post_elements = parse_reddit_html(html_data)
-
-            homepage_post_list = []
-            for element in post_elements:
-                post_data = extract_post_metadata(element)
-                homepage_post_list.append(post_data)
-
-            if homepage_post_list:
-                break
-        except Exception as e:
-            print(f"An error occurred while scraping: {e}")
-
-        retry_count += 1
-        print(f"Retry {retry_count}/{max_retry}. Retrying in 5 seconds...")
-        time.sleep(5)
-
-    if homepage_post_list:
-        print(homepage_post_list)
-        # Save the post list as JSON
-        with open(output_file_json, "w", encoding="utf-8") as json_file:
-            json.dump(homepage_post_list, json_file, indent=4)
-    else:
-        print("Failed to scrape the subreddit even after retries.")
+    scrape_reddit_urls(reddit_urls)
