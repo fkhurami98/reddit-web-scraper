@@ -18,7 +18,7 @@ def save_reddit_html_to_variable(url, output_file):
         output_file (str): The filename to save the HTML content.
 
     Returns:
-        None
+        str: The HTML content of the page.
     """
     with sync_playwright() as p:
         browser = p.chromium.launch()
@@ -78,11 +78,6 @@ def get_random_user_agent():
     return random.choice(user_agents)
 
 
-def read_html_file(file_path):
-    with open(file_path, "r", encoding="utf-8") as file:
-        html_content = file.read()
-
-    return html_content
 
 
 def parse_reddit_html(html):
