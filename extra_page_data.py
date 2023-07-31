@@ -8,13 +8,16 @@ from urllib.parse import urlparse
 import re
 from pprint import pprint
 
+
 def save_reddit_html_to_file(url, output_file):
     with sync_playwright() as p:
         browser = p.chromium.launch()
         context = browser.new_context()
         page = context.new_page()
 
-        page.goto(url, timeout=60000)  # Increase timeout in case the page takes longer to load
+        page.goto(
+            url, timeout=60000
+        )  # Increase timeout in case the page takes longer to load
 
         # Wait for the page to load completely
         page.wait_for_load_state("networkidle")
@@ -29,17 +32,14 @@ def save_reddit_html_to_file(url, output_file):
         # Wait for the page to load completely after accepting cookies
         page.wait_for_load_state("networkidle")
 
-        # Scroll down by 2 windows (twice the viewport height)
-        page.evaluate('window.scrollBy(0, window.innerHeight);')
+        # Scroll down by the height of the viewport
+        page.evaluate("window.scrollBy(0, window.innerHeight);")
 
         # Wait for the page to load completely after scrolling down
         page.wait_for_load_state("networkidle")
 
         # Wait for one second
         page.wait_for_timeout(1000)
-        
-        # Wait for a brief moment after scrolling to let the content load
-        page.wait_for_load_state("networkidle")
 
         # Get the entire HTML content of the page
         html_content = page.content()
@@ -52,11 +52,13 @@ def save_reddit_html_to_file(url, output_file):
 
     print(f"HTML content saved to {output_file}")
 
+
 def read_html_file(file_path):
     with open(file_path, "r", encoding="utf-8") as file:
         html_content = file.read()
 
     return html_content
+
 
 def parse_reddit_html(html):
     """
@@ -71,6 +73,7 @@ def parse_reddit_html(html):
     soup = BeautifulSoup(html, "html.parser")
     post_elements = soup.select("shreddit-post")
     return post_elements
+
 
 def extract_post_metadata(post_element):
     """
@@ -113,6 +116,7 @@ def extract_post_metadata(post_element):
 
     return post_data
 
+
 def sanitize_url_for_filename(url):
     """
     Sanitizes a URL to create a valid filename by replacing characters that are not allowed in filenames with underscores.
@@ -130,33 +134,40 @@ def sanitize_url_for_filename(url):
     return re.sub(r"[^a-zA-Z0-9-_.]", "_", path)
 
 
-
-
-
-
-
-
-
 if __name__ == "__main__":
-    reddit_url = "https://www.reddit.com/r/python/"
+    reddit_url = "https://www.reddit.com/r/Python/"
     output_file_json = f"{sanitize_url_for_filename(reddit_url)}.json"
     output_file_html = f"{sanitize_url_for_filename(reddit_url)}.html"
 
-    save_reddit_html_to_file(reddit_url, output_file_html)
-
-    html_data = read_html_file(output_file_html)
-    post_elements = parse_reddit_html(html_data)
-
-
+    max_retry = 3
+    retry_count = 0
     homepage_post_list = []
-    existing_post_data_list = []
 
-    for element in post_elements:
-        post_data = extract_post_metadata(element)
-        homepage_post_list.append(post_data)
+    while retry_count < max_retry:
+        try:
+            save_reddit_html_to_file(reddit_url, output_file_html)
 
-    pprint(homepage_post_list)
+            html_data = read_html_file(output_file_html)
+            post_elements = parse_reddit_html(html_data)
 
+            homepage_post_list = []
+            for element in post_elements:
+                post_data = extract_post_metadata(element)
+                homepage_post_list.append(post_data)
 
+            if homepage_post_list:
+                break
+        except Exception as e:
+            print(f"An error occurred while scraping: {e}")
 
+        retry_count += 1
+        print(f"Retry {retry_count}/{max_retry}. Retrying in 5 seconds...")
+        time.sleep(5)
 
+    if homepage_post_list:
+        print(homepage_post_list)
+        # Save the post list as JSON
+        with open(output_file_json, "w", encoding="utf-8") as json_file:
+            json.dump(homepage_post_list, json_file, indent=4)
+    else:
+        print("Failed to scrape the subreddit even after retries.")

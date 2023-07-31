@@ -1,0 +1,226 @@
+[
+    {
+        "Post Title": "Sunday Daily Thread: What's everyone working on this week?",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15d6uin/sunday_daily_thread_whats_everyone_working_on/",
+        "Subreddit": "r/Python",
+        "Author": "Im__Joseph",
+        "Number of Comments": 6,
+        "Post Score": 8
+    },
+    {
+        "Post Title": "Monday Daily Thread: Project ideas!",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15e0mqo/monday_daily_thread_project_ideas/",
+        "Subreddit": "r/Python",
+        "Author": "Im__Joseph",
+        "Number of Comments": 0,
+        "Post Score": 1
+    },
+    {
+        "Post Title": "What's up, Python? The GIL removed, a new compiler, optparse deprecated...",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15du57x/whats_up_python_the_gil_removed_a_new_compiler/",
+        "Subreddit": "r/Python",
+        "Author": "alicedu06",
+        "Number of Comments": 23,
+        "Post Score": 190
+    },
+    {
+        "Post Title": "Polyglot Apache Arrow: Java and Python Perspective",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15ecvbs/polyglot_apache_arrow_java_and_python_perspective/",
+        "Subreddit": "r/Python",
+        "Author": "AmphibianInfamous574",
+        "Number of Comments": 0,
+        "Post Score": 5
+    },
+    {
+        "Post Title": "Taming conditionals with bitmasks",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15e8ah7/taming_conditionals_with_bitmasks/",
+        "Subreddit": "r/Python",
+        "Author": "rednafi",
+        "Number of Comments": 7,
+        "Post Score": 10
+    },
+    {
+        "Post Title": "A hands-on introduction to Cython",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15ehr51/a_handson_introduction_to_cython/",
+        "Subreddit": "r/Python",
+        "Author": "Hefty-Consequence443",
+        "Number of Comments": 0,
+        "Post Score": 0
+    },
+    {
+        "Post Title": "Using Python and OpenCV to defend my backyard",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15drmgd/using_python_and_opencv_to_defend_my_backyard/",
+        "Subreddit": "r/Python",
+        "Author": "Nice-Information6019",
+        "Number of Comments": 5,
+        "Post Score": 59
+    },
+    {
+        "Post Title": "Biggest ever: Python GIL proposal PEP 703 will make CPython GIL optional! 20x speedups seen previously in some tests (unrelated to this news) without GIL and 20 threads.",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15ej7k6/biggest_ever_python_gil_proposal_pep_703_will/",
+        "Subreddit": "r/Python",
+        "Author": "germandiago",
+        "Number of Comments": 0,
+        "Post Score": 0
+    },
+    {
+        "Post Title": "OpenCV based auto aiming laser turret",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15ec402/opencv_based_auto_aiming_laser_turret/",
+        "Subreddit": "r/Python",
+        "Author": "Reasonable_Analysis1",
+        "Number of Comments": 2,
+        "Post Score": 2
+    },
+    {
+        "Post Title": "Python Decorators \u2014 Without foo/bar functions, real examples from my day job",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15dtmpu/python_decorators_without_foobar_functions_real/",
+        "Subreddit": "r/Python",
+        "Author": "Friendly-Connection9",
+        "Number of Comments": 1,
+        "Post Score": 21
+    },
+    {
+        "Post Title": "How to use the sportsipy and pyairtable Python packages to access advanced NBA basketball data",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15ecziy/how_to_use_the_sportsipy_and_pyairtable_python/",
+        "Subreddit": "r/Python",
+        "Author": "21stmandela",
+        "Number of Comments": 0,
+        "Post Score": 1
+    },
+    {
+        "Post Title": "Simplify API Integration: Introducing the Module-inator - Dynamically Load Python Classes for Vendor APIs",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15ec0cn/simplify_api_integration_introducing_the/",
+        "Subreddit": "r/Python",
+        "Author": "elite_player---999",
+        "Number of Comments": 0,
+        "Post Score": 1
+    },
+    {
+        "Post Title": "A Steering Council notice about PEP 703 (Making the Global Interpreter Lock Optional in CPython)",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15dzhz1/a_steering_council_notice_about_pep_703_making/",
+        "Subreddit": "r/Python",
+        "Author": "ssshukla26",
+        "Number of Comments": 0,
+        "Post Score": 7
+    },
+    {
+        "Post Title": "How to center things in the terminal",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15dokcs/how_to_center_things_in_the_terminal/",
+        "Subreddit": "r/Python",
+        "Author": "willm",
+        "Number of Comments": 1,
+        "Post Score": 24
+    },
+    {
+        "Post Title": "Mastering Functional Programming in Python - Guide",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15e9g3w/mastering_functional_programming_in_python_guide/",
+        "Subreddit": "r/Python",
+        "Author": "thumbsdrivesmecrazy",
+        "Number of Comments": 1,
+        "Post Score": 0
+    },
+    {
+        "Post Title": "Python Generator: The Art of Lazily Generated Data",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15e8ibk/python_generator_the_art_of_lazily_generated_data/",
+        "Subreddit": "r/Python",
+        "Author": "DredditorS",
+        "Number of Comments": 0,
+        "Post Score": 0
+    },
+    {
+        "Post Title": "The Basics of Test-Driven Development with a Focus on Data Structures",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15e89n8/the_basics_of_testdriven_development_with_a_focus/",
+        "Subreddit": "r/Python",
+        "Author": "albeXL",
+        "Number of Comments": 0,
+        "Post Score": 0
+    },
+    {
+        "Post Title": "after finishing YT beginner & intermediate course, what should I do next?",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15ea9gs/after_finishing_yt_beginner_intermediate_course/",
+        "Subreddit": "r/Python",
+        "Author": "outtamaadcity",
+        "Number of Comments": 7,
+        "Post Score": 0
+    },
+    {
+        "Post Title": "I created a handy data validation library.",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15e24q8/i_created_a_handy_data_validation_library/",
+        "Subreddit": "r/Python",
+        "Author": "takeout_bento",
+        "Number of Comments": 0,
+        "Post Score": 1
+    },
+    {
+        "Post Title": "Why does sys.argv not fallback to default value",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15e8non/why_does_sysargv_not_fallback_to_default_value/",
+        "Subreddit": "r/Python",
+        "Author": "rabbitdovahkiin",
+        "Number of Comments": 6,
+        "Post Score": 0
+    },
+    {
+        "Post Title": "Do open source developers get paid?",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15dciiy/do_open_source_developers_get_paid/",
+        "Subreddit": "r/Python",
+        "Author": "stonedphysics",
+        "Number of Comments": 31,
+        "Post Score": 35
+    },
+    {
+        "Post Title": "I'm working on a project that you code on terminal",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15dnffy/im_working_on_a_project_that_you_code_on_terminal/",
+        "Subreddit": "r/Python",
+        "Author": "PY-CDR",
+        "Number of Comments": 4,
+        "Post Score": 4
+    },
+    {
+        "Post Title": "Aura Text: IDE Made with Python (PyQt6)",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15do7yz/aura_text_ide_made_with_python_pyqt6/",
+        "Subreddit": "r/Python",
+        "Author": "Specialist-Arachnid6",
+        "Number of Comments": 4,
+        "Post Score": 3
+    },
+    {
+        "Post Title": "Want to Know About, Version Control with Jupyter Notebook using Git, including recommended workflows? Check Out this Blog Post.",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15e7lj8/want_to_know_about_version_control_with_jupyter/",
+        "Subreddit": "r/Python",
+        "Author": "techlatest_net",
+        "Number of Comments": 0,
+        "Post Score": 0
+    },
+    {
+        "Post Title": "Web Scraping Booking.com Using Python",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15dv2m2/web_scraping_bookingcom_using_python/",
+        "Subreddit": "r/Python",
+        "Author": "AccomplishedSea1424",
+        "Number of Comments": 0,
+        "Post Score": 0
+    },
+    {
+        "Post Title": "Serve Django static files with CloudFront and S3",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15dv1to/serve_django_static_files_with_cloudfront_and_s3/",
+        "Subreddit": "r/Python",
+        "Author": "vjanzz",
+        "Number of Comments": 0,
+        "Post Score": 0
+    },
+    {
+        "Post Title": "Configurable and customizable text-based adventure based on OpenAI and their powerful GPT language models - InfinityWorlds",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15dyhuk/configurable_and_customizable_textbased_adventure/",
+        "Subreddit": "r/Python",
+        "Author": "PatzEdi",
+        "Number of Comments": 0,
+        "Post Score": 0
+    },
+    {
+        "Post Title": "We created an open-source semantic search Python package on top of Postgres",
+        "Permalink": "https://www.reddit.com/r/Python/comments/15d1aa5/we_created_an_opensource_semantic_search_python/",
+        "Subreddit": "r/Python",
+        "Author": "philippemnoel",
+        "Number of Comments": 11,
+        "Post Score": 40
+    }
+]

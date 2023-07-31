@@ -14,7 +14,7 @@
         <link rel="dns-prefetch" href="https://www.redditstatic.com/">
       
         
-    <script nonce="">!function(e,n,t,o,i,r,a){var c=!1,d=!1,f=[],s=function(e){("e"in e||"p"in e||e.f&&e.f.indexOf("capture")>-1||e.f&&e.f.indexOf("withScope")>-1||e.f&&e.f.indexOf("showReportDialog")>-1)&&u(f),s.data.push(e)};function u(n){function t(){import("https://www.redditstatic.com/shreddit/sentry-94f7e90f.js").then((t=>{try{e.Sentry=t.default,e.onerror=l,e.onunhandledrejection=p;var o=e.Sentry,i=o.init;o.init=function(e){var n=a;for(var t in e)Object.prototype.hasOwnProperty.call(e,t)&&(n[t]=e[t]);i(n)},function(n,t){try{for(var o=s.data,i=0;i<n.length;i++)"function"==typeof n[i]&&n[i]();var r=!1,a=e.__SENTRY__;void 0!==a&&a.hub&&a.hub.getClient()&&(r=!0);var c=!1;for(i=0;i<o.length;i++)if(o[i].f){c=!0;var d=o[i];!1===r&&"init"!==d.f&&t.init(),r=!0,t[d.f].apply(t,d.a)}!1===r&&!1===c&&t.init();var f=e.onerror,u=e.onunhandledrejection;for(i=0;i<o.length;i++)"e"in o[i]&&f?f.apply(e,o[i].e):"p"in o[i]&&u&&u.apply(e,[o[i].p])}catch(e){console.error(e)}}(n,o)}catch(e){console.error(e)}}))}d||(d=!0,"requestIdleCallback"in window?requestIdleCallback(t,{timeout:3e3}):window.setTimeout(t,0))}s.data=[],e.Sentry=e.Sentry||{},e.Sentry.onLoad=function(e){f.push(e),c&&u(f)},e.Sentry.forceLoad=function(){c=!0,setTimeout((function(){u(f)}))},["init","addBreadcrumb","captureMessage","captureException","captureEvent","configureScope","withScope","showReportDialog"].forEach((function(n){e.Sentry[n]=function(){s({f:n,a:arguments})}}));var l=e.onerror;e.onerror=function(n,t,o,i,r){s({e:[].slice.call(arguments)}),l&&l.apply(e,arguments)};var p=e.onunhandledrejection;e.onunhandledrejection=function(n){s({p:"reason"in n?n.reason:"detail"in n&&"reason"in n.detail?n.detail.reason:n}),p&&p.apply(e,arguments)}}(window,document,0,0,0,0,{dsn:"https://9f057df6115a4bb488c08ea12a835e6e@o418887.ingest.sentry.io/5810803"});const e=["window.performance.mark is not a function","performance.getEntriesByName is not a function","window.queueMicrotask is not a function","runCustomize is not defined","require is not defined","n.assignedElements is not a function","SymBrowser_ModifyAnchorTagWithTarget","ibFindAllVideos","Unexpected token 'for'"],n=["findTopmostVisibleElement"],t=t=>!(!(n=>!!e.some((e=>n?.originalException?.message?.includes(e))))(t)&&!(e=>!!n.some((n=>e?.originalException?.stack?.includes(n))))(t));window.Sentry.onLoad((()=>{window.Sentry.init({enabled:SENTRY_CONFIG.enabled,environment:SENTRY_CONFIG.environment,release:"cdbe141e1142ac54e16fb82fc970b6358c8f4d44",beforeSend:(e,n)=>t(n)?null:(fetch("/svc/shreddit/sentryMetrics",{method:"POST",body:JSON.stringify({type:e?.exception?.values?.[0]?.type||"unknown"})}),e),sampleRate:.01})}));
+    <script nonce="">!function(n,e,t,o,i,r,a){var c=!1,d=!1,f=[],s=function(n){("e"in n||"p"in n||n.f&&n.f.indexOf("capture")>-1||n.f&&n.f.indexOf("withScope")>-1||n.f&&n.f.indexOf("showReportDialog")>-1)&&u(f),s.data.push(n)};function u(e){function t(){import("https://www.redditstatic.com/shreddit/sentry-94f7e90f.js").then((t=>{try{n.Sentry=t.default,n.onerror=l,n.onunhandledrejection=p;var o=n.Sentry,i=o.init;o.init=function(n){var e=a;for(var t in n)Object.prototype.hasOwnProperty.call(n,t)&&(e[t]=n[t]);i(e)},function(e,t){try{for(var o=s.data,i=0;i<e.length;i++)"function"==typeof e[i]&&e[i]();var r=!1,a=n.__SENTRY__;void 0!==a&&a.hub&&a.hub.getClient()&&(r=!0);var c=!1;for(i=0;i<o.length;i++)if(o[i].f){c=!0;var d=o[i];!1===r&&"init"!==d.f&&t.init(),r=!0,t[d.f].apply(t,d.a)}!1===r&&!1===c&&t.init();var f=n.onerror,u=n.onunhandledrejection;for(i=0;i<o.length;i++)"e"in o[i]&&f?f.apply(n,o[i].e):"p"in o[i]&&u&&u.apply(n,[o[i].p])}catch(n){console.error(n)}}(e,o)}catch(n){console.error(n)}}))}d||(d=!0,"requestIdleCallback"in window?requestIdleCallback(t,{timeout:3e3}):window.setTimeout(t,0))}s.data=[],n.Sentry=n.Sentry||{},n.Sentry.onLoad=function(n){f.push(n),c&&u(f)},n.Sentry.forceLoad=function(){c=!0,setTimeout((function(){u(f)}))},["init","addBreadcrumb","captureMessage","captureException","captureEvent","configureScope","withScope","showReportDialog"].forEach((function(e){n.Sentry[e]=function(){s({f:e,a:arguments})}}));var l=n.onerror;n.onerror=function(e,t,o,i,r){s({e:[].slice.call(arguments)}),l&&l.apply(n,arguments)};var p=n.onunhandledrejection;n.onunhandledrejection=function(e){s({p:"reason"in e?e.reason:"detail"in e&&"reason"in e.detail?e.detail.reason:e}),p&&p.apply(n,arguments)}}(window,document,0,0,0,0,{dsn:"https://9f057df6115a4bb488c08ea12a835e6e@o418887.ingest.sentry.io/5810803"});const n=["window.performance.mark is not a function","performance.getEntriesByName is not a function","window.queueMicrotask is not a function","runCustomize is not defined","require is not defined","n.assignedElements is not a function","SymBrowser_ModifyAnchorTagWithTarget","ibFindAllVideos","Unexpected token 'for'"],e=["findTopmostVisibleElement"],t=t=>!(!(e=>!!n.some((n=>e?.originalException?.message?.includes(n))))(t)&&!(n=>!!e.some((e=>n?.originalException?.stack?.includes(e))))(t));window.Sentry.onLoad((()=>{window.Sentry.init({enabled:SENTRY_CONFIG.enabled,environment:SENTRY_CONFIG.environment,release:"cefc67cd024f45476cdc783cfd9f3a3cd4a8b70d",beforeSend:(n,e)=>t(e)?null:(fetch("/svc/shreddit/sentryMetrics",{method:"POST",body:JSON.stringify({type:n?.exception?.values?.[0]?.type||"unknown"})}),n),sampleRate:.01})}));
 </script>
   
         <script nonce="">
@@ -41,7 +41,7 @@
     <script nonce="">
       // Setting this provides Lit a CSP nonce to use when dyamically creating style elements in
       // browsers that don't support constructed stylesheets. See https://lit.dev/docs/api/LitElement/#LitElement.styles
-      window.litNonce = 'Qz80YTTBwd/+ubzuBwl1+w==';
+      window.litNonce = 'XlOakoPuqHAYhZ3JCE1wgQ==';
 
       var CLIENT_CONFIG = {"USE_DEBUG":false,"ACCOUNT_MANAGER_ORIGIN":"https://www.reddit.com","APPLE_SSO_CLIENT_ID":"com.reddit.RedditAppleSSO","MANIFEST_FILE":"client-manifest.json","ORIGIN":"https://www.reddit.com","MWEB_ORIGIN":"https://www.reddit.com","GOOGLE_SSO_CLIENT_ID":"705819728788-b2c1kcs7tst3b7ghv7at0hkqmtc68ckl.apps.googleusercontent.com","MEDIA_BASE_URL":"https://www.redditstatic.com/","PRECONNECT_ORIGINS":["https://www.redditstatic.com/"],"STATIC_BASE_URL":"https://www.redditstatic.com/shreddit/","TRACKING_KEY":"ShredditFrontend-v1","TRACKING_ENDPOINT":"https://events.redditmedia.com/v2j","TRACKING_SECRET":"eW9vM3lhZW00VW9naDVleGFlZm9lcGhlZTZQaG9o","W3_REPORTING_ORIGIN":"https://www.reddit.com","W3_REPORTING_POLICY_URL":"https://w3-reporting.reddit.com/policy","W3_REPORTING_REPORTS_URL":null,"IS_GKE":false};
     </script>
@@ -61,9 +61,9 @@
           var SENTRY_CONFIG = {"environment":"production","dsn":"http://c330734aa8ef47e79c6baa18ebf877d7:0fe02982823646ecaf900125bd387d5f@sentry.reddit.ue1.snooguts.net","enabled":true};
         </script>
        
-    <script type="module" importance="high" fetchpriority="high" nonce="" src="https://www.redditstatic.com/shreddit/en-US/shell-901b8653.js"></script>
+    <script type="module" importance="high" fetchpriority="high" nonce="" src="https://www.redditstatic.com/shreddit/en-US/shell-f5429497.js"></script>
    
-        <script type="module" nonce="" src="https://www.redditstatic.com/shreddit/en-US/left-nav-resources-section-client-js-4a147d2a.js"></script><script type="module" nonce="" src="https://www.redditstatic.com/shreddit/en-US/left-nav-topics-section-client-js-ad9ff22e.js"></script><script type="module" nonce="" src="https://www.redditstatic.com/shreddit/en-US/left-nav-client-js-afcc7704.js"></script><script type="module" nonce="" src="https://www.redditstatic.com/shreddit/en-US/header-action-item-user-drawer-client-js-8cdb9b58.js"></script><script type="module" nonce="" src="https://www.redditstatic.com/shreddit/en-US/header-large-client-js-202828a1.js"></script><script type="module" nonce="" src="https://www.redditstatic.com/shreddit/en-US/deprecated-content-client-js-80315f5a.js"></script><script type="module" nonce="" src="https://www.redditstatic.com/shreddit/en-US/subreddit-feed-client-js-13e9588d.js"></script><script type="module" nonce="" src="https://www.redditstatic.com/shreddit/en-US/feed-post-client-js-194a9663.js"></script>
+        <script type="module" nonce="" src="https://www.redditstatic.com/shreddit/en-US/left-nav-resources-section-client-js-69402d4c.js"></script><script type="module" nonce="" src="https://www.redditstatic.com/shreddit/en-US/left-nav-topics-section-client-js-0f2d6844.js"></script><script type="module" nonce="" src="https://www.redditstatic.com/shreddit/en-US/left-nav-client-js-cecc47fd.js"></script><script type="module" nonce="" src="https://www.redditstatic.com/shreddit/en-US/header-action-item-user-drawer-client-js-103727d8.js"></script><script type="module" nonce="" src="https://www.redditstatic.com/shreddit/en-US/header-large-client-js-9ddaa6ae.js"></script><script type="module" nonce="" src="https://www.redditstatic.com/shreddit/en-US/deprecated-content-client-js-c892b9f2.js"></script><script type="module" nonce="" src="https://www.redditstatic.com/shreddit/en-US/subreddit-feed-client-js-416c7303.js"></script><script type="module" nonce="" src="https://www.redditstatic.com/shreddit/en-US/feed-post-client-js-92926ef7.js"></script>
         
   <link href="https://www.redditstatic.com/shreddit/assets/favicon/64x64.png" rel="icon shortcut" sizes="64x64">
   <link href="https://www.redditstatic.com/shreddit/assets/favicon/128x128.png" rel="icon shortcut" sizes="128x128">
@@ -84,12 +84,12 @@
     Advertisement
   </div>
         <div id="adblocktest" class="AdHeader AdUnit adsense-ads HeaderAd SidebarAd VerticalAd _has-ads ad--content ad-adsense ad-banner adsense-ads googads ad-banner-content ad-BANNER googleAd googlead hasads leftAd native-ad ADBAR ad-medium post-ad promoad rectad sidebar-ad small-ad sponsorAd sponsorPost" style="width: 1px; height: 1px; position: absolute; left: -1000%;"></div>
-        <shreddit-app class="overflow-x-hidden xs:overflow-visible v2 pt-[var(--page-y-padding)]" loid="000000000gmf9rdjrg.2.1690816508744.Z0FBQUFBQmt4OF84Z0s2bG1ZTlZlakNyNUdGLWlRU2pWMHliMmxoX2ZQaTVDcE1TQ2lZMkgzZ3l0M0kxcnMza1d3SFBYMkNRbGJXWG8zM0JwS2tCTkJheDVFODlmN29WUzJPN3NMdmJCMF9tUVFvTkU1NDFzMVZ1WnhVUGFuZkxsbXRUVTNQRzlGTXE" serverrenderid="6d7203d4-bd46-4a93-b379-43fa278db517" routename="subreddit" pagetype="community" devicetype="desktop" showshredtopheader="" referrer-type="reddit" browser="chrome_headless" disable-send-beacon="true" app-name="web3x" microapp-name="feeds" microapp-pool="feeds-main">
-        <faceplate-server-session timestamp="1690816509946"></faceplate-server-session>
+        <shreddit-app class="overflow-x-hidden xs:overflow-visible v2 pt-[var(--page-y-padding)]" loid="000000000gmgrc4w8w.2.1690817961024.Z0FBQUFBQmt4OVdwTVZ3Yjg2X2RFWERRZk1KeTItdFFCR0Jyc29NbzAyaXRObjIxSHo3WXJYd2tYNTZ2QjBqVk5CNFdUMHlsdTRMcENGT2ZCRWNPYW1GODBNVFpNUEpBUGNWOGt3d1VnYVNPS211ZFdqcFl4WVJ5TU00NlI2MlpuT3FfZURreWNnVHI" serverrenderid="da9fbee8-13b0-4814-b093-d810c78a443a" routename="subreddit" pagetype="community" devicetype="desktop" showshredtopheader="" referrer-type="other" browser="chrome_headless" disable-send-beacon="true" app-name="web3x" microapp-name="feeds" microapp-pool="feeds-first-time-user">
+        <faceplate-server-session timestamp="1690817961051"></faceplate-server-session>
         
         
         <slot name="use-app" slot="use-app"></slot>
-        <shreddit-good-visit-tracker referrertype="reddit" pagetype="community"></shreddit-good-visit-tracker>
+        <shreddit-good-visit-tracker referrertype="other" pagetype="community"></shreddit-good-visit-tracker>
         <shreddit-async-loader bundlename="faceplate_alerts">
           <faceplate-toaster aria-live="polite"></faceplate-toaster>
         </shreddit-async-loader>
@@ -385,15 +385,15 @@ display: inline-flex;
       </section>
     </faceplate-dialog>
   
-    <faceplate-loader name="hamburger-menu" src="https://www.redditstatic.com/shreddit/en-US/hamburger-menu-client-js-7542fe47.js,https://www.redditstatic.com/shreddit/en-US/deprecated-content-client-js-80315f5a.js" loading="programmatic">
+    <faceplate-loader name="hamburger-menu" src="https://www.redditstatic.com/shreddit/en-US/hamburger-menu-client-js-213c7c35.js,https://www.redditstatic.com/shreddit/en-US/deprecated-content-client-js-c892b9f2.js" loading="programmatic">
     <!----></faceplate-loader>
     <faceplate-partial name="hamburger-menu" src="/svc/shreddit/hamburger-menu" loading="programmatic"></faceplate-partial>
   </reddit-header-large>
-    <faceplate-loader name="share-menu" src="https://www.redditstatic.com/shreddit/en-US/share-menu-client-js-96ae0036.js" loading="programmatic">
+    <faceplate-loader name="share-menu" src="https://www.redditstatic.com/shreddit/en-US/share-menu-client-js-ece1ae35.js" loading="programmatic">
     <!----></faceplate-loader>
     <faceplate-partial name="share-menu" src="/svc/shreddit/share-menu" loading="programmatic"></faceplate-partial>
   
-    <faceplate-loader name="lead-gen-dialog" src="https://www.redditstatic.com/shreddit/en-US/lead-gen-dialog-client-js-9f579a1a.js" loading="programmatic">
+    <faceplate-loader name="lead-gen-dialog" src="https://www.redditstatic.com/shreddit/en-US/lead-gen-dialog-client-js-f3bc1251.js" loading="programmatic">
     <!----></faceplate-loader>
     <faceplate-partial name="lead-gen-dialog" src="/svc/shreddit/lead-gen-dialog" loading="programmatic"></faceplate-partial>
   <reddit-breadcrumbs slot="breadcrumbs" page-title="r/Python" page-url="/r/Python/">
@@ -439,7 +439,7 @@ display: inline-flex;
   
     <!----></faceplate-tracker>
     <hr class="w-100 my-sm border-neutral-border"> 
-    <faceplate-loader name="left-nav-recent-section" src="https://www.redditstatic.com/shreddit/en-US/left-nav-recent-section-client-js-22273d89.js" loading="lazy">
+    <faceplate-loader name="left-nav-recent-section" src="https://www.redditstatic.com/shreddit/en-US/left-nav-recent-section-client-js-347050b2.js" loading="lazy">
     <!----></faceplate-loader>
     <reddit-recent-pages is-hui-left-nav="">
       <hr class="w-100 my-sm border-neutral-border">
@@ -3001,11 +3001,11 @@ display: inline-flex;
               <div class="flex flex-col">
                 <div class="font-bold text-[18px]">r/Python</div>
                 <div class="xs:hidden flex items-center gap-[8px]">
-                  <span class="lowercase text-neutral-content-weak text-[12px]"> <faceplate-number number="1139139" pretty=""><!---->1.1M</faceplate-number> 
+                  <span class="lowercase text-neutral-content-weak text-[12px]"> <faceplate-number number="1139143" pretty=""><!---->1.1M</faceplate-number> 
                     members</span>
                   <div class="flex items-center justify-center gap-[4px]">
                     <span class="inline-flex bg-kiwigreen-400 rounded-full w-xs h-xs"></span>
-                    <span class="lowercase text-neutral-content-weak text-[12px]"> <faceplate-number number="786" pretty=""><!---->786</faceplate-number> 
+                    <span class="lowercase text-neutral-content-weak text-[12px]"> <faceplate-number number="480" pretty=""><!---->480</faceplate-number> 
                       online</span>
                   </div>
                 </div>
@@ -3386,7 +3386,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     <svg rpl="" class="fill-[color:var(--color-identity-moderator)] shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="12" width="12" icon-name="mod-fill" fill="currentColor"><path d="M18.154 2.1L10.27.108a1.121 1.121 0 00-.54 0L1.846 2.1A1.122 1.122 0 001 3.187V12c0 5.277 7.249 7.554 8.7 7.957.098.027.199.042.3.043.101 0 .202-.014.3-.04 1.453-.4 8.7-2.68 8.7-7.957V3.187a1.122 1.122 0 00-.846-1.087z"></path></svg>
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-30T00:00:10.651000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T00:00:10.651Z" title="Sunday, July 30, 2023 at 1:00:10 AM GMT+1"><!--?lit$092233883$-->2 days ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-30T00:00:10.651000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T00:00:10.651Z" title="Sunday, July 30, 2023 at 1:00:10 AM GMT+1"><!--?lit$6037764694$-->2 days ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -3464,7 +3464,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     <svg rpl="" class="fill-[color:var(--color-identity-moderator)] shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="12" width="12" icon-name="mod-fill" fill="currentColor"><path d="M18.154 2.1L10.27.108a1.121 1.121 0 00-.54 0L1.846 2.1A1.122 1.122 0 001 3.187V12c0 5.277 7.249 7.554 8.7 7.957.098.027.199.042.3.043.101 0 .202-.014.3-.04 1.453-.4 8.7-2.68 8.7-7.957V3.187a1.122 1.122 0 00-.846-1.087z"></path></svg>
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-31T00:00:13.682000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T00:00:13.682Z" title="Monday, July 31, 2023 at 1:00:13 AM GMT+1"><!--?lit$092233883$-->15 hr. ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-31T00:00:13.682000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T00:00:13.682Z" title="Monday, July 31, 2023 at 1:00:13 AM GMT+1"><!--?lit$6037764694$-->16 hr. ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -3500,7 +3500,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     </div>
   
   </shreddit-post> 
-    <hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"> <shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15du57x/whats_up_python_the_gil_removed_a_new_compiler/" content-href="https://www.bitecode.dev/p/whats-up-python-the-gil-removed-a" view-context="SubredditFeed" comment-count="23" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="2" more-posts-cursor="dDNfMTVkdTU3eA" show-post-flair="" is-desktop-viewport="" is-link-post="" should-track-post-view-events="" created-timestamp="2023-07-30T19:32:44.510000+0000" domain="bitecode.dev" id="t3_15du57x" post-title="What's up, Python? The GIL removed, a new compiler, optparse deprecated..." post-type="link" translation-language="en" score="186" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_66hdq" author="alicedu06" icon="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_6.png">
+    <hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"> <shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15du57x/whats_up_python_the_gil_removed_a_new_compiler/" content-href="https://www.bitecode.dev/p/whats-up-python-the-gil-removed-a" view-context="SubredditFeed" comment-count="23" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="2" more-posts-cursor="dDNfMTVkdTU3eA" show-post-flair="" is-desktop-viewport="" is-link-post="" should-track-post-view-events="" created-timestamp="2023-07-30T19:32:44.510000+0000" domain="bitecode.dev" id="t3_15du57x" post-title="What's up, Python? The GIL removed, a new compiler, optparse deprecated..." post-type="link" translation-language="en" score="190" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_66hdq" author="alicedu06" icon="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_6.png">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15du57x/whats_up_python_the_gil_removed_a_new_compiler/" target="_blank">
     </a>
     
@@ -3542,7 +3542,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-30T19:32:44.510000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T19:32:44.510Z" title="Sunday, July 30, 2023 at 8:32:44 PM GMT+1"><!--?lit$092233883$-->20 hr. ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-30T19:32:44.510000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T19:32:44.510Z" title="Sunday, July 30, 2023 at 8:32:44 PM GMT+1"><!--?lit$6037764694$-->20 hr. ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -3582,89 +3582,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
         
     <faceplate-loader name="share-menu" src="https://www.redditstatic.com/shreddit/en-US/share-menu-client-js-ece1ae35.js" loading="programmatic">
     <!----></faceplate-loader><faceplate-partial name="share-menu" src="/svc/shreddit/share-menu" loading="programmatic"></faceplate-partial><faceplate-loader name="lead-gen-dialog" src="https://www.redditstatic.com/shreddit/en-US/lead-gen-dialog-client-js-f3bc1251.js" loading="programmatic">
-    <!----></faceplate-loader><faceplate-partial name="lead-gen-dialog" src="/svc/shreddit/lead-gen-dialog" loading="programmatic"></faceplate-partial><faceplate-batch style="will-change: unset;"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15e8ah7/taming_conditionals_with_bitmasks/" content-href="https://www.reddit.com/r/Python/comments/15e8ah7/taming_conditionals_with_bitmasks/" view-context="SubredditFeed" comment-count="7" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="3" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-31T06:39:36.323000+0000" domain="self.Python" id="t3_15e8ah7" post-title="Taming conditionals with bitmasks" post-type="multi_media" translation-language="en" score="11" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_u75bl" author="rednafi" icon="https://styles.redditmedia.com/t5_bsbdd/styles/profileIcon_snoo-nftv2_bmZ0X2VpcDE1NToxMzdfNDY2YTMzMDg4N2JkZjYyZDUzZjk2OGVhODI0NzkzMTUwZjA3NzYyZV81MTA3ODE_rare_6781a901-34c4-4777-b6a6-05f96d2e47ea-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=75b512c9ab4e5b03cb58ac0a3a6655d4ad2b03b8">
-    <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15e8ah7/taming_conditionals_with_bitmasks/" target="_blank">
-    </a>
-    
-    
-    <span slot="credit-bar" class="flex justify-between text-12  mb-2xs ">
-      <span class="flex text-12 gap-[6px] items-center pr-xs">
-        <span class="relative">
-          
-    <span slot="authorName" class="">
-      <div class="inline-flex items-center">
-        
-    <faceplate-hovercard enter-delay="500" leave-delay="500" position="bottom-start" data-id="user-hover-card" close-on-track="" role="dialog" appearance="neutral">
-      
-    <a rpl="" href="/user/rednafi/" class="
-         flex items-center text-neutral-content font-bold a
-         
-         
-         no-visited
-         no-underline hover:no-underline
-         "><span class="mr-2xs"><faceplate-img src="https://styles.redditmedia.com/t5_bsbdd/styles/profileIcon_snoo-nftv2_bmZ0X2VpcDE1NToxMzdfNDY2YTMzMDg4N2JkZjYyZDUzZjk2OGVhODI0NzkzMTUwZjA3NzYyZV81MTA3ODE_rare_6781a901-34c4-4777-b6a6-05f96d2e47ea-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=75b512c9ab4e5b03cb58ac0a3a6655d4ad2b03b8" alt="u/u/rednafi avatar" class="avatar nd:visible nd:block nd:animate-pulse nd:bg-neutral-background-selected overflow-hidden rounded-full shrink-0 h-xl w-xl" loading="lazy"></faceplate-img></span>
-  <span class="whitespace-nowrap">u/rednafi</span></a>
-  
-      <div slot="content">
-        <faceplate-partial src="/svc/shreddit/user-hover-card/rednafi" loading="programmatic">
-          <div class="w-5xl h-4xl flex items-center justify-center">
-            <faceplate-progress value="20" class="animate-spin" status="incomplete"></faceplate-progress>
-          </div>
-        </faceplate-partial>
-      </div>
-    </faceplate-hovercard>
-  
-        
-      </div>
-    </span>
-  
-        </span>
-        
-    
-    
-   <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-31T06:39:36.323000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T06:39:36.323Z" title="Monday, July 31, 2023 at 7:39:36 AM GMT+1"><!--?lit$092233883$-->9 hr. ago</time> </faceplate-timeago>
-      </span>
-      <span class="flex items-center pl-xs">
-        
-        
-        <shreddit-async-loader class="relative min-w-[28px] -mr-[7px]" bundlename="shreddit_post_overflow_menu">
-    <shreddit-post-overflow-menu is-desktop=""></shreddit-post-overflow-menu>
-  </shreddit-async-loader>
-      </span>
-    </span>
-  
-    
-    <div id="post-title-t3_15e8ah7" slot="title" class="font-semibold text-neutral-content-strong text-16 xs:text-18  mb-2xs xs:mb-xs ">
-    
-    Taming conditionals with bitmasks
-  </div>
-     <shreddit-flair class="nd:text-tone-1 py-2xs nd:px-xs nd:leading-none inline-flex flex-col  relative top-[-0.25rem] xs:top-[-2px] mb-0 xs:mb-xs py-0 " color="DARK" slot="post-flair">
-    Resource
-  </shreddit-flair>
-    <div class="mb-xs" slot="text-body">
-    <div id="t3_15e8ah7-post-rtjson-content" class="text-neutral-content md max-h-[337px] overflow-hidden text-12 xs:text-14">
-    <p>
-    Recently, I applied this bitmask technique to prune a monstrously twisted conditional logic in a client project. Wrote a quick piece on how <code>enum.Flags</code> can be leveraged in Python to do that elegantly.
-  </p><p>
-    <a href="https://rednafi.com/python/tame_conditionals_with_bitmasks/" rel="noopener nofollow ugc" target="_blank">https://rednafi.com/python/tame_conditionals_with_bitmasks/</a>
-  </p>
-  </div>
-    <div id="t3_15e8ah7-overflow-cover" class="h-[66px] mt-[-66px] md px-md from-[color:var(--color-neutral-background)] bg-gradient-to-t hidden isolate
-      pointer-events-none read-more-overflow-cover"></div>
-    
-    <a rpl="" id="t3_15e8ah7-read-more-button" href="/r/Python/comments/15e8ah7/taming_conditionals_with_bitmasks/" class="
-         m-0 ml-[-1rem] md px-md py-0 font-normal text-sm items-center h-[28px] a hidden border-none a
-         
-         
-         
-         hover:underline
-         ">View full post</a>
-  
-  </div>
-    
-  
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15ecvbs/polyglot_apache_arrow_java_and_python_perspective/" content-href="https://medium.com/gooddata-developers/polyglot-apache-arrow-java-and-python-perspective-bf2ce020e27d" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="4" show-post-flair="" is-desktop-viewport="" is-link-post="" should-track-post-view-events="" created-timestamp="2023-07-31T10:54:41.829000+0000" domain="medium.com" id="t3_15ecvbs" post-title="Polyglot Apache Arrow: Java and Python Perspective" post-type="link" translation-language="en" score="4" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_kyoi486i" author="AmphibianInfamous574" icon="https://styles.redditmedia.com/t5_61d0t7/styles/profileIcon_snooa550d4e8-83b1-4cd1-9bd8-64a8d7575033-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=c6c512b8a4ac34bed77dfcca0e1c99cf309c09f3">
+    <!----></faceplate-loader><faceplate-partial name="lead-gen-dialog" src="/svc/shreddit/lead-gen-dialog" loading="programmatic"></faceplate-partial><faceplate-batch style="will-change: unset;"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15ecvbs/polyglot_apache_arrow_java_and_python_perspective/" content-href="https://medium.com/gooddata-developers/polyglot-apache-arrow-java-and-python-perspective-bf2ce020e27d" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="3" show-post-flair="" is-desktop-viewport="" is-link-post="" should-track-post-view-events="" created-timestamp="2023-07-31T10:54:41.829000+0000" domain="medium.com" id="t3_15ecvbs" post-title="Polyglot Apache Arrow: Java and Python Perspective" post-type="link" translation-language="en" score="5" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_kyoi486i" author="AmphibianInfamous574" icon="https://styles.redditmedia.com/t5_61d0t7/styles/profileIcon_snooa550d4e8-83b1-4cd1-9bd8-64a8d7575033-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=c6c512b8a4ac34bed77dfcca0e1c99cf309c09f3">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15ecvbs/polyglot_apache_arrow_java_and_python_perspective/" target="_blank">
     </a>
     
@@ -3706,7 +3624,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-31T10:54:41.829000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T10:54:41.829Z" title="Monday, July 31, 2023 at 11:54:41 AM GMT+1"><!--?lit$092233883$-->4 hr. ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-31T10:54:41.829000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T10:54:41.829Z" title="Monday, July 31, 2023 at 11:54:41 AM GMT+1"><!--?lit$6037764694$-->5 hr. ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -3741,7 +3659,173 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div></div>
     </div>
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15drmgd/using_python_and_opencv_to_defend_my_backyard/" content-href="https://www.reddit.com/r/Python/comments/15drmgd/using_python_and_opencv_to_defend_my_backyard/" view-context="SubredditFeed" comment-count="4" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="5" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-30T17:47:22.669000+0000" domain="self.Python" id="t3_15drmgd" post-title="Using Python and OpenCV to defend my backyard" post-type="multi_media" translation-language="en" score="59" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_4siluvtz" author="Nice-Information6019" icon="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_7.png">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15e8ah7/taming_conditionals_with_bitmasks/" content-href="https://www.reddit.com/r/Python/comments/15e8ah7/taming_conditionals_with_bitmasks/" view-context="SubredditFeed" comment-count="7" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="4" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-31T06:39:36.323000+0000" domain="self.Python" id="t3_15e8ah7" post-title="Taming conditionals with bitmasks" post-type="multi_media" translation-language="en" score="10" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_u75bl" author="rednafi" icon="https://styles.redditmedia.com/t5_bsbdd/styles/profileIcon_snoo-nftv2_bmZ0X2VpcDE1NToxMzdfNDY2YTMzMDg4N2JkZjYyZDUzZjk2OGVhODI0NzkzMTUwZjA3NzYyZV81MTA3ODE_rare_6781a901-34c4-4777-b6a6-05f96d2e47ea-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=75b512c9ab4e5b03cb58ac0a3a6655d4ad2b03b8">
+    <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15e8ah7/taming_conditionals_with_bitmasks/" target="_blank">
+    </a>
+    
+    
+    <span slot="credit-bar" class="flex justify-between text-12  mb-2xs ">
+      <span class="flex text-12 gap-[6px] items-center pr-xs">
+        <span class="relative">
+          
+    <span slot="authorName" class="">
+      <div class="inline-flex items-center">
+        
+    <faceplate-hovercard enter-delay="500" leave-delay="500" position="bottom-start" data-id="user-hover-card" close-on-track="" role="dialog" appearance="neutral">
+      
+    <a rpl="" href="/user/rednafi/" class="
+         flex items-center text-neutral-content font-bold a
+         
+         
+         no-visited
+         no-underline hover:no-underline
+         "><span class="mr-2xs"><faceplate-img src="https://styles.redditmedia.com/t5_bsbdd/styles/profileIcon_snoo-nftv2_bmZ0X2VpcDE1NToxMzdfNDY2YTMzMDg4N2JkZjYyZDUzZjk2OGVhODI0NzkzMTUwZjA3NzYyZV81MTA3ODE_rare_6781a901-34c4-4777-b6a6-05f96d2e47ea-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=75b512c9ab4e5b03cb58ac0a3a6655d4ad2b03b8" alt="u/u/rednafi avatar" class="avatar nd:visible nd:block nd:animate-pulse nd:bg-neutral-background-selected overflow-hidden rounded-full shrink-0 h-xl w-xl" loading="lazy"></faceplate-img></span>
+  <span class="whitespace-nowrap">u/rednafi</span></a>
+  
+      <div slot="content">
+        <faceplate-partial src="/svc/shreddit/user-hover-card/rednafi" loading="programmatic">
+          <div class="w-5xl h-4xl flex items-center justify-center">
+            <faceplate-progress value="20" class="animate-spin" status="incomplete"></faceplate-progress>
+          </div>
+        </faceplate-partial>
+      </div>
+    </faceplate-hovercard>
+  
+        
+      </div>
+    </span>
+  
+        </span>
+        
+    
+    
+   <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
+    <faceplate-timeago ts="2023-07-31T06:39:36.323000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T06:39:36.323Z" title="Monday, July 31, 2023 at 7:39:36 AM GMT+1"><!--?lit$6037764694$-->9 hr. ago</time> </faceplate-timeago>
+      </span>
+      <span class="flex items-center pl-xs">
+        
+        
+        <shreddit-async-loader class="relative min-w-[28px] -mr-[7px]" bundlename="shreddit_post_overflow_menu">
+    <shreddit-post-overflow-menu is-desktop=""></shreddit-post-overflow-menu>
+  </shreddit-async-loader>
+      </span>
+    </span>
+  
+    
+    <div id="post-title-t3_15e8ah7" slot="title" class="font-semibold text-neutral-content-strong text-16 xs:text-18  mb-2xs xs:mb-xs ">
+    
+    Taming conditionals with bitmasks
+  </div>
+     <shreddit-flair class="nd:text-tone-1 py-2xs nd:px-xs nd:leading-none inline-flex flex-col  relative top-[-0.25rem] xs:top-[-2px] mb-0 xs:mb-xs py-0 " color="DARK" slot="post-flair">
+    Resource
+  </shreddit-flair>
+    <div class="mb-xs" slot="text-body">
+    <div id="t3_15e8ah7-post-rtjson-content" class="text-neutral-content md max-h-[337px] overflow-hidden text-12 xs:text-14">
+    <p>
+    Recently, I applied this bitmask technique to prune a monstrously twisted conditional logic in a client project. Wrote a quick piece on how <code>enum.Flags</code> can be leveraged in Python to do that elegantly.
+  </p><p>
+    <a href="https://rednafi.com/python/tame_conditionals_with_bitmasks/" rel="noopener nofollow ugc" target="_blank">https://rednafi.com/python/tame_conditionals_with_bitmasks/</a>
+  </p>
+  </div>
+    <div id="t3_15e8ah7-overflow-cover" class="h-[66px] mt-[-66px] md px-md from-[color:var(--color-neutral-background)] bg-gradient-to-t hidden isolate
+      pointer-events-none read-more-overflow-cover"></div>
+    
+    <a rpl="" id="t3_15e8ah7-read-more-button" href="/r/Python/comments/15e8ah7/taming_conditionals_with_bitmasks/" class="
+         m-0 ml-[-1rem] md px-md py-0 font-normal text-sm items-center h-[28px] a hidden border-none a
+         
+         
+         
+         hover:underline
+         ">View full post</a>
+  
+  </div>
+    
+  
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15ehr51/a_handson_introduction_to_cython/" content-href="https://www.reddit.com/r/Python/comments/15ehr51/a_handson_introduction_to_cython/" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="5" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-31T14:29:15.574000+0000" domain="self.Python" id="t3_15ehr51" post-title="A hands-on introduction to Cython" post-type="multi_media" translation-language="en" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_e3mh2l7x" author="Hefty-Consequence443" icon="https://styles.redditmedia.com/t5_6tdnkr/styles/profileIcon_wjtul6a2xxab1.jpg?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=45ef82d3729e0bc0d23dd68a9f9c777d87a43e47">
+    <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15ehr51/a_handson_introduction_to_cython/" target="_blank">
+    </a>
+    
+    
+    <span slot="credit-bar" class="flex justify-between text-12  mb-2xs ">
+      <span class="flex text-12 gap-[6px] items-center pr-xs">
+        <span class="relative">
+          
+    <span slot="authorName" class="">
+      <div class="inline-flex items-center">
+        
+    <faceplate-hovercard enter-delay="500" leave-delay="500" position="bottom-start" data-id="user-hover-card" close-on-track="" role="dialog" appearance="neutral">
+      
+    <a rpl="" href="/user/Hefty-Consequence443/" class="
+         flex items-center text-neutral-content font-bold a
+         
+         
+         no-visited
+         no-underline hover:no-underline
+         "><span class="mr-2xs"><faceplate-img src="https://styles.redditmedia.com/t5_6tdnkr/styles/profileIcon_wjtul6a2xxab1.jpg?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=45ef82d3729e0bc0d23dd68a9f9c777d87a43e47" alt="u/u/Hefty-Consequence443 avatar" class="avatar nd:visible nd:block nd:animate-pulse nd:bg-neutral-background-selected overflow-hidden rounded-full shrink-0 h-xl w-xl" loading="lazy"></faceplate-img></span>
+  <span class="whitespace-nowrap">u/Hefty-Consequence443</span></a>
+  
+      <div slot="content">
+        <faceplate-partial src="/svc/shreddit/user-hover-card/Hefty-Consequence443" loading="programmatic">
+          <div class="w-5xl h-4xl flex items-center justify-center">
+            <faceplate-progress value="20" class="animate-spin" status="incomplete"></faceplate-progress>
+          </div>
+        </faceplate-partial>
+      </div>
+    </faceplate-hovercard>
+  
+        
+      </div>
+    </span>
+  
+        </span>
+        
+    
+    
+   <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
+    <faceplate-timeago ts="2023-07-31T14:29:15.574000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T14:29:15.574Z" title="Monday, July 31, 2023 at 3:29:15 PM GMT+1"><!--?lit$6037764694$-->1 hr. ago</time> </faceplate-timeago>
+      </span>
+      <span class="flex items-center pl-xs">
+        
+        
+        <shreddit-async-loader class="relative min-w-[28px] -mr-[7px]" bundlename="shreddit_post_overflow_menu">
+    <shreddit-post-overflow-menu is-desktop=""></shreddit-post-overflow-menu>
+  </shreddit-async-loader>
+      </span>
+    </span>
+  
+    
+    <div id="post-title-t3_15ehr51" slot="title" class="font-semibold text-neutral-content-strong text-16 xs:text-18  mb-2xs xs:mb-xs ">
+    
+    A hands-on introduction to Cython
+  </div>
+     <shreddit-flair class="nd:text-tone-1 py-2xs nd:px-xs nd:leading-none inline-flex flex-col  relative top-[-0.25rem] xs:top-[-2px] mb-0 xs:mb-xs py-0 " color="DARK" background-color="#DADADA" slot="post-flair">
+    Tutorial
+  </shreddit-flair>
+    <div class="mb-xs" slot="text-body">
+    <div id="t3_15ehr51-post-rtjson-content" class="text-neutral-content md max-h-[337px] overflow-hidden text-12 xs:text-14">
+    <p>
+    In this medium post I have tried to synthesise the fundamental ingredients of Cython and put them into practice to speed up an algorithm known to anyone who has taken a basic Algebra course: <strong>the gaussian method!</strong>
+  </p><p>
+    <a href="https://medium.com/@miguel.otero.pedrido.1993/cythonizing-your-code-for-beginners-6c7eba2b38ae" rel="noopener nofollow ugc" target="_blank">https://medium.com/@miguel.otero.pedrido.1993/cythonizing-your-code-for-beginners-6c7eba2b38ae</a>
+  </p>
+  </div>
+    <div id="t3_15ehr51-overflow-cover" class="h-[66px] mt-[-66px] md px-md from-[color:var(--color-neutral-background)] bg-gradient-to-t hidden isolate
+      pointer-events-none read-more-overflow-cover"></div>
+    
+    <a rpl="" id="t3_15ehr51-read-more-button" href="/r/Python/comments/15ehr51/a_handson_introduction_to_cython/" class="
+         m-0 ml-[-1rem] md px-md py-0 font-normal text-sm items-center h-[28px] a hidden border-none a
+         
+         
+         
+         hover:underline
+         ">View full post</a>
+  
+  </div>
+    
+  
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-ad-post class="promotedlink block" ad-events="[{&quot;type&quot;:&quot;IMPRESSION&quot;,&quot;url&quot;:&quot;https://alb.reddit.com/i.gif?za=NI4SzSNrpRPMjV3AAQTVACBDjqdNYiJ7MDyKaH8I3NJugQ1oNTDF8wICrMpxVEUgQ9vZyZXRYnw3r4hDMJuUHX-Ud-cMOvk4Gw_8pMp2b_OWXwYZ8OB6gpvmFb47y8_vpFDErfZJTCwTg-qSLay9NyG65U0skTDi&amp;zp=j8jVWOiWHorVc1vTMB3y_ns0aAq6CTX4YeQyIXWQQAAUtdgqt7TdATkvLVP4XCbsmsKmKuQ&quot;}]" ad-type="display" data-ad-click-location="background" impression-id="" is-feed-ad-redesign="true" view-type="cardView" is-blank="" is-shredtop-redesign="" with-content-tags="" without-overflow-actions-menu="" permalink="/user/redditads/comments/7w17su/interested_in_gaining_a_new_perspective_on_things/" content-href="http://www.reddit.com/r/askreddit" view-context="SubredditFeed" comment-count="0" vote-type="" feedindex="6" is-desktop-viewport="" should-track-post-view-events="" locked="" created-timestamp="2018-02-08T01:26:24.941000+0000" domain="reddit.com" id="t3_7w17su" post-title="Interested in gaining a new perspective on things? Check out the r/askreddit subreddit!" post-type="link" translation-language="en" author-id="t2_1ed7b" author="redditads" icon="https://styles.redditmedia.com/t5_3rycy/styles/profileIcon_8b4k69583rm61.jpg?width=48&amp;height=48&amp;frame=1&amp;auto=webp&amp;crop=48:48,smart&amp;s=f60e3d94baaf33ef032a7762eb14c1f4681611fe">
+      
+    </shreddit-ad-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15drmgd/using_python_and_opencv_to_defend_my_backyard/" content-href="https://www.reddit.com/r/Python/comments/15drmgd/using_python_and_opencv_to_defend_my_backyard/" view-context="SubredditFeed" comment-count="5" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="7" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-30T17:47:22.669000+0000" domain="self.Python" id="t3_15drmgd" post-title="Using Python and OpenCV to defend my backyard" post-type="multi_media" translation-language="en" score="59" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_4siluvtz" author="Nice-Information6019" icon="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_7.png">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15drmgd/using_python_and_opencv_to_defend_my_backyard/" target="_blank">
     </a>
     
@@ -3782,7 +3866,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-30T17:47:22.669000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T17:47:22.669Z" title="Sunday, July 30, 2023 at 6:47:22 PM GMT+1"><!--?lit$092233883$-->21 hr. ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-30T17:47:22.669000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T17:47:22.669Z" title="Sunday, July 30, 2023 at 6:47:22 PM GMT+1"><!--?lit$6037764694$-->22 hr. ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -3825,10 +3909,8 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div>
     
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-ad-post class="promotedlink block" ad-events="[{&quot;type&quot;:&quot;IMPRESSION&quot;,&quot;url&quot;:&quot;https://alb.reddit.com/i.gif?za=rAbuY2iKIZYI9JTGhrFvazPDTliKnqiRv0Lx3qdN6GRHfyW1W6cbEhKuVdP70Jh_2XXsbD19VTa3jKjtq1DO3qzGIfy9m6w6y4fA8KBA0ikiq8aY5V-Ny6ChdmMfTWvSgTv_OU-DC2M_uvi9wgzD8CHwD9Okxg8P&amp;zp=ErJ8Gupf6HthcB_INvVcRhGXicuOkQNRycGWr9z-01lOxvrkn0aipYXQcm3tFsdwTzcgwr0&quot;}]" ad-type="display" data-ad-click-location="background" impression-id="" is-feed-ad-redesign="true" view-type="cardView" is-blank="" is-shredtop-redesign="" with-content-tags="" without-overflow-actions-menu="" permalink="/user/redditads/comments/7w17su/interested_in_gaining_a_new_perspective_on_things/" content-href="http://www.reddit.com/r/askreddit" view-context="SubredditFeed" comment-count="0" vote-type="" feedindex="6" is-desktop-viewport="" should-track-post-view-events="" locked="" created-timestamp="2018-02-08T01:26:24.941000+0000" domain="reddit.com" id="t3_7w17su" post-title="Interested in gaining a new perspective on things? Check out the r/askreddit subreddit!" post-type="link" translation-language="en" author-id="t2_1ed7b" author="redditads" icon="https://styles.redditmedia.com/t5_3rycy/styles/profileIcon_8b4k69583rm61.jpg?width=48&amp;height=48&amp;frame=1&amp;auto=webp&amp;crop=48:48,smart&amp;s=f60e3d94baaf33ef032a7762eb14c1f4681611fe">
-      
-    </shreddit-ad-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15ehr51/a_handson_introduction_to_cython/" content-href="https://www.reddit.com/r/Python/comments/15ehr51/a_handson_introduction_to_cython/" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="7" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-31T14:29:15.574000+0000" domain="self.Python" id="t3_15ehr51" post-title="A hands-on introduction to Cython" post-type="multi_media" translation-language="en" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_e3mh2l7x" author="Hefty-Consequence443" icon="https://styles.redditmedia.com/t5_6tdnkr/styles/profileIcon_wjtul6a2xxab1.jpg?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=45ef82d3729e0bc0d23dd68a9f9c777d87a43e47">
-    <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15ehr51/a_handson_introduction_to_cython/" target="_blank">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15ej7k6/biggest_ever_python_gil_proposal_pep_703_will/" content-href="https://www.reddit.com/r/Python/comments/15ej7k6/biggest_ever_python_gil_proposal_pep_703_will/" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="8" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-31T15:24:55.627000+0000" domain="self.Python" id="t3_15ej7k6" post-title="Biggest ever: Python GIL proposal PEP 703 will make CPython GIL optional! 20x speedups seen previously in some tests (unrelated to this news) without GIL and 20 threads." post-type="text" translation-language="en" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_i0bbk" author="germandiago" icon="https://styles.redditmedia.com/t5_bbrsy/styles/profileIcon_snood3909501-f48b-49fe-b874-bd90fe0bf960-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=a07e50aadedc20a297381d06b46fc7f9e89e799c">
+    <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15ej7k6/biggest_ever_python_gil_proposal_pep_703_will/" target="_blank">
     </a>
     
     
@@ -3841,17 +3923,17 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
         
     <faceplate-hovercard enter-delay="500" leave-delay="500" position="bottom-start" data-id="user-hover-card" close-on-track="" role="dialog" appearance="neutral">
       
-    <a rpl="" href="/user/Hefty-Consequence443/" class="
+    <a rpl="" href="/user/germandiago/" class="
          flex items-center text-neutral-content font-bold a
          
          
          no-visited
          no-underline hover:no-underline
-         "><span class="mr-2xs"><faceplate-img src="https://styles.redditmedia.com/t5_6tdnkr/styles/profileIcon_wjtul6a2xxab1.jpg?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=45ef82d3729e0bc0d23dd68a9f9c777d87a43e47" alt="u/u/Hefty-Consequence443 avatar" class="avatar nd:visible nd:block nd:animate-pulse nd:bg-neutral-background-selected overflow-hidden rounded-full shrink-0 h-xl w-xl" loading="lazy"></faceplate-img></span>
-  <span class="whitespace-nowrap">u/Hefty-Consequence443</span></a>
+         "><span class="mr-2xs"><faceplate-img src="https://styles.redditmedia.com/t5_bbrsy/styles/profileIcon_snood3909501-f48b-49fe-b874-bd90fe0bf960-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=a07e50aadedc20a297381d06b46fc7f9e89e799c" alt="u/u/germandiago avatar" class="avatar nd:visible nd:block nd:animate-pulse nd:bg-neutral-background-selected overflow-hidden rounded-full shrink-0 h-xl w-xl" loading="lazy"></faceplate-img></span>
+  <span class="whitespace-nowrap">u/germandiago</span></a>
   
       <div slot="content">
-        <faceplate-partial src="/svc/shreddit/user-hover-card/Hefty-Consequence443" loading="programmatic">
+        <faceplate-partial src="/svc/shreddit/user-hover-card/germandiago" loading="programmatic">
           <div class="w-5xl h-4xl flex items-center justify-center">
             <faceplate-progress value="20" class="animate-spin" status="incomplete"></faceplate-progress>
           </div>
@@ -3868,7 +3950,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-31T14:29:15.574000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T14:29:15.574Z" title="Monday, July 31, 2023 at 3:29:15 PM GMT+1"><!--?lit$092233883$-->46 min. ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-31T15:24:55.627000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T15:24:55.627Z" title="Monday, July 31, 2023 at 4:24:55 PM GMT+1"><!--?lit$6037764694$-->15 min. ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -3880,25 +3962,29 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     </span>
   
     
-    <div id="post-title-t3_15ehr51" slot="title" class="font-semibold text-neutral-content-strong text-16 xs:text-18  mb-2xs xs:mb-xs ">
+    <div id="post-title-t3_15ej7k6" slot="title" class="font-semibold text-neutral-content-strong text-16 xs:text-18  mb-2xs xs:mb-xs ">
     
-    A hands-on introduction to Cython
+    Biggest ever: Python GIL proposal PEP 703 will make CPython GIL optional! 20x speedups seen previously in some tests (unrelated to this news) without GIL and 20 threads.
   </div>
-     <shreddit-flair class="nd:text-tone-1 py-2xs nd:px-xs nd:leading-none inline-flex flex-col  relative top-[-0.25rem] xs:top-[-2px] mb-0 xs:mb-xs py-0 " color="DARK" background-color="#DADADA" slot="post-flair">
-    Tutorial
+     <shreddit-flair class="nd:text-tone-1 py-2xs nd:px-xs nd:leading-none inline-flex flex-col  relative top-[-0.25rem] xs:top-[-2px] mb-0 xs:mb-xs py-0 " color="DARK" slot="post-flair">
+    News
   </shreddit-flair>
     <div class="mb-xs" slot="text-body">
-    <div id="t3_15ehr51-post-rtjson-content" class="text-neutral-content md max-h-[337px] overflow-hidden text-12 xs:text-14">
+    <div id="t3_15ej7k6-post-rtjson-content" class="text-neutral-content md max-h-[337px] overflow-hidden text-12 xs:text-14">
     <p>
-    In this medium post I have tried to synthesise the fundamental ingredients of Cython and put them into practice to speed up an algorithm known to anyone who has taken a basic Algebra course: <strong>the gaussian method!</strong>
+    I think this is breaking news, after more than a decade discussion, here it is: <a href="https://peps.python.org/pep-0703/" rel="noopener nofollow ugc" target="_blank">https://peps.python.org/pep-0703/</a>
   </p><p>
-    <a href="https://medium.com/@miguel.otero.pedrido.1993/cythonizing-your-code-for-beginners-6c7eba2b38ae" rel="noopener nofollow ugc" target="_blank">https://medium.com/@miguel.otero.pedrido.1993/cythonizing-your-code-for-beginners-6c7eba2b38ae</a>
+    <a href="https://twitter.com/soumithchintala/status/1685524194144989184" rel="noopener nofollow ugc" target="_blank">https://twitter.com/soumithchintala/status/1685524194144989184</a>
+  </p><p>
+    I was impressed by the 20x speed up of no-GIL before as well (shameless plug, a link to my old post): <a href="https://www.reddit.com/r/programming/comments/q8n508/prototype_gilless_cpython_shows_nearly_20x/" rel="noopener nofollow ugc" target="_blank">https://www.reddit.com/r/programming/comments/q8n508/prototype_gilless_cpython_shows_nearly_20x/</a>
+  </p><p>
+    This has great potential.
   </p>
   </div>
-    <div id="t3_15ehr51-overflow-cover" class="h-[66px] mt-[-66px] md px-md from-[color:var(--color-neutral-background)] bg-gradient-to-t hidden isolate
+    <div id="t3_15ej7k6-overflow-cover" class="h-[66px] mt-[-66px] md px-md from-[color:var(--color-neutral-background)] bg-gradient-to-t hidden isolate
       pointer-events-none read-more-overflow-cover"></div>
     
-    <a rpl="" id="t3_15ehr51-read-more-button" href="/r/Python/comments/15ehr51/a_handson_introduction_to_cython/" class="
+    <a rpl="" id="t3_15ej7k6-read-more-button" href="/r/Python/comments/15ej7k6/biggest_ever_python_gil_proposal_pep_703_will/" class="
          m-0 ml-[-1rem] md px-md py-0 font-normal text-sm items-center h-[28px] a hidden border-none a
          
          
@@ -3909,7 +3995,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div>
     
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15ec402/opencv_based_auto_aiming_laser_turret/" content-href="https://www.reddit.com/r/Python/comments/15ec402/opencv_based_auto_aiming_laser_turret/" view-context="SubredditFeed" comment-count="2" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="8" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-31T10:16:07.540000+0000" domain="self.Python" id="t3_15ec402" post-title="OpenCV based auto aiming laser turret" post-type="multi_media" translation-language="en" score="2" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_7fnm6q1c" author="Reasonable_Analysis1" icon="https://styles.redditmedia.com/t5_2wxoj8/styles/profileIcon_snooa7eb3212-9ae5-4720-98a5-63770cdac662-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=c7c894908f8835273b0194fcd820d60bea42d3a8">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15ec402/opencv_based_auto_aiming_laser_turret/" content-href="https://www.reddit.com/r/Python/comments/15ec402/opencv_based_auto_aiming_laser_turret/" view-context="SubredditFeed" comment-count="2" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="9" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-31T10:16:07.540000+0000" domain="self.Python" id="t3_15ec402" post-title="OpenCV based auto aiming laser turret" post-type="multi_media" translation-language="en" score="2" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_7fnm6q1c" author="Reasonable_Analysis1" icon="https://styles.redditmedia.com/t5_2wxoj8/styles/profileIcon_snooa7eb3212-9ae5-4720-98a5-63770cdac662-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=c7c894908f8835273b0194fcd820d60bea42d3a8">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15ec402/opencv_based_auto_aiming_laser_turret/" target="_blank">
     </a>
     
@@ -3950,7 +4036,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-31T10:16:07.540000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T10:16:07.540Z" title="Monday, July 31, 2023 at 11:16:07 AM GMT+1"><!--?lit$092233883$-->5 hr. ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-31T10:16:07.540000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T10:16:07.540Z" title="Monday, July 31, 2023 at 11:16:07 AM GMT+1"><!--?lit$6037764694$-->5 hr. ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -3989,7 +4075,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div>
     
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15dtmpu/python_decorators_without_foobar_functions_real/" content-href="https://www.pythongasm.com/decorators-in-python" view-context="SubredditFeed" comment-count="1" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="9" show-post-flair="" is-desktop-viewport="" is-link-post="" should-track-post-view-events="" created-timestamp="2023-07-30T19:11:10.505000+0000" domain="pythongasm.com" id="t3_15dtmpu" post-title="Python Decorators — Without foo/bar functions, real examples from my day job" post-type="link" translation-language="en" score="20" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_crkcri72" author="Friendly-Connection9" icon="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_6.png">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15dtmpu/python_decorators_without_foobar_functions_real/" content-href="https://www.pythongasm.com/decorators-in-python" view-context="SubredditFeed" comment-count="1" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="10" show-post-flair="" is-desktop-viewport="" is-link-post="" should-track-post-view-events="" created-timestamp="2023-07-30T19:11:10.505000+0000" domain="pythongasm.com" id="t3_15dtmpu" post-title="Python Decorators — Without foo/bar functions, real examples from my day job" post-type="link" translation-language="en" score="21" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_crkcri72" author="Friendly-Connection9" icon="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_6.png">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15dtmpu/python_decorators_without_foobar_functions_real/" target="_blank">
     </a>
     
@@ -4031,7 +4117,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-30T19:11:10.505000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T19:11:10.505Z" title="Sunday, July 30, 2023 at 8:11:10 PM GMT+1"><!--?lit$092233883$-->20 hr. ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-30T19:11:10.505000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T19:11:10.505Z" title="Sunday, July 30, 2023 at 8:11:10 PM GMT+1"><!--?lit$6037764694$-->20 hr. ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -4058,7 +4144,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
       <div class="relative shrink-0 ml-xs xs:ml-sm"></div>
     </div>
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15ecziy/how_to_use_the_sportsipy_and_pyairtable_python/" content-href="https://levelup.gitconnected.com/oceans-of-data-at-your-fingertips-extract-advanced-basketball-stats-with-python-and-airtable-97aebb516b38" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="10" show-post-flair="" is-desktop-viewport="" is-link-post="" should-track-post-view-events="" created-timestamp="2023-07-31T11:00:52.102000+0000" domain="levelup.gitconnected.com" id="t3_15ecziy" post-title="How to use the sportsipy and pyairtable Python packages to access advanced NBA basketball data" post-type="link" translation-language="en" score="1" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_2jd2ywwe" author="21stmandela" icon="https://styles.redditmedia.com/t5_qssp1/styles/profileIcon_snoo-nftv2_bmZ0X2VpcDE1NToxMzdfMDA2YzVlMDQyYzAxZmZmNmNhMGNmZDg3NTkzMTNiZGNmNWFlNjIyZF8xNTg5NQ_rare_1d0308bd-1568-41ac-b441-811a9638db68-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=ab6e7dbcafc6776fd5f19dd740ab08aa1b634e75">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15ecziy/how_to_use_the_sportsipy_and_pyairtable_python/" content-href="https://levelup.gitconnected.com/oceans-of-data-at-your-fingertips-extract-advanced-basketball-stats-with-python-and-airtable-97aebb516b38" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="11" show-post-flair="" is-desktop-viewport="" is-link-post="" should-track-post-view-events="" created-timestamp="2023-07-31T11:00:52.102000+0000" domain="levelup.gitconnected.com" id="t3_15ecziy" post-title="How to use the sportsipy and pyairtable Python packages to access advanced NBA basketball data" post-type="link" translation-language="en" score="1" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_2jd2ywwe" author="21stmandela" icon="https://styles.redditmedia.com/t5_qssp1/styles/profileIcon_snoo-nftv2_bmZ0X2VpcDE1NToxMzdfMDA2YzVlMDQyYzAxZmZmNmNhMGNmZDg3NTkzMTNiZGNmNWFlNjIyZF8xNTg5NQ_rare_1d0308bd-1568-41ac-b441-811a9638db68-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=ab6e7dbcafc6776fd5f19dd740ab08aa1b634e75">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15ecziy/how_to_use_the_sportsipy_and_pyairtable_python/" target="_blank">
     </a>
     
@@ -4100,7 +4186,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-31T11:00:52.102000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T11:00:52.102Z" title="Monday, July 31, 2023 at 12:00:52 PM GMT+1"><!--?lit$092233883$-->4 hr. ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-31T11:00:52.102000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T11:00:52.102Z" title="Monday, July 31, 2023 at 12:00:52 PM GMT+1"><!--?lit$6037764694$-->5 hr. ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -4135,7 +4221,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div></div>
     </div>
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15ec0cn/simplify_api_integration_introducing_the/" content-href="https://www.reddit.com/r/Python/comments/15ec0cn/simplify_api_integration_introducing_the/" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="11" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-31T10:10:55.661000+0000" domain="self.Python" id="t3_15ec0cn" post-title="Simplify API Integration: Introducing the Module-inator - Dynamically Load Python Classes for Vendor APIs" post-type="multi_media" translation-language="en" score="1" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_4tgathr7" author="elite_player---999" icon="https://styles.redditmedia.com/t5_26rimq/styles/profileIcon_snoo-nftv2_bmZ0X2VpcDE1NToxMzdfYmZkNjcwNjY3MDUzZTUxN2E5N2FmZTU2YzkxZTRmODNmMTE2MGJkM180NTk4Mzc_rare_c59eb5ca-b751-44c3-8b8d-79c0df5d7c18-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=cab09b4f8149a6d52a0a9d9d90ec88582635b806">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15ec0cn/simplify_api_integration_introducing_the/" content-href="https://www.reddit.com/r/Python/comments/15ec0cn/simplify_api_integration_introducing_the/" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="12" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-31T10:10:55.661000+0000" domain="self.Python" id="t3_15ec0cn" post-title="Simplify API Integration: Introducing the Module-inator - Dynamically Load Python Classes for Vendor APIs" post-type="multi_media" translation-language="en" score="1" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_4tgathr7" author="elite_player---999" icon="https://styles.redditmedia.com/t5_26rimq/styles/profileIcon_snoo-nftv2_bmZ0X2VpcDE1NToxMzdfYmZkNjcwNjY3MDUzZTUxN2E5N2FmZTU2YzkxZTRmODNmMTE2MGJkM180NTk4Mzc_rare_c59eb5ca-b751-44c3-8b8d-79c0df5d7c18-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=cab09b4f8149a6d52a0a9d9d90ec88582635b806">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15ec0cn/simplify_api_integration_introducing_the/" target="_blank">
     </a>
     
@@ -4176,7 +4262,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-31T10:10:55.661000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T10:10:55.661Z" title="Monday, July 31, 2023 at 11:10:55 AM GMT+1"><!--?lit$092233883$-->5 hr. ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-31T10:10:55.661000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T10:10:55.661Z" title="Monday, July 31, 2023 at 11:10:55 AM GMT+1"><!--?lit$6037764694$-->5 hr. ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -4217,7 +4303,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div>
     
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15dzhz1/a_steering_council_notice_about_pep_703_making/" content-href="https://discuss.python.org/t/a-steering-council-notice-about-pep-703-making-the-global-interpreter-lock-optional-in-cpython/30474" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="12" show-post-flair="" is-desktop-viewport="" is-link-post="" should-track-post-view-events="" created-timestamp="2023-07-30T23:09:13.155000+0000" domain="discuss.python.org" id="t3_15dzhz1" post-title="A Steering Council notice about PEP 703 (Making the Global Interpreter Lock Optional in CPython)" post-type="link" translation-language="en" score="7" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_173v7s" author="ssshukla26" icon="https://styles.redditmedia.com/t5_98z2v/styles/profileIcon_snood75a6533-f801-4ca1-8e09-061c21bcc227-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=7851025b147de91416bc9117664ce14e47d49b0b">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15dzhz1/a_steering_council_notice_about_pep_703_making/" content-href="https://discuss.python.org/t/a-steering-council-notice-about-pep-703-making-the-global-interpreter-lock-optional-in-cpython/30474" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="13" show-post-flair="" is-desktop-viewport="" is-link-post="" should-track-post-view-events="" created-timestamp="2023-07-30T23:09:13.155000+0000" domain="discuss.python.org" id="t3_15dzhz1" post-title="A Steering Council notice about PEP 703 (Making the Global Interpreter Lock Optional in CPython)" post-type="link" translation-language="en" score="7" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_173v7s" author="ssshukla26" icon="https://styles.redditmedia.com/t5_98z2v/styles/profileIcon_snood75a6533-f801-4ca1-8e09-061c21bcc227-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=7851025b147de91416bc9117664ce14e47d49b0b">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15dzhz1/a_steering_council_notice_about_pep_703_making/" target="_blank">
     </a>
     
@@ -4259,7 +4345,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-30T23:09:13.155000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T23:09:13.155Z" title="Monday, July 31, 2023 at 12:09:13 AM GMT+1"><!--?lit$092233883$-->16 hr. ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-30T23:09:13.155000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T23:09:13.155Z" title="Monday, July 31, 2023 at 12:09:13 AM GMT+1"><!--?lit$6037764694$-->17 hr. ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -4294,7 +4380,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div></div>
     </div>
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15dokcs/how_to_center_things_in_the_terminal/" content-href="https://textual.textualize.io/how-to/center-things/" view-context="SubredditFeed" comment-count="1" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="13" show-post-flair="" is-desktop-viewport="" is-link-post="" should-track-post-view-events="" created-timestamp="2023-07-30T15:38:15.027000+0000" domain="textual.textualize.io" id="t3_15dokcs" post-title="How to center things in the terminal" post-type="link" translation-language="en" score="24" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_7zjh" author="willm" icon="https://styles.redditmedia.com/t5_3liz3/styles/profileIcon_snooe8e4c583-4ee9-4e58-ad76-fd3d156a7efc-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=0da5171cba09defb7addb1f19d0b545c4d327435">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15dokcs/how_to_center_things_in_the_terminal/" content-href="https://textual.textualize.io/how-to/center-things/" view-context="SubredditFeed" comment-count="1" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="14" show-post-flair="" is-desktop-viewport="" is-link-post="" should-track-post-view-events="" created-timestamp="2023-07-30T15:38:15.027000+0000" domain="textual.textualize.io" id="t3_15dokcs" post-title="How to center things in the terminal" post-type="link" translation-language="en" score="24" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_7zjh" author="willm" icon="https://styles.redditmedia.com/t5_3liz3/styles/profileIcon_snooe8e4c583-4ee9-4e58-ad76-fd3d156a7efc-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=0da5171cba09defb7addb1f19d0b545c4d327435">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15dokcs/how_to_center_things_in_the_terminal/" target="_blank">
     </a>
     
@@ -4336,7 +4422,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-30T15:38:15.027000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T15:38:15.027Z" title="Sunday, July 30, 2023 at 4:38:15 PM GMT+1"><!--?lit$092233883$-->1 day ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-30T15:38:15.027000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T15:38:15.027Z" title="Sunday, July 30, 2023 at 4:38:15 PM GMT+1"><!--?lit$6037764694$-->1 day ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -4371,9 +4457,9 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div></div>
     </div>
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-ad-post class="promotedlink block" ad-events="[{&quot;type&quot;:&quot;IMPRESSION&quot;,&quot;url&quot;:&quot;https://alb.reddit.com/i.gif?za=rAbuY2iKIZYI9JTGhrFvazPDTliKnqiRv0Lx3qdN6GRHfyW1W6cbEhKuVdP70Jh_2XXsbD19VTa3jKjtq1DO3qzGIfy9m6w6y4fA8KBA0ikiq8aY5V-Ny6ChdmMfTWvSgTv_OU-DC2M_uvi9wgzD8CHwD9Okxg8P&amp;zp=ErJ8Gupf6HthcB_INvVcRhGXicuOkQNRycGWr9z-01lOxvrkn0aipYXQcm3tFsdwTzcgwr0&quot;}]" ad-type="display" data-ad-click-location="background" impression-id="" is-feed-ad-redesign="true" view-type="cardView" is-blank="" is-shredtop-redesign="" with-content-tags="" without-overflow-actions-menu="" permalink="/user/redditads/comments/7w17su/interested_in_gaining_a_new_perspective_on_things/" content-href="http://www.reddit.com/r/askreddit" view-context="SubredditFeed" comment-count="0" vote-type="" feedindex="14" is-desktop-viewport="" should-track-post-view-events="" locked="" created-timestamp="2018-02-08T01:26:24.941000+0000" domain="reddit.com" id="t3_7w17su" post-title="Interested in gaining a new perspective on things? Check out the r/askreddit subreddit!" post-type="link" translation-language="en" author-id="t2_1ed7b" author="redditads" icon="https://styles.redditmedia.com/t5_3rycy/styles/profileIcon_8b4k69583rm61.jpg?width=48&amp;height=48&amp;frame=1&amp;auto=webp&amp;crop=48:48,smart&amp;s=f60e3d94baaf33ef032a7762eb14c1f4681611fe">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-ad-post class="promotedlink block" ad-events="[{&quot;type&quot;:&quot;IMPRESSION&quot;,&quot;url&quot;:&quot;https://alb.reddit.com/i.gif?za=NI4SzSNrpRPMjV3AAQTVACBDjqdNYiJ7MDyKaH8I3NJugQ1oNTDF8wICrMpxVEUgQ9vZyZXRYnw3r4hDMJuUHX-Ud-cMOvk4Gw_8pMp2b_OWXwYZ8OB6gpvmFb47y8_vpFDErfZJTCwTg-qSLay9NyG65U0skTDi&amp;zp=j8jVWOiWHorVc1vTMB3y_ns0aAq6CTX4YeQyIXWQQAAUtdgqt7TdATkvLVP4XCbsmsKmKuQ&quot;}]" ad-type="display" data-ad-click-location="background" impression-id="" is-feed-ad-redesign="true" view-type="cardView" is-blank="" is-shredtop-redesign="" with-content-tags="" without-overflow-actions-menu="" permalink="/user/redditads/comments/7w17su/interested_in_gaining_a_new_perspective_on_things/" content-href="http://www.reddit.com/r/askreddit" view-context="SubredditFeed" comment-count="0" vote-type="" feedindex="15" is-desktop-viewport="" should-track-post-view-events="" locked="" created-timestamp="2018-02-08T01:26:24.941000+0000" domain="reddit.com" id="t3_7w17su" post-title="Interested in gaining a new perspective on things? Check out the r/askreddit subreddit!" post-type="link" translation-language="en" author-id="t2_1ed7b" author="redditads" icon="https://styles.redditmedia.com/t5_3rycy/styles/profileIcon_8b4k69583rm61.jpg?width=48&amp;height=48&amp;frame=1&amp;auto=webp&amp;crop=48:48,smart&amp;s=f60e3d94baaf33ef032a7762eb14c1f4681611fe">
       
-    </shreddit-ad-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15e9g3w/mastering_functional_programming_in_python_guide/" content-href="https://www.reddit.com/r/Python/comments/15e9g3w/mastering_functional_programming_in_python_guide/" view-context="SubredditFeed" comment-count="1" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="15" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-31T07:48:33.787000+0000" domain="self.Python" id="t3_15e9g3w" post-title="Mastering Functional Programming in Python - Guide" post-type="multi_media" translation-language="en" score="0" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_m8sjl" author="thumbsdrivesmecrazy" icon="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_1.png">
+    </shreddit-ad-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15e9g3w/mastering_functional_programming_in_python_guide/" content-href="https://www.reddit.com/r/Python/comments/15e9g3w/mastering_functional_programming_in_python_guide/" view-context="SubredditFeed" comment-count="1" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="16" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-31T07:48:33.787000+0000" domain="self.Python" id="t3_15e9g3w" post-title="Mastering Functional Programming in Python - Guide" post-type="multi_media" translation-language="en" score="0" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_m8sjl" author="thumbsdrivesmecrazy" icon="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_1.png">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15e9g3w/mastering_functional_programming_in_python_guide/" target="_blank">
     </a>
     
@@ -4414,7 +4500,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-31T07:48:33.787000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T07:48:33.787Z" title="Monday, July 31, 2023 at 8:48:33 AM GMT+1"><!--?lit$092233883$-->7 hr. ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-31T07:48:33.787000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T07:48:33.787Z" title="Monday, July 31, 2023 at 8:48:33 AM GMT+1"><!--?lit$6037764694$-->8 hr. ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -4455,7 +4541,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div>
     
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15e8ibk/python_generator_the_art_of_lazily_generated_data/" content-href="https://hackthedeveloper.com/python-generator" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="16" show-post-flair="" is-desktop-viewport="" is-link-post="" should-track-post-view-events="" created-timestamp="2023-07-31T06:52:33.227000+0000" domain="hackthedeveloper.com" id="t3_15e8ibk" post-title="Python Generator: The Art of Lazily Generated Data" post-type="link" translation-language="en" score="0" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_8i7g1ila" author="DredditorS" icon="https://styles.redditmedia.com/t5_3a6eyp/styles/profileIcon_snoo3735626b-2bb2-4477-acda-04634558b64e-headshot-f.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=a401ba54d1c88bd6913b9d71f2c5758831729e65">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15e8ibk/python_generator_the_art_of_lazily_generated_data/" content-href="https://hackthedeveloper.com/python-generator" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="17" show-post-flair="" is-desktop-viewport="" is-link-post="" should-track-post-view-events="" created-timestamp="2023-07-31T06:52:33.227000+0000" domain="hackthedeveloper.com" id="t3_15e8ibk" post-title="Python Generator: The Art of Lazily Generated Data" post-type="link" translation-language="en" score="0" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_8i7g1ila" author="DredditorS" icon="https://styles.redditmedia.com/t5_3a6eyp/styles/profileIcon_snoo3735626b-2bb2-4477-acda-04634558b64e-headshot-f.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=a401ba54d1c88bd6913b9d71f2c5758831729e65">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15e8ibk/python_generator_the_art_of_lazily_generated_data/" target="_blank">
     </a>
     
@@ -4497,7 +4583,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-31T06:52:33.227000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T06:52:33.227Z" title="Monday, July 31, 2023 at 7:52:33 AM GMT+1"><!--?lit$092233883$-->8 hr. ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-31T06:52:33.227000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T06:52:33.227Z" title="Monday, July 31, 2023 at 7:52:33 AM GMT+1"><!--?lit$6037764694$-->9 hr. ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -4532,7 +4618,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div></div>
     </div>
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15e89n8/the_basics_of_testdriven_development_with_a_focus/" content-href="https://albexl.substack.com/p/the-basics-of-test-driven-development" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="17" show-post-flair="" is-desktop-viewport="" is-link-post="" should-track-post-view-events="" created-timestamp="2023-07-31T06:38:06.690000+0000" domain="albexl.substack.com" id="t3_15e89n8" post-title="The Basics of Test-Driven Development with a Focus on Data Structures" post-type="link" translation-language="en" score="0" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_8ievfhe0" author="albeXL" icon="https://styles.redditmedia.com/t5_3doyo1/styles/profileIcon_hzphgach9qsa1.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=2d7d904add35b1baa525c479bf65ee1273031670">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15e89n8/the_basics_of_testdriven_development_with_a_focus/" content-href="https://albexl.substack.com/p/the-basics-of-test-driven-development" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="18" show-post-flair="" is-desktop-viewport="" is-link-post="" should-track-post-view-events="" created-timestamp="2023-07-31T06:38:06.690000+0000" domain="albexl.substack.com" id="t3_15e89n8" post-title="The Basics of Test-Driven Development with a Focus on Data Structures" post-type="link" translation-language="en" score="0" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_8ievfhe0" author="albeXL" icon="https://styles.redditmedia.com/t5_3doyo1/styles/profileIcon_hzphgach9qsa1.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=2d7d904add35b1baa525c479bf65ee1273031670">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15e89n8/the_basics_of_testdriven_development_with_a_focus/" target="_blank">
     </a>
     
@@ -4574,7 +4660,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-31T06:38:06.690000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T06:38:06.690Z" title="Monday, July 31, 2023 at 7:38:06 AM GMT+1"><!--?lit$092233883$-->9 hr. ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-31T06:38:06.690000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T06:38:06.690Z" title="Monday, July 31, 2023 at 7:38:06 AM GMT+1"><!--?lit$6037764694$-->9 hr. ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -4609,7 +4695,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div></div>
     </div>
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15ea9gs/after_finishing_yt_beginner_intermediate_course/" content-href="https://www.reddit.com/r/Python/comments/15ea9gs/after_finishing_yt_beginner_intermediate_course/" view-context="SubredditFeed" comment-count="7" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="18" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-31T08:33:28.330000+0000" domain="self.Python" id="t3_15ea9gs" post-title="after finishing YT beginner &amp; intermediate course, what should I do next?" post-type="multi_media" translation-language="en" score="0" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_glqbbg10t" author="outtamaadcity" icon="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_5.png">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15ea9gs/after_finishing_yt_beginner_intermediate_course/" content-href="https://www.reddit.com/r/Python/comments/15ea9gs/after_finishing_yt_beginner_intermediate_course/" view-context="SubredditFeed" comment-count="7" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="19" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-31T08:33:28.330000+0000" domain="self.Python" id="t3_15ea9gs" post-title="after finishing YT beginner &amp; intermediate course, what should I do next?" post-type="multi_media" translation-language="en" score="0" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_glqbbg10t" author="outtamaadcity" icon="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_5.png">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15ea9gs/after_finishing_yt_beginner_intermediate_course/" target="_blank">
     </a>
     
@@ -4650,7 +4736,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-31T08:33:28.330000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T08:33:28.330Z" title="Monday, July 31, 2023 at 9:33:28 AM GMT+1"><!--?lit$092233883$-->7 hr. ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-31T08:33:28.330000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T08:33:28.330Z" title="Monday, July 31, 2023 at 9:33:28 AM GMT+1"><!--?lit$6037764694$-->7 hr. ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -4696,7 +4782,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div>
     
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15e24q8/i_created_a_handy_data_validation_library/" content-href="https://www.reddit.com/r/Python/comments/15e24q8/i_created_a_handy_data_validation_library/" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="19" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-31T01:09:28.375000+0000" domain="self.Python" id="t3_15e24q8" post-title="I created a handy data validation library." post-type="multi_media" translation-language="en" score="1" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_gkxxlyiq4" author="takeout_bento" icon="https://styles.redditmedia.com/t5_8zyg70/styles/profileIcon_gllflf91q5fb1.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=a1f472b8e73c6a271121915a7ab08e47bcc41892">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15e24q8/i_created_a_handy_data_validation_library/" content-href="https://www.reddit.com/r/Python/comments/15e24q8/i_created_a_handy_data_validation_library/" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="20" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-31T01:09:28.375000+0000" domain="self.Python" id="t3_15e24q8" post-title="I created a handy data validation library." post-type="multi_media" translation-language="en" score="1" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_gkxxlyiq4" author="takeout_bento" icon="https://styles.redditmedia.com/t5_8zyg70/styles/profileIcon_gllflf91q5fb1.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=a1f472b8e73c6a271121915a7ab08e47bcc41892">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15e24q8/i_created_a_handy_data_validation_library/" target="_blank">
     </a>
     
@@ -4737,7 +4823,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-31T01:09:28.375000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T01:09:28.375Z" title="Monday, July 31, 2023 at 2:09:28 AM GMT+1"><!--?lit$092233883$-->14 hr. ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-31T01:09:28.375000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T01:09:28.375Z" title="Monday, July 31, 2023 at 2:09:28 AM GMT+1"><!--?lit$6037764694$-->14 hr. ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -4801,7 +4887,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div>
     
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15e8non/why_does_sysargv_not_fallback_to_default_value/" content-href="https://www.reddit.com/r/Python/comments/15e8non/why_does_sysargv_not_fallback_to_default_value/" view-context="SubredditFeed" comment-count="6" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="20" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-31T07:01:18.034000+0000" domain="self.Python" id="t3_15e8non" post-title="Why does sys.argv not fallback to default value" post-type="text" translation-language="en" score="0" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_gwvaoo" author="rabbitdovahkiin" icon="https://styles.redditmedia.com/t5_9gbhq/styles/profileIcon_snoo-nftv2_bmZ0X2VpcDE1NToxMzdfYmZkNjcwNjY3MDUzZTUxN2E5N2FmZTU2YzkxZTRmODNmMTE2MGJkM180ODkyMQ_rare_30a9d291-bbbe-4343-92ee-b983d9c23382-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=9c0538635e895ffed61bef575acc3ab116c698c0">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15e8non/why_does_sysargv_not_fallback_to_default_value/" content-href="https://www.reddit.com/r/Python/comments/15e8non/why_does_sysargv_not_fallback_to_default_value/" view-context="SubredditFeed" comment-count="6" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="21" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-31T07:01:18.034000+0000" domain="self.Python" id="t3_15e8non" post-title="Why does sys.argv not fallback to default value" post-type="text" translation-language="en" score="0" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_gwvaoo" author="rabbitdovahkiin" icon="https://styles.redditmedia.com/t5_9gbhq/styles/profileIcon_snoo-nftv2_bmZ0X2VpcDE1NToxMzdfYmZkNjcwNjY3MDUzZTUxN2E5N2FmZTU2YzkxZTRmODNmMTE2MGJkM180ODkyMQ_rare_30a9d291-bbbe-4343-92ee-b983d9c23382-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=9c0538635e895ffed61bef575acc3ab116c698c0">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15e8non/why_does_sysargv_not_fallback_to_default_value/" target="_blank">
     </a>
     
@@ -4842,7 +4928,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-31T07:01:18.034000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T07:01:18.034Z" title="Monday, July 31, 2023 at 8:01:18 AM GMT+1"><!--?lit$092233883$-->8 hr. ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-31T07:01:18.034000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T07:01:18.034Z" title="Monday, July 31, 2023 at 8:01:18 AM GMT+1"><!--?lit$6037764694$-->9 hr. ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -4885,7 +4971,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div>
     
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15dciiy/do_open_source_developers_get_paid/" content-href="https://www.reddit.com/r/Python/comments/15dciiy/do_open_source_developers_get_paid/" view-context="SubredditFeed" comment-count="31" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="21" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-30T04:47:46.104000+0000" domain="self.Python" id="t3_15dciiy" post-title="Do open source developers get paid?" post-type="text" translation-language="en" score="35" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_depbb3m4" author="stonedphysics" icon="https://styles.redditmedia.com/t5_4s5z3e/styles/profileIcon_snooee89fe3f-d1ff-46d1-8227-7c296b95c003-headshot-f.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=d2397490de8d2106d6c72535f259e9ca008a647c">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15dciiy/do_open_source_developers_get_paid/" content-href="https://www.reddit.com/r/Python/comments/15dciiy/do_open_source_developers_get_paid/" view-context="SubredditFeed" comment-count="31" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="22" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-30T04:47:46.104000+0000" domain="self.Python" id="t3_15dciiy" post-title="Do open source developers get paid?" post-type="text" translation-language="en" score="35" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_depbb3m4" author="stonedphysics" icon="https://styles.redditmedia.com/t5_4s5z3e/styles/profileIcon_snooee89fe3f-d1ff-46d1-8227-7c296b95c003-headshot-f.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=d2397490de8d2106d6c72535f259e9ca008a647c">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15dciiy/do_open_source_developers_get_paid/" target="_blank">
     </a>
     
@@ -4926,7 +5012,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-30T04:47:46.104000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T04:47:46.104Z" title="Sunday, July 30, 2023 at 5:47:46 AM GMT+1"><!--?lit$092233883$-->1 day ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-30T04:47:46.104000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T04:47:46.104Z" title="Sunday, July 30, 2023 at 5:47:46 AM GMT+1"><!--?lit$6037764694$-->1 day ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -4965,9 +5051,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div>
     
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-ad-post class="promotedlink block" ad-events="[{&quot;type&quot;:&quot;IMPRESSION&quot;,&quot;url&quot;:&quot;https://alb.reddit.com/i.gif?za=rAbuY2iKIZYI9JTGhrFvazPDTliKnqiRv0Lx3qdN6GRHfyW1W6cbEhKuVdP70Jh_2XXsbD19VTa3jKjtq1DO3qzGIfy9m6w6y4fA8KBA0ikiq8aY5V-Ny6ChdmMfTWvSgTv_OU-DC2M_uvi9wgzD8CHwD9Okxg8P&amp;zp=ErJ8Gupf6HthcB_INvVcRhGXicuOkQNRycGWr9z-01lOxvrkn0aipYXQcm3tFsdwTzcgwr0&quot;}]" ad-type="display" data-ad-click-location="background" impression-id="" is-feed-ad-redesign="true" view-type="cardView" is-blank="" is-shredtop-redesign="" with-content-tags="" without-overflow-actions-menu="" permalink="/user/redditads/comments/7w17su/interested_in_gaining_a_new_perspective_on_things/" content-href="http://www.reddit.com/r/askreddit" view-context="SubredditFeed" comment-count="0" vote-type="" feedindex="22" is-desktop-viewport="" should-track-post-view-events="" locked="" created-timestamp="2018-02-08T01:26:24.941000+0000" domain="reddit.com" id="t3_7w17su" post-title="Interested in gaining a new perspective on things? Check out the r/askreddit subreddit!" post-type="link" translation-language="en" author-id="t2_1ed7b" author="redditads" icon="https://styles.redditmedia.com/t5_3rycy/styles/profileIcon_8b4k69583rm61.jpg?width=48&amp;height=48&amp;frame=1&amp;auto=webp&amp;crop=48:48,smart&amp;s=f60e3d94baaf33ef032a7762eb14c1f4681611fe">
-      
-    </shreddit-ad-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15dnffy/im_working_on_a_project_that_you_code_on_terminal/" content-href="https://www.reddit.com/r/Python/comments/15dnffy/im_working_on_a_project_that_you_code_on_terminal/" view-context="SubredditFeed" comment-count="4" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="23" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-30T14:48:55.082000+0000" domain="self.Python" id="t3_15dnffy" post-title="I'm working on a project that you code on terminal" post-type="multi_media" translation-language="en" score="4" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_lfcrrngo" author="PY-CDR" icon="https://styles.redditmedia.com/t5_63hke5/styles/profileIcon_snoo2bd3e657-4265-4825-9107-313642325728-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=7a1ffce5e55d9a4b26ad5cd8eb3859195df72bf9">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15dnffy/im_working_on_a_project_that_you_code_on_terminal/" content-href="https://www.reddit.com/r/Python/comments/15dnffy/im_working_on_a_project_that_you_code_on_terminal/" view-context="SubredditFeed" comment-count="4" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="23" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-30T14:48:55.082000+0000" domain="self.Python" id="t3_15dnffy" post-title="I'm working on a project that you code on terminal" post-type="multi_media" translation-language="en" score="4" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_lfcrrngo" author="PY-CDR" icon="https://styles.redditmedia.com/t5_63hke5/styles/profileIcon_snoo2bd3e657-4265-4825-9107-313642325728-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=7a1ffce5e55d9a4b26ad5cd8eb3859195df72bf9">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15dnffy/im_working_on_a_project_that_you_code_on_terminal/" target="_blank">
     </a>
     
@@ -5008,7 +5092,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-30T14:48:55.082000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T14:48:55.082Z" title="Sunday, July 30, 2023 at 3:48:55 PM GMT+1"><!--?lit$092233883$-->1 day ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-30T14:48:55.082000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T14:48:55.082Z" title="Sunday, July 30, 2023 at 3:48:55 PM GMT+1"><!--?lit$6037764694$-->1 day ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -5046,7 +5130,9 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div>
     
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15do7yz/aura_text_ide_made_with_python_pyqt6/" content-href="https://www.reddit.com/r/Python/comments/15do7yz/aura_text_ide_made_with_python_pyqt6/" view-context="SubredditFeed" comment-count="4" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="24" more-posts-cursor="dDNfMTVkc2YzOQ" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-30T15:23:30.703000+0000" domain="self.Python" id="t3_15do7yz" post-title="Aura Text: IDE Made with Python (PyQt6)" post-type="multi_media" translation-language="en" score="3" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_9ia8btxb" author="Specialist-Arachnid6" icon="https://styles.redditmedia.com/t5_3me2sk/styles/profileIcon_52e5fu2wq35b1.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=3eb08f0c31be0934b115a18dbbfb384737a09e36">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-ad-post class="promotedlink block" ad-events="[{&quot;type&quot;:&quot;IMPRESSION&quot;,&quot;url&quot;:&quot;https://alb.reddit.com/i.gif?za=NI4SzSNrpRPMjV3AAQTVACBDjqdNYiJ7MDyKaH8I3NJugQ1oNTDF8wICrMpxVEUgQ9vZyZXRYnw3r4hDMJuUHX-Ud-cMOvk4Gw_8pMp2b_OWXwYZ8OB6gpvmFb47y8_vpFDErfZJTCwTg-qSLay9NyG65U0skTDi&amp;zp=j8jVWOiWHorVc1vTMB3y_ns0aAq6CTX4YeQyIXWQQAAUtdgqt7TdATkvLVP4XCbsmsKmKuQ&quot;}]" ad-type="display" data-ad-click-location="background" impression-id="" is-feed-ad-redesign="true" view-type="cardView" is-blank="" is-shredtop-redesign="" with-content-tags="" without-overflow-actions-menu="" permalink="/user/redditads/comments/7w17su/interested_in_gaining_a_new_perspective_on_things/" content-href="http://www.reddit.com/r/askreddit" view-context="SubredditFeed" comment-count="0" vote-type="" feedindex="24" is-desktop-viewport="" should-track-post-view-events="" locked="" created-timestamp="2018-02-08T01:26:24.941000+0000" domain="reddit.com" id="t3_7w17su" post-title="Interested in gaining a new perspective on things? Check out the r/askreddit subreddit!" post-type="link" translation-language="en" author-id="t2_1ed7b" author="redditads" icon="https://styles.redditmedia.com/t5_3rycy/styles/profileIcon_8b4k69583rm61.jpg?width=48&amp;height=48&amp;frame=1&amp;auto=webp&amp;crop=48:48,smart&amp;s=f60e3d94baaf33ef032a7762eb14c1f4681611fe">
+      
+    </shreddit-ad-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15do7yz/aura_text_ide_made_with_python_pyqt6/" content-href="https://www.reddit.com/r/Python/comments/15do7yz/aura_text_ide_made_with_python_pyqt6/" view-context="SubredditFeed" comment-count="4" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="25" more-posts-cursor="dDNfMTVkMWFhNQ" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-30T15:23:30.703000+0000" domain="self.Python" id="t3_15do7yz" post-title="Aura Text: IDE Made with Python (PyQt6)" post-type="multi_media" translation-language="en" score="3" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_9ia8btxb" author="Specialist-Arachnid6" icon="https://styles.redditmedia.com/t5_3me2sk/styles/profileIcon_52e5fu2wq35b1.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=3eb08f0c31be0934b115a18dbbfb384737a09e36">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15do7yz/aura_text_ide_made_with_python_pyqt6/" target="_blank">
     </a>
     
@@ -5087,7 +5173,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-30T15:23:30.703000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T15:23:30.703Z" title="Sunday, July 30, 2023 at 4:23:30 PM GMT+1"><!--?lit$092233883$-->1 day ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-30T15:23:30.703000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T15:23:30.703Z" title="Sunday, July 30, 2023 at 4:23:30 PM GMT+1"><!--?lit$6037764694$-->1 day ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -5130,7 +5216,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div>
     
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15e7lj8/want_to_know_about_version_control_with_jupyter/" content-href="https://medium.com/@techlatest.net/version-control-with-jupyter-notebook-a-how-to-article-on-version-controlling-jupyter-notebooks-97038da49f56" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="25" more-posts-cursor="dDNfMTVkc2YzOQ" show-post-flair="" is-desktop-viewport="" is-link-post="" should-track-post-view-events="" created-timestamp="2023-07-31T05:59:42.149000+0000" domain="medium.com" id="t3_15e7lj8" post-title="Want to Know About, Version Control with Jupyter Notebook using Git, including recommended workflows? Check Out this Blog Post." post-type="link" translation-language="en" score="0" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_12m02dhx" author="techlatest_net" icon="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_5.png">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15e7lj8/want_to_know_about_version_control_with_jupyter/" content-href="https://medium.com/@techlatest.net/version-control-with-jupyter-notebook-a-how-to-article-on-version-controlling-jupyter-notebooks-97038da49f56" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="26" more-posts-cursor="dDNfMTVkMWFhNQ" show-post-flair="" is-desktop-viewport="" is-link-post="" should-track-post-view-events="" created-timestamp="2023-07-31T05:59:42.149000+0000" domain="medium.com" id="t3_15e7lj8" post-title="Want to Know About, Version Control with Jupyter Notebook using Git, including recommended workflows? Check Out this Blog Post." post-type="link" translation-language="en" score="0" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_12m02dhx" author="techlatest_net" icon="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_5.png">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15e7lj8/want_to_know_about_version_control_with_jupyter/" target="_blank">
     </a>
     
@@ -5172,7 +5258,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-31T05:59:42.149000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T05:59:42.149Z" title="Monday, July 31, 2023 at 6:59:42 AM GMT+1"><!--?lit$092233883$-->9 hr. ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-31T05:59:42.149000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-31T05:59:42.149Z" title="Monday, July 31, 2023 at 6:59:42 AM GMT+1"><!--?lit$6037764694$-->10 hr. ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -5207,7 +5293,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div></div>
     </div>
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15dv2m2/web_scraping_bookingcom_using_python/" content-href="https://serpdog.io/blog/web-scraping-bookingcom" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="26" more-posts-cursor="dDNfMTVkc2YzOQ" show-post-flair="" is-desktop-viewport="" is-link-post="" should-track-post-view-events="" created-timestamp="2023-07-30T20:10:25.592000+0000" domain="serpdog.io" id="t3_15dv2m2" post-title="Web Scraping Booking.com Using Python" post-type="link" translation-language="en" score="0" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_qzd3rjpu" author="AccomplishedSea1424" icon="https://styles.redditmedia.com/t5_6toa21/styles/profileIcon_snoo4752eb2f-1456-490d-978d-e460ab20e062-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=267d28cf02d606334da0ca7f69d0ab458359d626">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15dv2m2/web_scraping_bookingcom_using_python/" content-href="https://serpdog.io/blog/web-scraping-bookingcom" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="27" more-posts-cursor="dDNfMTVkMWFhNQ" show-post-flair="" is-desktop-viewport="" is-link-post="" should-track-post-view-events="" created-timestamp="2023-07-30T20:10:25.592000+0000" domain="serpdog.io" id="t3_15dv2m2" post-title="Web Scraping Booking.com Using Python" post-type="link" translation-language="en" score="0" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_qzd3rjpu" author="AccomplishedSea1424" icon="https://styles.redditmedia.com/t5_6toa21/styles/profileIcon_snoo4752eb2f-1456-490d-978d-e460ab20e062-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=267d28cf02d606334da0ca7f69d0ab458359d626">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15dv2m2/web_scraping_bookingcom_using_python/" target="_blank">
     </a>
     
@@ -5249,7 +5335,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-30T20:10:25.592000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T20:10:25.592Z" title="Sunday, July 30, 2023 at 9:10:25 PM GMT+1"><!--?lit$092233883$-->19 hr. ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-30T20:10:25.592000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T20:10:25.592Z" title="Sunday, July 30, 2023 at 9:10:25 PM GMT+1"><!--?lit$6037764694$-->19 hr. ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -5284,7 +5370,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div></div>
     </div>
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15dv1to/serve_django_static_files_with_cloudfront_and_s3/" content-href="https://www.reddit.com/r/Python/comments/15dv1to/serve_django_static_files_with_cloudfront_and_s3/" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="27" more-posts-cursor="dDNfMTVkc2YzOQ" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-30T20:09:33.454000+0000" domain="self.Python" id="t3_15dv1to" post-title="Serve Django static files with CloudFront and S3" post-type="multi_media" translation-language="en" score="0" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_bbso57i23" author="vjanzz" icon="https://styles.redditmedia.com/t5_8ep54k/styles/profileIcon_snoo863c34f5-675b-4dfa-a034-a3ac75d6fc5d-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=3a6c7c1f7372bd50d8c2db2be0ea2a91f480eb1c">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15dv1to/serve_django_static_files_with_cloudfront_and_s3/" content-href="https://www.reddit.com/r/Python/comments/15dv1to/serve_django_static_files_with_cloudfront_and_s3/" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="28" more-posts-cursor="dDNfMTVkMWFhNQ" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-30T20:09:33.454000+0000" domain="self.Python" id="t3_15dv1to" post-title="Serve Django static files with CloudFront and S3" post-type="multi_media" translation-language="en" score="0" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_bbso57i23" author="vjanzz" icon="https://styles.redditmedia.com/t5_8ep54k/styles/profileIcon_snoo863c34f5-675b-4dfa-a034-a3ac75d6fc5d-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=3a6c7c1f7372bd50d8c2db2be0ea2a91f480eb1c">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15dv1to/serve_django_static_files_with_cloudfront_and_s3/" target="_blank">
     </a>
     
@@ -5325,7 +5411,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-30T20:09:33.454000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T20:09:33.454Z" title="Sunday, July 30, 2023 at 9:09:33 PM GMT+1"><!--?lit$092233883$-->19 hr. ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-30T20:09:33.454000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T20:09:33.454Z" title="Sunday, July 30, 2023 at 9:09:33 PM GMT+1"><!--?lit$6037764694$-->19 hr. ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -5370,7 +5456,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div>
     
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15dyhuk/configurable_and_customizable_textbased_adventure/" content-href="https://www.reddit.com/r/Python/comments/15dyhuk/configurable_and_customizable_textbased_adventure/" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="28" more-posts-cursor="dDNfMTVkc2YzOQ" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-30T22:26:31.820000+0000" domain="self.Python" id="t3_15dyhuk" post-title="Configurable and customizable text-based adventure based on OpenAI and their powerful GPT language models - InfinityWorlds" post-type="multi_media" translation-language="en" score="0" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_6pw2phnvy" author="PatzEdi" icon="https://styles.redditmedia.com/t5_813qcd/styles/profileIcon_snoofa2c73ce-ceb0-4316-a475-dfbaa489bb96-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=a3223e44acb25e9df630c2f282f499805e8f9a02">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15dyhuk/configurable_and_customizable_textbased_adventure/" content-href="https://www.reddit.com/r/Python/comments/15dyhuk/configurable_and_customizable_textbased_adventure/" view-context="SubredditFeed" comment-count="0" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="29" more-posts-cursor="dDNfMTVkMWFhNQ" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-30T22:26:31.820000+0000" domain="self.Python" id="t3_15dyhuk" post-title="Configurable and customizable text-based adventure based on OpenAI and their powerful GPT language models - InfinityWorlds" post-type="multi_media" translation-language="en" score="0" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_6pw2phnvy" author="PatzEdi" icon="https://styles.redditmedia.com/t5_813qcd/styles/profileIcon_snoofa2c73ce-ceb0-4316-a475-dfbaa489bb96-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=a3223e44acb25e9df630c2f282f499805e8f9a02">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15dyhuk/configurable_and_customizable_textbased_adventure/" target="_blank">
     </a>
     
@@ -5411,7 +5497,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-30T22:26:31.820000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T22:26:31.820Z" title="Sunday, July 30, 2023 at 11:26:31 PM GMT+1"><!--?lit$092233883$-->17 hr. ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-30T22:26:31.820000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T22:26:31.820Z" title="Sunday, July 30, 2023 at 11:26:31 PM GMT+1"><!--?lit$6037764694$-->17 hr. ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -5451,7 +5537,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div>
     
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15d1aa5/we_created_an_opensource_semantic_search_python/" content-href="https://www.reddit.com/r/Python/comments/15d1aa5/we_created_an_opensource_semantic_search_python/" view-context="SubredditFeed" comment-count="11" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="29" more-posts-cursor="dDNfMTVkc2YzOQ" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-29T19:56:16.548000+0000" domain="self.Python" id="t3_15d1aa5" post-title="We created an open-source semantic search Python package on top of Postgres" post-type="multi_media" translation-language="en" score="40" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_4iwrwdc0" author="philippemnoel" icon="https://styles.redditmedia.com/t5_24bs1c/styles/profileIcon_snoo0e2e4d14-c2c8-4ae9-8543-2890233a68a5-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=96ad2f42177cd467a6ddddbb2912ca59b559eb6b">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15d1aa5/we_created_an_opensource_semantic_search_python/" content-href="https://www.reddit.com/r/Python/comments/15d1aa5/we_created_an_opensource_semantic_search_python/" view-context="SubredditFeed" comment-count="11" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="30" more-posts-cursor="dDNfMTVkMWFhNQ" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-29T19:56:16.548000+0000" domain="self.Python" id="t3_15d1aa5" post-title="We created an open-source semantic search Python package on top of Postgres" post-type="multi_media" translation-language="en" score="40" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_4iwrwdc0" author="philippemnoel" icon="https://styles.redditmedia.com/t5_24bs1c/styles/profileIcon_snoo0e2e4d14-c2c8-4ae9-8543-2890233a68a5-headshot.png?width=64&amp;height=64&amp;frame=1&amp;auto=webp&amp;crop=64:64,smart&amp;s=96ad2f42177cd467a6ddddbb2912ca59b559eb6b">
     <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15d1aa5/we_created_an_opensource_semantic_search_python/" target="_blank">
     </a>
     
@@ -5492,7 +5578,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
     
     
    <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-29T19:56:16.548000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-29T19:56:16.548Z" title="Saturday, July 29, 2023 at 8:56:16 PM GMT+1"><!--?lit$092233883$-->2 days ago</time> </faceplate-timeago>
+    <faceplate-timeago ts="2023-07-29T19:56:16.548000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-29T19:56:16.548Z" title="Saturday, July 29, 2023 at 8:56:16 PM GMT+1"><!--?lit$6037764694$-->2 days ago</time> </faceplate-timeago>
       </span>
       <span class="flex items-center pl-xs">
         
@@ -5528,89 +5614,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div>
     
   
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-ad-post class="promotedlink block" ad-events="[{&quot;type&quot;:&quot;IMPRESSION&quot;,&quot;url&quot;:&quot;https://alb.reddit.com/i.gif?za=rAbuY2iKIZYI9JTGhrFvazPDTliKnqiRv0Lx3qdN6GRHfyW1W6cbEhKuVdP70Jh_2XXsbD19VTa3jKjtq1DO3qzGIfy9m6w6y4fA8KBA0ikiq8aY5V-Ny6ChdmMfTWvSgTv_OU-DC2M_uvi9wgzD8CHwD9Okxg8P&amp;zp=ErJ8Gupf6HthcB_INvVcRhGXicuOkQNRycGWr9z-01lOxvrkn0aipYXQcm3tFsdwTzcgwr0&quot;}]" ad-type="display" data-ad-click-location="background" impression-id="" is-feed-ad-redesign="true" view-type="cardView" is-blank="" is-shredtop-redesign="" with-content-tags="" without-overflow-actions-menu="" permalink="/user/redditads/comments/7w17su/interested_in_gaining_a_new_perspective_on_things/" content-href="http://www.reddit.com/r/askreddit" view-context="SubredditFeed" comment-count="0" vote-type="" feedindex="30" is-desktop-viewport="" should-track-post-view-events="" locked="" created-timestamp="2018-02-08T01:26:24.941000+0000" domain="reddit.com" id="t3_7w17su" post-title="Interested in gaining a new perspective on things? Check out the r/askreddit subreddit!" post-type="link" translation-language="en" author-id="t2_1ed7b" author="redditads" icon="https://styles.redditmedia.com/t5_3rycy/styles/profileIcon_8b4k69583rm61.jpg?width=48&amp;height=48&amp;frame=1&amp;auto=webp&amp;crop=48:48,smart&amp;s=f60e3d94baaf33ef032a7762eb14c1f4681611fe">
-      
-    </shreddit-ad-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"><shreddit-post class="block cursor-pointer relative bg-neutral-background focus-within:bg-neutral-background-hover hover:bg-neutral-background-hover xs:rounded-[16px] p-md my-2xs nd:visible" permalink="/r/Python/comments/15dsf39/why_does_pythoneel_get_hate/" content-href="https://www.reddit.com/r/Python/comments/15dsf39/why_does_pythoneel_get_hate/" view-context="SubredditFeed" comment-count="7" view-type="cardView" vote-type="" pdp-target="_blank" feedindex="31" more-posts-cursor="dDNfMTVkc2YzOQ" show-post-flair="" is-desktop-viewport="" should-track-post-view-events="" created-timestamp="2023-07-30T18:20:41.888000+0000" domain="self.Python" id="t3_15dsf39" post-title="Why does python-eel get hate?" post-type="multi_media" translation-language="en" score="0" subreddit-id="t5_2qh0y" subreddit-prefixed-name="r/Python" author-id="t2_cg3w3603" author="funnypoltergeist" icon="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_3.png">
-    <a slot="full-post-link" class="absolute inset-0" href="/r/Python/comments/15dsf39/why_does_pythoneel_get_hate/" target="_blank">
-    </a>
-    
-    
-    <span slot="credit-bar" class="flex justify-between text-12  mb-2xs ">
-      <span class="flex text-12 gap-[6px] items-center pr-xs">
-        <span class="relative">
-          
-    <span slot="authorName" class="">
-      <div class="inline-flex items-center">
-        
-    <faceplate-hovercard enter-delay="500" leave-delay="500" position="bottom-start" data-id="user-hover-card" close-on-track="" role="dialog" appearance="neutral">
-      
-    <a rpl="" href="/user/funnypoltergeist/" class="
-         flex items-center text-neutral-content font-bold a
-         
-         
-         no-visited
-         no-underline hover:no-underline
-         "><span class="mr-2xs"><faceplate-img src="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_3.png" alt="u/u/funnypoltergeist avatar" class="avatar nd:visible nd:block nd:animate-pulse nd:bg-neutral-background-selected overflow-hidden rounded-full shrink-0 h-xl w-xl" loading="lazy"></faceplate-img></span>
-  <span class="whitespace-nowrap">u/funnypoltergeist</span></a>
-  
-      <div slot="content">
-        <faceplate-partial src="/svc/shreddit/user-hover-card/funnypoltergeist" loading="programmatic">
-          <div class="w-5xl h-4xl flex items-center justify-center">
-            <faceplate-progress value="20" class="animate-spin" status="incomplete"></faceplate-progress>
-          </div>
-        </faceplate-partial>
-      </div>
-    </faceplate-hovercard>
-  
-        
-      </div>
-    </span>
-  
-        </span>
-        
-    
-    
-   <span class="inline-block my-0 created-separator text-neutral-content-weak">•</span>
-    <faceplate-timeago ts="2023-07-30T18:20:41.888000+0000" short="" class="whitespace-nowrap text-neutral-content-weak"><!----> <time datetime="2023-07-30T18:20:41.888Z" title="Sunday, July 30, 2023 at 7:20:41 PM GMT+1"><!--?lit$092233883$-->21 hr. ago</time> </faceplate-timeago>
-      </span>
-      <span class="flex items-center pl-xs">
-        
-        
-        <shreddit-async-loader class="relative min-w-[28px] -mr-[7px]" bundlename="shreddit_post_overflow_menu">
-    <shreddit-post-overflow-menu is-desktop=""></shreddit-post-overflow-menu>
-  </shreddit-async-loader>
-      </span>
-    </span>
-  
-    
-    <div id="post-title-t3_15dsf39" slot="title" class="font-semibold text-neutral-content-strong text-16 xs:text-18  mb-2xs xs:mb-xs ">
-    
-    Why does python-eel get hate?
-  </div>
-     <shreddit-flair class="nd:text-tone-1 py-2xs nd:px-xs nd:leading-none inline-flex flex-col  relative top-[-0.25rem] xs:top-[-2px] mb-0 xs:mb-xs py-0 " color="DARK" slot="post-flair">
-    Discussion
-  </shreddit-flair>
-    <div class="mb-xs" slot="text-body">
-    <div id="t3_15dsf39-post-rtjson-content" class="text-neutral-content md max-h-[337px] overflow-hidden text-12 xs:text-14">
-    <p>
-    <a href="https://github.com/python-eel/Eel" rel="noopener nofollow ugc" target="_blank">python-eel</a> is a tool that makes desktop apps easier by hosting a website that you make on localhost and displaying it in the form of an application. The website has the power to interact with the system via python. I told my tech-savvy friends that I liked using python-eel and they didn't seem to agree with me. Are there controversies about it I haven't heard about?
-  </p>
-  </div>
-    <div id="t3_15dsf39-overflow-cover" class="h-[66px] mt-[-66px] md px-md from-[color:var(--color-neutral-background)] bg-gradient-to-t hidden isolate
-      pointer-events-none read-more-overflow-cover"></div>
-    
-    <a rpl="" id="t3_15dsf39-read-more-button" href="/r/Python/comments/15dsf39/why_does_pythoneel_get_hate/" class="
-         m-0 ml-[-1rem] md px-md py-0 font-normal text-sm items-center h-[28px] a hidden border-none a
-         
-         
-         
-         hover:underline
-         ">View full post</a>
-  
-  </div>
-    
-  
-  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"></faceplate-batch><faceplate-partial id="partial-more-posts-dDNfMTVkc2YzOQ" loading="programmatic" tabindex="0" src="/svc/shreddit/community-more-posts/hot/?after=dDNfMTVkc2YzOQ%3D%3D&amp;t=DAY&amp;name=Python&amp;feedLength=32&amp;adDistance=1" method="GET">
+  </shreddit-post><hr class="border-0  border-b-sm border-solid border-b-neutral-border-weak xs:mx-md"></faceplate-batch><faceplate-partial id="partial-more-posts-dDNfMTVkMWFhNQ" loading="programmatic" tabindex="0" src="/svc/shreddit/community-more-posts/hot/?after=dDNfMTVkMWFhNQ%3D%3D&amp;t=DAY&amp;name=Python&amp;feedLength=31&amp;adDistance=6" method="GET">
       <shreddit-post-loading></shreddit-post-loading>
     </faceplate-partial>
   
@@ -5635,7 +5639,7 @@ xs:overflow-y-auto xs:overflow-x-hidden
 
 https://arstechnica.com/gadgets/2023/06/reddits-new-api-pricing-will-kill-off-apollo-on-june-30/
 
-https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-changes-apollo-charges" subscribers="1139139" banner-url="https://styles.redditmedia.com/t5_2qh0y/styles/bannerBackgroundImage_rluqfluf65a51.png" active="786" router-name="subreddit">
+https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-changes-apollo-charges" subscribers="1139143" banner-url="https://styles.redditmedia.com/t5_2qh0y/styles/bannerBackgroundImage_rluqfluf65a51.png" active="480" router-name="subreddit">
     <div class="w-full flex flex-col animate-pulse -mt-md rounded-t-[8px] overflow-hidden">
    <div class="w-full h-[128px] bg-neutral-background-selected"></div> 
 
@@ -5712,7 +5716,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   <!----></faceplate-tracker>
         
     </div>
-  </div> <shreddit-async-loader bundlename="sidebar_ad"><shreddit-sidebar-ad id="t3_7w17su" ad-events="[{&quot;type&quot;:&quot;IMPRESSION&quot;,&quot;url&quot;:&quot;https://alb.reddit.com/i.gif?za=sXJqhDb0NRGykZIZ91aA2BMmHVYHy0aYBX2_Vbi_g5_k8NGrfG75FG8RSKRulZBIz8FA7NQAQwVa186i5T47JBzO3dujmTZnjnSNiHwI5LBiakhycHDtf3mV39OqEfIDCc8p5oiClA2RJklKz9pg0z3tEh25G8DW&amp;zp=6aoXNzKiuGMtUXAgzR007ZiVuN3-ltIeHVzfRbrS227QwAResrOm_3wAEWcbU502NQluECg&quot;}]" is-blank="" is-subreddit-feed="" url="http://www.reddit.com/r/askreddit" class="promotedlink p-0 m-0 invisible xs:block">
+  </div> <shreddit-async-loader bundlename="sidebar_ad"><shreddit-sidebar-ad id="t3_7w17su" ad-events="[{&quot;type&quot;:&quot;IMPRESSION&quot;,&quot;url&quot;:&quot;https://alb.reddit.com/i.gif?za=o4-go5Zi8JPi2nJf0X1HRuu9_iwHTFbel7mKblnmGw0ZU8UrhKTi6ShimQIN_2o1DPnuwtuT4J9Q34LEt9jvu_G71m0enqsHB8UZiSpmt9cGgtKeWCtu7U28K_81r8bcbolqgEscknBS1FimaAkFEKMUJk9NQ5Vs&amp;zp=xKwPYBoF8nPhxLdn7V5ExuZTFKc2GzfPWidZzzdCszgiR_4oXDgmwEjA3yCYIwDsMO5ryTU&quot;}]" is-blank="" is-subreddit-feed="" url="http://www.reddit.com/r/askreddit" class="promotedlink p-0 m-0 invisible xs:block">
       <div class="text-secondary-weak text-12 mb-xs uppercase font-semibold ml-md" slot="promoted-label">
         Promoted
       </div>
@@ -6102,7 +6106,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
         <span class="text-14">
             <a class="text-neutral-content" target="_blank" href="/r/learnpython">r/learnpython</a>
           </span>
-        <span class="text-12 text-secondary-weak">729,381 members</span>
+        <span class="text-12 text-secondary-weak">729,384 members</span>
       </span>
     </span>
     <span class="flex items-center shrink-0">
@@ -6224,7 +6228,7 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   </div>
         </div>
       </section>
-      <shreddit-async-loader bundlename="sidebar_ad"><shreddit-sidebar-ad id="t3_7w17su" ad-events="[{&quot;type&quot;:&quot;IMPRESSION&quot;,&quot;url&quot;:&quot;https://alb.reddit.com/i.gif?za=pr53zsrDzjoBnTzrkBvNlzT3tiu56BaOoWeIKHE-8IuSMtJOu8YPwqS6mK58mbsvz287NHjYXFix_ERjjJbHzzpmenu6Ok9bPneud62lxzR8F21MlDzI_mM4Vx379P0zonNMiW3zY_qpYD0ABOQs7o6esKRFiWOF&amp;zp=gsVGAZgBhzLavbDFvkgi7f400Id61p77svr14EvYECpRqCnAPf4aYyxbRTgNfTpM86Z-WVY&quot;}]" is-blank="" is-subreddit-feed="" url="http://www.reddit.com/r/askreddit" class="promotedlink p-0 m-0 invisible xs:block">
+      <shreddit-async-loader bundlename="sidebar_ad"><shreddit-sidebar-ad id="t3_7w17su" ad-events="[{&quot;type&quot;:&quot;IMPRESSION&quot;,&quot;url&quot;:&quot;https://alb.reddit.com/i.gif?za=6m153-XlBglzXh2PuVaw_vpPFe5yDE2bS8j2BQD-REnc2222wfut1TooS1NP30blVKT4QV7fPbNka_Tfrhtk126O9XAbc-zhr2FagTqj5bJsn6If-Cqhwt2S3BkFB9VmQMLArIZgGwc2_9IsEcA2S0oA3bhKueK2hA&amp;zp=ZALsLJMnesQOF8mJKNkoHSql80d1pbYNsvnyL67HWC-CPXiWRmAZDFEmxTuq6VWsX68Ot0_I&quot;}]" is-blank="" is-subreddit-feed="" url="http://www.reddit.com/r/askreddit" class="promotedlink p-0 m-0 invisible xs:block">
       <div class="text-secondary-weak text-12 mb-xs uppercase font-semibold ml-md" slot="promoted-label">
         Promoted
       </div>
@@ -6273,4 +6277,4 @@ https://www.theverge.com/2023/6/5/23749188/reddit-subreddit-private-protest-api-
   
        
     
-  <script type="module" async="" src="https://www.redditstatic.com/shreddit/en-US/left-nav-recent-section-client-js-22273d89.js"></script></body></html>
+  <script type="module" async="" src="https://www.redditstatic.com/shreddit/en-US/left-nav-recent-section-client-js-347050b2.js"></script></body></html>
