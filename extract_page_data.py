@@ -1,3 +1,4 @@
+from concurrent.futures import ThreadPoolExecutor
 import time
 from bs4 import BeautifulSoup
 from pprint import pprint
@@ -8,11 +9,29 @@ from urllib.parse import urlparse
 import re
 from pprint import pprint
 
+def get_random_user_agent():
+    """
+    Gets a random user agent from a list of common user agents.
+
+    Returns:
+        str: A random user agent string.
+    """
+    # List of common user agents
+    user_agents = [
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.54 Safari/537.36",
+        "Mozilla/5.0 (Linux; Android 10; MED-LX9) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.99 Mobile Safari/537.36",
+        "Mozilla/5.0 (Linux; Android 9; Redmi 8A Build/PKQ1.190319.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0.4240.110 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/294.0.0.39.118;]",
+        "Mozilla/5.0 (iPhone; CPU iPhone OS 13_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Instagram 165.0.0.20.119 (iPhone11,8; iOS 13_7; pt_BR; pt-BR; scale=2.00; 828x1792; 252729634) NW/1",
+        "Mozilla/5.0 (Linux; Android 10; BLA-L09 Build/HUAWEIBLA-L09S; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/112.0.5615.136 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/413.0.0.30.104;]",
+    ]
+
+    return random.choice(user_agents)
 
 def save_reddit_html_to_file(url, output_file):
     with sync_playwright() as p:
         browser = p.chromium.launch()
-        context = browser.new_context()
+        context = browser.new_context(user_agent=get_random_user_agent())
         page = context.new_page()
 
         page.goto(
@@ -133,50 +152,57 @@ def sanitize_url_for_filename(url):
     # Replace characters that are not allowed in filenames with underscores
     return re.sub(r"[^a-zA-Z0-9-_.]", "_", path)
 
-def scrape_reddit_urls(urls, max_retry=3, retry_delay=5):
-    for reddit_url in urls:
-        output_file_json = f"{sanitize_url_for_filename(reddit_url)}.json"
-        output_file_html = f"{sanitize_url_for_filename(reddit_url)}.html"
 
-        retry_count = 0
-        homepage_post_list = []
 
-        while retry_count < max_retry:
-            try:
-                save_reddit_html_to_file(reddit_url, output_file_html)
+def scrape_reddit_url(reddit_url, max_retry=10, retry_delay=3):
+    output_file_json = f"{sanitize_url_for_filename(reddit_url)}.json"
+    output_file_html = f"{sanitize_url_for_filename(reddit_url)}.html"
 
-                html_data = read_html_file(output_file_html)
-                post_elements = parse_reddit_html(html_data)
+    retry_count = 0
+    homepage_post_list = []
 
-                homepage_post_list = []
-                for element in post_elements:
-                    post_data = extract_post_metadata(element)
-                    homepage_post_list.append(post_data)
+    while retry_count < max_retry:
+        try:
+            save_reddit_html_to_file(reddit_url, output_file_html)
 
-                if homepage_post_list:
-                    break
-            except Exception as e:
-                print(f"An error occurred while scraping: {e}")
+            html_data = read_html_file(output_file_html)
+            post_elements = parse_reddit_html(html_data)
 
-            retry_count += 1
-            print(f"Retry {retry_count}/{max_retry}. Retrying in {retry_delay} seconds...")
-            time.sleep(retry_delay)
+            homepage_post_list = []
+            for element in post_elements:
+                post_data = extract_post_metadata(element)
+                homepage_post_list.append(post_data)
 
-        if homepage_post_list:
-            print(f"Scraped {reddit_url}:")
-            print(homepage_post_list)
-            # Save the post list as JSON
-            with open(output_file_json, "w", encoding="utf-8") as json_file:
-                json.dump(homepage_post_list, json_file, indent=4)
-        else:
-            print(f"Failed to scrape {reddit_url} even after retries.")
+            if homepage_post_list:
+                break
+        except Exception as e:
+            print(f"An error occurred while scraping {reddit_url}: {e}")
 
+        retry_count += 1
+        print(f"Retry {retry_count}/{max_retry}. Retrying in {retry_delay} seconds...")
+        time.sleep(retry_delay)
+
+    if homepage_post_list:
+        print(f"Scraped {reddit_url}:")
+        print(homepage_post_list)
+        # Save the post list as JSON
+        with open(output_file_json, "w", encoding="utf-8") as json_file:
+            json.dump(homepage_post_list, json_file, indent=4)
+    else:
+        print(f"Failed to scrape {reddit_url} even after retries.")
+
+def scrape_reddit_urls_with_threads(urls, max_retry=10, retry_delay=3, num_threads=4):
+    with ThreadPoolExecutor(max_workers=num_threads) as executor:
+        executor.map(lambda url: scrape_reddit_url(url, max_retry, retry_delay), urls)
 
 if __name__ == "__main__":
     reddit_urls = [
         "https://www.reddit.com/r/Python/",
         "https://www.reddit.com/r/programming/",
+        "https://www.reddit.com/r/badcode/",
+        "https://www.reddit.com/r/javascript/"
+
         # Add more Reddit URLs here
     ]
 
-    scrape_reddit_urls(reddit_urls)
+    scrape_reddit_urls_with_threads(reddit_urls)
