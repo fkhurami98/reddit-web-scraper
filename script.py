@@ -29,6 +29,18 @@ def save_reddit_html_to_file(url, output_file):
         # Wait for the page to load completely after accepting cookies
         page.wait_for_load_state("networkidle")
 
+        # Scroll down by 2 windows (twice the viewport height)
+        page.evaluate('window.scrollBy(0, window.innerHeight);')
+
+        # Wait for the page to load completely after scrolling down
+        page.wait_for_load_state("networkidle")
+
+        # Wait for one second
+        page.wait_for_timeout(1000)
+        
+        # Wait for a brief moment after scrolling to let the content load
+        page.wait_for_load_state("networkidle")
+
         # Get the entire HTML content of the page
         html_content = page.content()
 
@@ -126,13 +138,13 @@ def sanitize_url_for_filename(url):
 
 
 if __name__ == "__main__":
-    reddit_url = "https://www.reddit.com/r/AmItheAsshole/"
-    output_file = f"{sanitize_url_for_filename(reddit_url)}.json"
+    reddit_url = "https://www.reddit.com/r/python/"
+    output_file_json = f"{sanitize_url_for_filename(reddit_url)}.json"
+    output_file_html = f"{sanitize_url_for_filename(reddit_url)}.html"
 
-    save_reddit_html_to_file(reddit_url, output_file)
+    save_reddit_html_to_file(reddit_url, output_file_html)
 
-    file_path = output_file
-    html_data = read_html_file(file_path=file_path)
+    html_data = read_html_file(output_file_html)
     post_elements = parse_reddit_html(html_data)
 
 
