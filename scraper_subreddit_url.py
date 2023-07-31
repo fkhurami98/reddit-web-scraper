@@ -8,21 +8,8 @@ from urllib.parse import urlparse
 import re
 import os
 
-def get_random_user_agent():
-    """
-    Gets a random user agent from a list of common user agents.
 
-    Returns:
-        str: A random user agent string.
-    """
-    user_agents = [
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36",
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.54 Safari/537.36",
-        # Add more user agents here if needed
-    ]
-    return random.choice(user_agents)
-
-def save_reddit_html_to_file(url, output_file):
+def save_reddit_html_to_variable(url, output_file):
     """
     Saves the HTML content of a given Reddit URL to a file.
 
@@ -51,11 +38,17 @@ def save_reddit_html_to_file(url, output_file):
         if accept_button:
             accept_button.click()
 
-        page.wait_for_load_state("networkidle")  # Wait for the page to load completely after accepting cookies
+        page.wait_for_load_state(
+            "networkidle"
+        )  # Wait for the page to load completely after accepting cookies
 
-        page.evaluate("window.scrollBy(0, window.innerHeight);")  # Scroll down by the height of the viewport
+        page.evaluate(
+            "window.scrollBy(0, window.innerHeight);"
+        )  # Scroll down by the height of the viewport
 
-        page.wait_for_load_state("networkidle")  # Wait for the page to load completely after scrolling down
+        page.wait_for_load_state(
+            "networkidle"
+        )  # Wait for the page to load completely after scrolling down
 
         page.wait_for_timeout(1000)  # Wait for one second
 
@@ -63,16 +56,34 @@ def save_reddit_html_to_file(url, output_file):
 
         browser.close()  # Close the browser
 
-    with open(output_file, "w", encoding="utf-8") as file:
-        file.write(html_content)  # Save the HTML content to a file
-
     print(f"HTML content saved to {output_file}")
+    return html_content
+
+
+def get_random_user_agent():
+    """
+    Gets a random user agent from a list of common user agents.
+
+    Returns:
+        str: A random user agent string.
+    """
+    user_agents = [
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.54 Safari/537.36",
+        "Mozilla/5.0 (Linux; Android 10; MED-LX9) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.99 Mobile Safari/537.36",
+        "Mozilla/5.0 (Linux; Android 9; Redmi 8A Build/PKQ1.190319.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0.4240.110 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/294.0.0.39.118;]",
+        "Mozilla/5.0 (iPhone; CPU iPhone OS 13_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Instagram 165.0.0.20.119 (iPhone11,8; iOS 13_7; pt_BR; pt-BR; scale=2.00; 828x1792; 252729634) NW/1",
+        "Mozilla/5.0 (Linux; Android 10; BLA-L09 Build/HUAWEIBLA-L09S; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/112.0.5615.136 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/413.0.0.30.104;]",
+    ]
+    return random.choice(user_agents)
+
 
 def read_html_file(file_path):
     with open(file_path, "r", encoding="utf-8") as file:
         html_content = file.read()
 
     return html_content
+
 
 def parse_reddit_html(html):
     """
@@ -87,6 +98,7 @@ def parse_reddit_html(html):
     soup = BeautifulSoup(html, "html.parser")
     post_elements = soup.select("shreddit-post")
     return post_elements
+
 
 def extract_post_metadata(post_element):
     """
@@ -129,6 +141,7 @@ def extract_post_metadata(post_element):
 
     return post_data
 
+
 def sanitize_url_for_filename(url):
     """
     Sanitizes a URL to create a valid filename by replacing characters that are not allowed in filenames with underscores.
@@ -140,7 +153,10 @@ def sanitize_url_for_filename(url):
         str: The sanitized filename.
     """
     path = urlparse(url).path  # Use the urlparse function to get the path from the URL
-    return re.sub(r"[^a-zA-Z0-9-_.]", "_", path)  # Replace characters that are not allowed in filenames with underscores
+    return re.sub(
+        r"[^a-zA-Z0-9-_.]", "_", path
+    )  # Replace characters that are not allowed in filenames with underscores
+
 
 def scrape_reddit_url(reddit_url, max_retry=10, retry_delay=3):
     """
@@ -162,11 +178,9 @@ def scrape_reddit_url(reddit_url, max_retry=10, retry_delay=3):
 
     while retry_count < max_retry:
         try:
-            save_reddit_html_to_file(reddit_url, output_file_html)
-
-            html_data = read_html_file(output_file_html)
+            html_data = save_reddit_html_to_variable(reddit_url, output_file_html)
             print(output_file_html)
-            os.remove(output_file_html)
+            # os.remove(output_file_html)
             post_elements = parse_reddit_html(html_data)
 
             homepage_post_list = []
@@ -191,6 +205,7 @@ def scrape_reddit_url(reddit_url, max_retry=10, retry_delay=3):
     else:
         print(f"Failed to scrape {reddit_url} even after retries.")
 
+
 def scrape_reddit_urls_with_threads(urls, max_retry=10, retry_delay=3, num_threads=4):
     """
     Scrapes multiple Reddit URLs concurrently using threads.
@@ -205,9 +220,8 @@ def scrape_reddit_urls_with_threads(urls, max_retry=10, retry_delay=3, num_threa
         None
     """
     with ThreadPoolExecutor(max_workers=num_threads) as executor:
-        executor.map(
-            lambda url: scrape_reddit_url(url, max_retry, retry_delay), urls
-        )
+        executor.map(lambda url: scrape_reddit_url(url, max_retry, retry_delay), urls)
+
 
 if __name__ == "__main__":
     reddit_urls = [
@@ -220,8 +234,8 @@ if __name__ == "__main__":
         "https://www.reddit.com/r/Jokes/",
         "https://www.reddit.com/r/explainlikeimfive/",
         "https://www.reddit.com/r/LifeProTips/",
-        "https://www.reddit.com/r/tifu/"
-        
+        "https://www.reddit.com/r/tifu/",
     ]
 
     scrape_reddit_urls_with_threads(reddit_urls)
+
