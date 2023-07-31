@@ -7,14 +7,27 @@ from playwright.sync_api import sync_playwright, TimeoutError
 from urllib.parse import urlparse
 import re
 
+
 def get_reddit_page(url):
+    """
+    Visits a Reddit page using playwright and extracts the HTML.
+
+    Args:
+        url (str): The URL of the Reddit page for scraping.
+        max_attempts (int, optional): The maximum number of attempts to load the page in case of timeouts. Defaults to 3.
+
+    Returns:
+        str: A string containing the HTML of the Reddit page, or None if the maximum attempts are exceeded.
+    """
     with sync_playwright() as p:
         browser = p.chromium.launch()
         context = browser.new_context(user_agent=get_random_user_agent())
         page = context.new_page()
 
         try:
-            page.goto(url, timeout=60 * 1000)  # Increase the timeout to 60 seconds
+            page.goto(
+                url, timeout=60 * 1000
+            )  # possibly increases time for page to load therfor providing more content??
         except TimeoutError:
             print("Page navigation timed out.")
 
@@ -139,6 +152,7 @@ def extract_individual_post_info(html_code):
 
     return post_info
 
+
 def sanitize_url_for_filename(url):
     """
     Sanitizes a URL to create a valid filename by replacing characters that are not allowed in filenames with underscores.
@@ -168,25 +182,19 @@ def scrape_reddit_url(url):
     """
     html = get_reddit_page(url)
     post_elements = parse_reddit_html(html)
+
     post_data_list = []
+    existing_post_data_list = []
 
     for post_element in post_elements:
         post_data = extract_post_metadata(post_element)
-
-        try:
-            with open("posts_metadata.json", "r") as file:
-                existing_post_data_list = json.load(file)
-        except FileNotFoundError:
-            existing_post_data_list = []
-
         permalink = post_data["Permalink"]
         print(f"Extracting HTML from {permalink}")
         html_content = get_reddit_page(permalink)
         data = extract_individual_post_info(html_content)
         post_data.update(data)
         pprint(post_data)
-        time.sleep(30)
-
+        time.sleep(3)
         post_data_list.append(post_data)
 
     combined_post_data_list = existing_post_data_list + post_data_list
@@ -199,15 +207,18 @@ def scrape_reddit_url(url):
 
 if __name__ == "__main__":
     # List of Reddit URLs to scrape
-    reddit_urls = [
-        "https://www.reddit.com",
-        "https://www.reddit.com/r/python/",
-        "https://www.reddit.com/r/AmItheAsshole/",
+    reddit_urls = [ 
+        "https://www.reddit.com/r/worldnews/", # First one is empty
+        "https://www.reddit.com/r/todayilearned/",
+        "https://www.reddit.com/r/movies/",
+        "https://www.reddit.com/r/showerthoughts/",
         # Add more URLs here as needed
     ]
 
     for url in reddit_urls:
         scrape_reddit_url(url)
 
-#Accept button not found or timed out bug, still appearing even if it is found
-# Get comments frm each 
+# Accept button not found or timed out bug, still appearing even if it is found
+# so unstable
+# Sometimes json file is blank []?
+
