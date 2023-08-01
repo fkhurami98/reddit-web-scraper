@@ -230,6 +230,8 @@ if __name__ == "__main__":
         "https://www.reddit.com/r/explainlikeimfive/",
         "https://www.reddit.com/r/LifeProTips/",
         "https://www.reddit.com/r/tifu/",
+        "https://www.reddit.com/r/AskReddit/",
+        "https://www.reddit.com/r/worldnews/"
     ]
 
     scrape_reddit_urls_with_threads(reddit_urls)
