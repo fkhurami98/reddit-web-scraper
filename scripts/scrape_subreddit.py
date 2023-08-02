@@ -6,7 +6,6 @@ import json
 from playwright.sync_api import sync_playwright
 from urllib.parse import urlparse
 import re
-import os
 
 
 def save_reddit_html_to_variable(url, output_file):
@@ -56,7 +55,6 @@ def save_reddit_html_to_variable(url, output_file):
 
         browser.close()  # Close the browser
 
-    print(f"Data saved to {output_file}")
     return html_content
 
 
@@ -213,6 +211,12 @@ def scrape_reddit_urls_with_threads(urls, max_retry=10, retry_delay=3, num_threa
 
 
 def scrape_subreddits():
+    """
+    Initiates the scraping process for a list of Reddit URLs.
+
+    Returns:
+        None
+    """
     reddit_urls = [
         "https://www.reddit.com/r/Python/",
         "https://www.reddit.com/r/programming/",
@@ -228,6 +232,7 @@ def scrape_subreddits():
         "https://www.reddit.com/r/worldnews/",
     ]
 
+    # Call the function to scrape Reddit URLs using threads
     scrape_reddit_urls_with_threads(reddit_urls)
 
 
