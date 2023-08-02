@@ -56,7 +56,7 @@ def save_reddit_html_to_variable(url, output_file):
 
         browser.close()  # Close the browser
 
-    print(f"HTML content saved to {output_file}")
+    print(f"Data saved to {output_file}")
     return html_content
 
 
@@ -76,8 +76,6 @@ def get_random_user_agent():
         "Mozilla/5.0 (Linux; Android 10; BLA-L09 Build/HUAWEIBLA-L09S; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/112.0.5615.136 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/413.0.0.30.104;]",
     ]
     return random.choice(user_agents)
-
-
 
 
 def parse_reddit_html(html):
@@ -165,17 +163,14 @@ def scrape_reddit_url(reddit_url, max_retry=10, retry_delay=3):
     Returns:
         None
     """
-    output_file_json = f"{sanitize_url_for_filename(reddit_url)}.json"
-    output_file_html = f"{sanitize_url_for_filename(reddit_url)}.html"
+    filename = f"subreddit_page_data/{sanitize_url_for_filename(reddit_url)}.json"
 
     retry_count = 0
     homepage_post_list = []
 
     while retry_count < max_retry:
         try:
-            html_data = save_reddit_html_to_variable(reddit_url, output_file_html)
-            print(output_file_html)
-            # os.remove(output_file_html)
+            html_data = save_reddit_html_to_variable(reddit_url, output_file=filename)
             post_elements = parse_reddit_html(html_data)
 
             homepage_post_list = []
@@ -194,14 +189,13 @@ def scrape_reddit_url(reddit_url, max_retry=10, retry_delay=3):
 
     if homepage_post_list:
         print(f"Scraped {reddit_url}:")
-        print(homepage_post_list)
-        with open(output_file_json, "w", encoding="utf-8") as json_file:
+        with open(filename, "w", encoding="utf-8") as json_file:
             json.dump(homepage_post_list, json_file, indent=4)
     else:
         print(f"Failed to scrape {reddit_url} even after retries.")
 
 
-def scrape_reddit_urls_with_threads(urls, max_retry=10, retry_delay=3, num_threads=4):
+def scrape_reddit_urls_with_threads(urls, max_retry=10, retry_delay=3, num_threads=6):
     """
     Scrapes multiple Reddit URLs concurrently using threads.
 
@@ -218,7 +212,7 @@ def scrape_reddit_urls_with_threads(urls, max_retry=10, retry_delay=3, num_threa
         executor.map(lambda url: scrape_reddit_url(url, max_retry, retry_delay), urls)
 
 
-if __name__ == "__main__":
+def scrape_subreddits():
     reddit_urls = [
         "https://www.reddit.com/r/Python/",
         "https://www.reddit.com/r/programming/",
@@ -231,8 +225,11 @@ if __name__ == "__main__":
         "https://www.reddit.com/r/LifeProTips/",
         "https://www.reddit.com/r/tifu/",
         "https://www.reddit.com/r/AskReddit/",
-        "https://www.reddit.com/r/worldnews/"
+        "https://www.reddit.com/r/worldnews/",
     ]
 
     scrape_reddit_urls_with_threads(reddit_urls)
 
+
+if __name__ == "__main__":
+    scrape_subreddits()

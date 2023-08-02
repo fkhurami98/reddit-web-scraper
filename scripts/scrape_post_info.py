@@ -1,15 +1,11 @@
-from concurrent.futures import ThreadPoolExecutor
+import os
 import requests
 from bs4 import BeautifulSoup
 import json
-import time
-
-
-
+from concurrent.futures import ThreadPoolExecutor
 
 def extract_individual_post_info(html_code):
     soup = BeautifulSoup(html_code, "html.parser")
-
     parent_div = soup.select_one("div.mb-sm.mb-xs.px-md.xs\\:px-0")
 
     if not parent_div:
@@ -37,9 +33,10 @@ def scrape_permalink_content(permalink):
         print(f"Error occurred while scraping {permalink}: {e}")
         return None
 
-def main(file_path):
-    with open(f"{file_path}", "r") as json_file:
+def process_json_file(json_file_path):
+    with open(json_file_path, "r") as json_file:
         original_posts = json.load(json_file)
+    
     with ThreadPoolExecutor(max_workers=6) as executor:
         futures = [executor.submit(scrape_permalink_content, post["Permalink"]) for post in original_posts]
 
@@ -48,9 +45,19 @@ def main(file_path):
             if post_info:
                 post.update(post_info)
 
-    with open(f"{file_path}", "w") as json_file:
+    with open(json_file_path, "w") as json_file:
         json.dump(original_posts, json_file, indent=4)
 
+def process_all_json_files(folder_path):
+    for filename in os.listdir(folder_path):
+        if filename.endswith(".json"):
+            json_file_path = os.path.join(folder_path, filename)
+            process_json_file(json_file_path)
+
+def scrape_post_info():
+    folder_path = 'subreddit_page_data'
+    process_all_json_files(folder_path)
+    
+
 if __name__ == "__main__":
-    main(file_path='subreddit_page_data/_r_tifu_.json')
-    print("Done")
+    scrape_post_info()
