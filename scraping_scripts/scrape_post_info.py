@@ -3,7 +3,6 @@ import requests
 from bs4 import BeautifulSoup
 import json
 from concurrent.futures import ThreadPoolExecutor
-from datetime import datetime
 
 
 def extract_individual_post_info(html_code):

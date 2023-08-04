@@ -1,6 +1,7 @@
 from scripts.scrape_subreddit import scrape_subreddits
 from scripts.scrape_post_info import scrape_post_info
 import time
+
 if __name__ == "__main__":
     """
     If i run the code of the two functions below in one file,
