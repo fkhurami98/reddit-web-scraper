@@ -160,3 +160,4 @@ cython_debug/
 #.idea/
 
 subreddit_page_data/
+.vscode/settings.json
