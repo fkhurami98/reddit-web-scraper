@@ -1,15 +1,21 @@
-from scripts.scrape_subreddit import scrape_subreddits
-from scripts.scrape_post_info import scrape_post_info
-import time
+from scraping_scripts.scrape_subreddit import scrape_subreddits
+from scraping_scripts.scrape_post_info import scrape_post_info
+from database.db import insert_to_db
 
 if __name__ == "__main__":
-    """
-    If i run the code of the two functions below in one file,
-    post content is not written to the json file properly.
+    SUBREDDIT_URL_LIST = [
+        "https://www.reddit.com/r/Jokes/",
+        "https://www.reddit.com/r/explainlikeimfive/",
+        "https://www.reddit.com/r/LifeProTips/",
+        "https://www.reddit.com/r/TrueOffMyChest/"
+    ]
+    scrape_subreddits(url_list=SUBREDDIT_URL_LIST)
 
-    - Post content only supports text. Support for URLs and Images needed.
-    - Date time needs to be added to the json
-    """
-    scrape_subreddits()
-    time.sleep(1)
     scrape_post_info()
+
+    insert_to_db(
+        database_url="postgresql://postgres:password@localhost:5432/reddit_scraper_1",
+        json_folder_path="subreddit_page_data",
+    )
+
+# Need to handle private communities

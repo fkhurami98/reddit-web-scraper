@@ -210,30 +210,16 @@ def scrape_reddit_urls_with_threads(urls, max_retry=10, retry_delay=3, num_threa
         executor.map(lambda url: scrape_reddit_url(url, max_retry, retry_delay), urls)
 
 
-def scrape_subreddits():
+def scrape_subreddits(url_list):
     """
     Initiates the scraping process for a list of Reddit URLs.
 
     Returns:
         None
     """
-    reddit_urls = [
-        "https://www.reddit.com/r/Python/",
-        "https://www.reddit.com/r/programming/",
-        "https://www.reddit.com/r/badcode/",
-        "https://www.reddit.com/r/javascript/",
-        "https://www.reddit.com/r/announcements/",
-        "https://www.reddit.com/r/science/",
-        "https://www.reddit.com/r/Jokes/",
-        "https://www.reddit.com/r/explainlikeimfive/",
-        "https://www.reddit.com/r/LifeProTips/",
-        "https://www.reddit.com/r/tifu/",
-        "https://www.reddit.com/r/AskReddit/",
-        "https://www.reddit.com/r/worldnews/",
-    ]
 
     # Call the function to scrape Reddit URLs using threads
-    scrape_reddit_urls_with_threads(reddit_urls)
+    scrape_reddit_urls_with_threads(url_list)
 
 
 if __name__ == "__main__":
