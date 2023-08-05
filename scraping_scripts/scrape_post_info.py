@@ -33,7 +33,12 @@ def extract_individual_post_info(html_code):
         }
     else:
         post_text = parent_div.find_all("p")
-        opinions = [paragraph.text.strip() for paragraph in post_text]
+        # opinions = [paragraph.text.strip() for index, paragraph in enumerate(post_text)]
+
+        opinions = ""
+        for paragraph in post_text:
+            opinions += paragraph.text.strip()
+
         post_info = {"Post Content": opinions, "Time Stamp": created_timestamp}
 
     return post_info
