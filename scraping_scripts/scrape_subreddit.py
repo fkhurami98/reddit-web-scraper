@@ -6,6 +6,7 @@ import json
 from playwright.sync_api import sync_playwright
 from urllib.parse import urlparse
 import re
+import os
 
 
 def save_reddit_html_to_variable(url, output_file):
@@ -210,6 +211,21 @@ def scrape_reddit_urls_with_threads(urls, max_retry=10, retry_delay=3, num_threa
         executor.map(lambda url: scrape_reddit_url(url, max_retry, retry_delay), urls)
 
 
+def delete_json_files(folder_path):
+    try:
+        for filename in os.listdir(folder_path):
+            if filename.endswith(".json"):
+                file_path = os.path.join(folder_path, filename)
+                os.remove(file_path)
+                print(f"Deleted: {filename}")
+            else:
+                print("Folder is empty")
+                break
+        print("All files deleted successfully")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+
 def scrape_subreddits(url_list):
     """
     Initiates the scraping process for a list of Reddit URLs.
@@ -218,9 +234,11 @@ def scrape_subreddits(url_list):
         None
     """
 
+    delete_json_files(folder_path="/home/farhadkhurami/reddit-web-scraper/subreddit_page_data")
+
     # Call the function to scrape Reddit URLs using threads
     scrape_reddit_urls_with_threads(url_list)
 
 
 if __name__ == "__main__":
-    scrape_subreddits()
+    pass

@@ -111,14 +111,13 @@ def process_all_json_files(folder_path):
             process_json_file(json_file_path)
 
 
-def scrape_post_info():
+def scrape_post_info(folder_path):
     """
     Initiates the scraping process for all JSON files in the specified folder.
 
     Returns:
         None
     """
-    folder_path = "subreddit_page_data"
     process_all_json_files(folder_path)
 
 
