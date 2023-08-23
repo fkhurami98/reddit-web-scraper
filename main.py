@@ -20,6 +20,10 @@ if __name__ == "__main__":
             "https://www.reddit.com/r/whowouldwin/",
             "https://www.reddit.com/r/AskReddit/",
             "https://www.reddit.com/r/HFY/",
+            "https://www.reddit.com/r/AskHistorians/",
+            "https://www.reddit.com/r/talesfromretail/",
+            "https://www.reddit.com/r/talesfromtechsupport/",
+            "https://www.reddit.com/r/wouldyourather/"
         ]
     )
 
