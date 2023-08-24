@@ -1,9 +1,18 @@
 import os
 import json
-from sqlalchemy import create_engine, Column, Integer, String, Text, TIMESTAMP
+from sqlalchemy import (
+    create_engine,
+    Column,
+    Integer,
+    String,
+    Text,
+    TIMESTAMP,
+    ForeignKey,
+)
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy import inspect  
+from sqlalchemy.orm import sessionmaker, relationship
+from sqlalchemy import inspect
+
 
 def insert_to_db(database_url, json_folder_path):
     """
@@ -15,7 +24,7 @@ def insert_to_db(database_url, json_folder_path):
     """
     # Create the engine
     engine = create_engine(database_url)
-    
+
     # Declarative base for ORM
     Base = declarative_base()
 
@@ -32,7 +41,15 @@ def insert_to_db(database_url, json_folder_path):
         post_score = Column(Integer)
         post_content = Column(Text)
         time_stamp = Column(TIMESTAMP)
-    
+
+    class Comments(Base):
+        __tablename__ = "comments"
+
+        id = Column(Integer, primary_key=True)
+        comment_text = Column(Text)
+        permalink = Column(Text, ForeignKey("posts.permalink"))
+        post = relationship("Post", back_populates="comments")
+
     # Session creation
     Session = sessionmaker(bind=engine)
     session = Session()
@@ -73,7 +90,8 @@ def insert_to_db(database_url, json_folder_path):
     # Close the session
     session.close()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     DATABASE_URL = "postgresql://postgres:password@localhost:5432/reddit_scraper_1"
     JSON_FOLDER_PATH = "subreddit_page_data"
     insert_to_db(DATABASE_URL, JSON_FOLDER_PATH)
