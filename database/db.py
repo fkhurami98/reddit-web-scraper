@@ -42,21 +42,27 @@ def insert_to_db(database_url, json_folder_path):
         post_content = Column(Text)
         time_stamp = Column(TIMESTAMP)
 
-    class Comments(Base):
-        __tablename__ = "comments"
+    # class Comments(Base):
+    #     __tablename__ = "comments"
 
-        id = Column(Integer, primary_key=True)
-        comment_text = Column(Text)
-        permalink = Column(Text, ForeignKey("posts.permalink"))
-        post = relationship("Post", back_populates="comments")
+    #     id = Column(Integer, primary_key=True)
+    #     comment_text = Column(Text)
+    #     permalink = Column(Text, ForeignKey("posts.permalink"))
+    #     upvotes = Column(Integer)  # Add upvotes field
+    #     downvotes = Column(Integer)  # Add downvotes field
+    #     author = Column(String(100))  # Add author field
+    #     post = relationship("Post", back_populates="comments")
+
 
     # Session creation
     Session = sessionmaker(bind=engine)
     session = Session()
 
     # Check if the table exists, create it if not
-    inspector = inspect(engine)  # Create an inspector for the engine
-    if not inspector.has_table("posts"):  # Use the inspector to check table existence
+    inspector = inspect(engine)
+    if not inspector.has_table(
+        "posts", "comments"
+    ):  # Use the inspector to check table existence
         Base.metadata.create_all(engine)
 
     # Iterate through JSON files
