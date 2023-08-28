@@ -221,7 +221,6 @@ def delete_json_files(folder_path):
             else:
                 print("Folder is empty")
                 break
-        print("All files deleted successfully")
     except Exception as e:
         print(f"An error occurred: {e}")
 
@@ -234,7 +233,7 @@ def scrape_subreddits(url_list):
         None
     """
 
-    delete_json_files(folder_path="/home/farhadkhurami/reddit-web-scraper/subreddit_page_data")
+    delete_json_files(folder_path="/reddit-web-scraper/subreddit_page_data")
 
     # Call the function to scrape Reddit URLs using threads
     scrape_reddit_urls_with_threads(url_list)
