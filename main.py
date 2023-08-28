@@ -3,7 +3,7 @@ from scraping_scripts.scrape_post_info import scrape_post_info
 from database.db import insert_to_db
 
 if __name__ == "__main__":
-    path = "/home/farhadkhurami/reddit-web-scraper/subreddit_page_data"
+    path = "/reddit-web-scraper/subreddit_page_data"
     scrape_subreddits(
         url_list=[
             "https://www.reddit.com/r/Jokes/",

@@ -2,12 +2,12 @@
 FROM python:3.9
 
 # Set the working directory inside the container
-WORKDIR /home/farhadkhurami/reddit-web-scraper
+WORKDIR /reddit-web-scraper/
 
 # Copy the application files into the container
 COPY . .
 
-# Install dependencies for Playwright
+# Install dependencies 
 RUN apt-get update && apt-get install -y \
     libnss3 \
     libglib2.0-0 \
