@@ -233,7 +233,7 @@ def scrape_subreddits(url_list):
         None
     """
 
-    delete_json_files(folder_path="/reddit-web-scraper/subreddit_page_data")
+    delete_json_files(folder_path="/home/farhadkhurami/reddit-web-scraper/subreddit_page_data")
 
     # Call the function to scrape Reddit URLs using threads
     scrape_reddit_urls_with_threads(url_list)

@@ -98,6 +98,8 @@ def insert_to_db(database_url, json_folder_path):
 
 
 if __name__ == "__main__":
+    # Use if insert to db trips up 
+    
     DATABASE_URL = "postgresql://postgres:password@localhost:5432/reddit_scraper_1"
     JSON_FOLDER_PATH = "subreddit_page_data"
     insert_to_db(DATABASE_URL, JSON_FOLDER_PATH)
