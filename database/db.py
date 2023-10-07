@@ -6,11 +6,10 @@ from sqlalchemy import (
     Integer,
     String,
     Text,
-    TIMESTAMP,
-    ForeignKey,
+    TIMESTAMP
 )
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, relationship
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy import inspect
 
 
