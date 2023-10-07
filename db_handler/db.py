@@ -13,13 +13,13 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import inspect
 
 
-def insert_to_db(database_url, json_folder_path):
+def insert_to_db(database_url: str, json_folder_path: str):
     """
     Main function to create table if not exists and insert data from JSON files.
 
     Args:
-        database_url: Database connection URL.
-        json_folder_path: Path to the folder containing JSON files.
+        database_url (str): Database connection URL.
+        json_folder_path (str): Path to the folder containing JSON files.
     """
     # Create the engine
     engine = create_engine(database_url)

@@ -1,11 +1,12 @@
+import json
 import os
 import requests
 from bs4 import BeautifulSoup
-import json
 from concurrent.futures import ThreadPoolExecutor
 
 
-def extract_individual_post_info(html_code):
+
+def extract_individual_post_info(html_code: str):
     """
     Extracts post content and timestamp from HTML code using BeautifulSoup.
 
@@ -44,7 +45,7 @@ def extract_individual_post_info(html_code):
     return post_info
 
 
-def scrape_permalink_content(permalink):
+def fetch_permalink_content(permalink: str):
     """
     Scrapes post content from a given permalink.
 
@@ -67,7 +68,7 @@ def scrape_permalink_content(permalink):
         return None
 
 
-def process_json_file(json_file_path):
+def process_json_file(json_file_path: str):
     """
     Processes a JSON file containing post details and updates post content.
 
@@ -82,7 +83,7 @@ def process_json_file(json_file_path):
 
     with ThreadPoolExecutor(max_workers=6) as executor:
         futures = [
-            executor.submit(scrape_permalink_content, post["Permalink"])
+            executor.submit(fetch_permalink_content, post["Permalink"])
             for post in original_posts
         ]
 
@@ -95,7 +96,7 @@ def process_json_file(json_file_path):
         json.dump(original_posts, json_file, indent=4)
 
 
-def process_all_json_files(folder_path):
+def process_all_json_files(folder_path: str):
     """
     Processes all JSON files in a folder.
 
@@ -110,16 +111,3 @@ def process_all_json_files(folder_path):
             json_file_path = os.path.join(folder_path, filename)
             process_json_file(json_file_path)
 
-
-def scrape_post_info(folder_path):
-    """
-    Initiates the scraping process for all JSON files in the specified folder.
-
-    Returns:
-        None
-    """
-    process_all_json_files(folder_path)
-
-
-if __name__ == "__main__":
-    scrape_post_info()

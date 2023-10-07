@@ -1,21 +1,23 @@
-from concurrent.futures import ThreadPoolExecutor
-import time
-from bs4 import BeautifulSoup
-import random
 import json
-from playwright.sync_api import sync_playwright
-from urllib.parse import urlparse
-import re
 import os
+import random
+import re
+import time
+from urllib.parse import urlparse
+from utils.constants import USER_AGENTS
+
+from bs4 import BeautifulSoup
+from concurrent.futures import ThreadPoolExecutor
+from playwright.sync_api import sync_playwright
 
 
-def save_reddit_html_to_variable(url, output_file):
+
+def save_reddit_html_to_variable(url: str):
     """
     Saves the HTML content of a given Reddit URL to a file.
 
     Args:
         url (str): The Reddit URL to scrape.
-        output_file (str): The filename to save the HTML content.
 
     Returns:
         str: The HTML content of the page.
@@ -66,18 +68,11 @@ def get_random_user_agent():
     Returns:
         str: A random user agent string.
     """
-    user_agents = [
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36",
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.54 Safari/537.36",
-        "Mozilla/5.0 (Linux; Android 10; MED-LX9) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.99 Mobile Safari/537.36",
-        "Mozilla/5.0 (Linux; Android 9; Redmi 8A Build/PKQ1.190319.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0.4240.110 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/294.0.0.39.118;]",
-        "Mozilla/5.0 (iPhone; CPU iPhone OS 13_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Instagram 165.0.0.20.119 (iPhone11,8; iOS 13_7; pt_BR; pt-BR; scale=2.00; 828x1792; 252729634) NW/1",
-        "Mozilla/5.0 (Linux; Android 10; BLA-L09 Build/HUAWEIBLA-L09S; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/112.0.5615.136 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/413.0.0.30.104;]",
-    ]
-    return random.choice(user_agents)
+
+    return random.choice(USER_AGENTS)
 
 
-def parse_reddit_html(html):
+def parse_reddit_html(html: str):
     """
     Parses the HTML of a Reddit page using BeautifulSoup and extracts post elements.
 
@@ -150,7 +145,7 @@ def sanitize_url_for_filename(url):
     )  # Replace characters that are not allowed in filenames with underscores
 
 
-def scrape_reddit_url(reddit_url, max_retry=10, retry_delay=3):
+def fetch_reddit_url(reddit_url, max_retry=10, retry_delay=3):
     """
     Scrapes a Reddit URL, extracts post information, and saves the results to a JSON file.
 
@@ -169,7 +164,7 @@ def scrape_reddit_url(reddit_url, max_retry=10, retry_delay=3):
 
     while retry_count < max_retry:
         try:
-            html_data = save_reddit_html_to_variable(reddit_url, output_file=filename)
+            html_data = save_reddit_html_to_variable(reddit_url)
             post_elements = parse_reddit_html(html_data)
 
             homepage_post_list = []
@@ -194,7 +189,7 @@ def scrape_reddit_url(reddit_url, max_retry=10, retry_delay=3):
         print(f"Failed to scrape {reddit_url} even after retries.")
 
 
-def scrape_reddit_urls_with_threads(urls, max_retry=10, retry_delay=3, num_threads=6):
+def fetch_reddit_urls_with_threads(urls, max_retry=10, retry_delay=3, num_threads=6):
     """
     Scrapes multiple Reddit URLs concurrently using threads.
 
@@ -208,10 +203,10 @@ def scrape_reddit_urls_with_threads(urls, max_retry=10, retry_delay=3, num_threa
         None
     """
     with ThreadPoolExecutor(max_workers=num_threads) as executor:
-        executor.map(lambda url: scrape_reddit_url(url, max_retry, retry_delay), urls)
+        executor.map(lambda url: fetch_reddit_url(url, max_retry, retry_delay), urls)
 
 
-def delete_json_files(folder_path):
+def delete_json_files(folder_path: str):
     try:
         for filename in os.listdir(folder_path):
             if filename.endswith(".json"):
@@ -225,7 +220,7 @@ def delete_json_files(folder_path):
         print(f"An error occurred: {e}")
 
 
-def scrape_subreddits(url_list):
+def fetch_subreddits(url_list: list):
     """
     Initiates the scraping process for a list of Reddit URLs.
 
@@ -236,7 +231,7 @@ def scrape_subreddits(url_list):
     delete_json_files(folder_path="/home/farhadkhurami/reddit-web-scraper/subreddit_page_data")
 
     # Call the function to scrape Reddit URLs using threads
-    scrape_reddit_urls_with_threads(url_list)
+    fetch_reddit_urls_with_threads(url_list)
 
 
 if __name__ == "__main__":
