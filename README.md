@@ -1,5 +1,3 @@
-# reddit-web-scraper
-
-
-- Have a seperate script for downloading html files from reddit forums
-- Have a seperate script that somehow efficiently downloads the individiual post data
+# Refactor notes
+- Utils folder with function that gets current path
+- add all paths and lists
