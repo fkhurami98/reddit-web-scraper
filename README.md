@@ -1,3 +1,4 @@
 # Refactor notes
-- Utils folder with function that gets current path
-- add all paths and lists
+- Incorporate fake-useragent library 
+- New table in database for comments
+- Look into tor ip rotation
