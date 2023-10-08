@@ -1,6 +1,8 @@
+# JSON_SAVE_PATH = "/home/farhadkhurami/reddit-web-scraper/json_data_folder"
 DATABASE_URL = "postgresql://postgres:password@localhost:5432/reddit_scraper_1"
 
-USER_AGENTS = [
+
+USER_AGENTS_LIST = [
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36 RuxitSynthetic/1.0 v739309145837407200 t3659150847447165606 athe94ac249 altpriv cvcv=2 smf=0",
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36",
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36 RuxitSynthetic/1.0 v5941168518903017870 t1865758485807943117 ath1fb31b7a altpriv cvcv=2 smf=0",

@@ -4,12 +4,11 @@ import random
 import re
 import time
 from urllib.parse import urlparse
-from utils.constants import USER_AGENTS
+from utils.constants import USER_AGENTS_LIST
 
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor
 from playwright.sync_api import sync_playwright
-
 
 
 def save_reddit_html_to_variable(url: str):
@@ -69,7 +68,7 @@ def get_random_user_agent():
         str: A random user agent string.
     """
 
-    return random.choice(USER_AGENTS)
+    return random.choice(USER_AGENTS_LIST)
 
 
 def parse_reddit_html(html: str):
@@ -157,7 +156,7 @@ def fetch_reddit_url(reddit_url, max_retry=10, retry_delay=3):
     Returns:
         None
     """
-    filename = f"subreddit_page_data/{sanitize_url_for_filename(reddit_url)}.json"
+    filename = f"json_data_folder/{sanitize_url_for_filename(reddit_url)}.json"
 
     retry_count = 0
     homepage_post_list = []
@@ -227,12 +226,4 @@ def fetch_subreddits(url_list: list):
     Returns:
         None
     """
-
-    delete_json_files(folder_path="/home/farhadkhurami/reddit-web-scraper/subreddit_page_data")
-
-    # Call the function to scrape Reddit URLs using threads
     fetch_reddit_urls_with_threads(url_list)
-
-
-if __name__ == "__main__":
-    pass

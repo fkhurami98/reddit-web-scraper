@@ -81,7 +81,7 @@ def process_json_file(json_file_path: str):
     with open(json_file_path, "r") as json_file:
         original_posts = json.load(json_file)
 
-    with ThreadPoolExecutor(max_workers=6) as executor:
+    with ThreadPoolExecutor(max_workers=4) as executor:
         futures = [
             executor.submit(fetch_permalink_content, post["Permalink"])
             for post in original_posts

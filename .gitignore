@@ -159,5 +159,5 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-subreddit_page_data/
+json_data_folder/
 .vscode/settings.json
