@@ -1,13 +1,17 @@
 import os
+from fake_useragent import UserAgent
 from db_handler.db import insert_to_db
 from utils.constants import URL_LIST, DATABASE_URL
-from utils.functions import CurrentPath
+from utils.functions import get_save_path
 from scraping_helpers.fetch_post_info import process_all_json_files
-from scraping_helpers.fetch_subreddit_info import fetch_reddit_with_threads, delete_json_files
+from scraping_helpers.fetch_subreddit_info import (
+    fetch_reddit_with_threads,
+    delete_json_files,
+)
 
 
 if __name__ == "__main__":
-    JSON_SAVE_PATH = CurrentPath(__file__).get_save_path()
+    JSON_SAVE_PATH = get_save_path(__file__)
 
     # Creates /json_data_folder folder if not exists
     if not os.path.exists("json_data_folder"):
