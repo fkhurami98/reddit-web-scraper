@@ -1,10 +1,10 @@
 import json
 import os
-import random
 import re
 import time
 from urllib.parse import urlparse
 from utils.constants import USER_AGENTS_LIST
+from utils.functions import get_random_user_agent
 
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor
@@ -72,17 +72,6 @@ def save_reddit_html_to_variable(url: str):
         browser.close()  # Close the browser
 
     return html_content
-
-
-def get_random_user_agent():
-    """
-    Gets a random user agent from a list of common user agents.
-
-    Returns:
-        str: A random user agent string.
-    """
-
-    return random.choice(USER_AGENTS_LIST)
 
 
 def parse_reddit_html(html: str):
@@ -202,7 +191,9 @@ def fetch_reddit_url(reddit_url, max_retry=10, retry_delay=3):
         print(f"Failed to scrape {reddit_url} even after retries.")
 
 
-def fetch_reddit_with_threads(url_list: list, max_retry=10, retry_delay=3, num_threads=6):
+def fetch_reddit_with_threads(
+    url_list: list, max_retry=10, retry_delay=3, num_threads=6
+):
     """
     Scrapes multiple Reddit URLs concurrently using threads.
 
@@ -216,5 +207,6 @@ def fetch_reddit_with_threads(url_list: list, max_retry=10, retry_delay=3, num_t
         None
     """
     with ThreadPoolExecutor(max_workers=num_threads) as executor:
-        executor.map(lambda url: fetch_reddit_url(url, max_retry, retry_delay), url_list)
-
+        executor.map(
+            lambda url: fetch_reddit_url(url, max_retry, retry_delay), url_list
+        )
