@@ -11,6 +11,20 @@ from concurrent.futures import ThreadPoolExecutor
 from playwright.sync_api import sync_playwright
 
 
+def delete_json_files(folder_path: str):
+    try:
+        for filename in os.listdir(folder_path):
+            if filename.endswith(".json"):
+                file_path = os.path.join(folder_path, filename)
+                os.remove(file_path)
+                print(f"Deleted: {filename}")
+            else:
+                print("Folder is empty")
+                break
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+
 def save_reddit_html_to_variable(url: str):
     """
     Saves the HTML content of a given Reddit URL to a file.
@@ -188,7 +202,7 @@ def fetch_reddit_url(reddit_url, max_retry=10, retry_delay=3):
         print(f"Failed to scrape {reddit_url} even after retries.")
 
 
-def fetch_reddit_urls_with_threads(urls, max_retry=10, retry_delay=3, num_threads=6):
+def fetch_reddit_with_threads(url_list: list, max_retry=10, retry_delay=3, num_threads=6):
     """
     Scrapes multiple Reddit URLs concurrently using threads.
 
@@ -202,28 +216,5 @@ def fetch_reddit_urls_with_threads(urls, max_retry=10, retry_delay=3, num_thread
         None
     """
     with ThreadPoolExecutor(max_workers=num_threads) as executor:
-        executor.map(lambda url: fetch_reddit_url(url, max_retry, retry_delay), urls)
+        executor.map(lambda url: fetch_reddit_url(url, max_retry, retry_delay), url_list)
 
-
-def delete_json_files(folder_path: str):
-    try:
-        for filename in os.listdir(folder_path):
-            if filename.endswith(".json"):
-                file_path = os.path.join(folder_path, filename)
-                os.remove(file_path)
-                print(f"Deleted: {filename}")
-            else:
-                print("Folder is empty")
-                break
-    except Exception as e:
-        print(f"An error occurred: {e}")
-
-
-def fetch_subreddits(url_list: list):
-    """
-    Initiates the scraping process for a list of Reddit URLs.
-
-    Returns:
-        None
-    """
-    fetch_reddit_urls_with_threads(url_list)
