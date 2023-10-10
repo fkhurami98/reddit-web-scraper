@@ -1,9 +1,19 @@
+"""
+fetch_subreddit_metadata.py
+
+This script focuses on scraping metadata of posts from Reddit's subreddit landing pages.
+The key functionalities are:
+- Scrape the HTML content of a subreddit page using a headless browser.
+- Parse the HTML to extract metadata for individual posts.
+- Save the metadata of posts as JSON files.
+- Delete JSON files when needed.
+- Offer concurrent scraping for multiple subreddit URLs for efficiency.
+"""
 import json
 import os
 import re
 import time
 from urllib.parse import urlparse
-from utils.constants import USER_AGENTS_LIST
 from utils.functions import get_random_user_agent
 
 from bs4 import BeautifulSoup
@@ -11,7 +21,10 @@ from concurrent.futures import ThreadPoolExecutor
 from playwright.sync_api import sync_playwright
 
 
-def delete_json_files(folder_path: str):
+def clear_json_files_in_folder(folder_path: str):
+    """
+    Remove all JSON files in the specified folder.
+    """
     try:
         for filename in os.listdir(folder_path):
             if filename.endswith(".json"):
@@ -25,15 +38,13 @@ def delete_json_files(folder_path: str):
         print(f"An error occurred: {e}")
 
 
-def save_reddit_html_to_variable(url: str):
+def scrape_subreddit_page_html(url: str) -> str:
     """
-    Saves the HTML content of a given Reddit URL to a file.
+    Retrieves the HTML content of a subreddit page using a headless browser.
 
     Args:
-        url (str): The Reddit URL to scrape.
+        url (str): Subreddit URL.
 
-    Returns:
-        str: The HTML content of the page.
     """
     with sync_playwright() as p:
         browser = p.chromium.launch()
@@ -65,8 +76,6 @@ def save_reddit_html_to_variable(url: str):
             "networkidle"
         )  # Wait for the page to load completely after scrolling down
 
-        page.wait_for_timeout(1000)  # Wait for one second
-
         html_content = page.content()  # Get the entire HTML content of the page
 
         browser.close()  # Close the browser
@@ -74,30 +83,24 @@ def save_reddit_html_to_variable(url: str):
     return html_content
 
 
-def parse_reddit_html(html: str):
+def extract_posts_from_html(html: str) -> list:
     """
-    Parses the HTML of a Reddit page using BeautifulSoup and extracts post elements.
+    Extracts post elements from the subreddit's HTML.
 
     Args:
-        html (str): The HTML content of the Reddit page.
-
-    Returns:
-        list: A list of BeautifulSoup elements representing post elements.
+        html (str): HTML content of the subreddit page.
     """
     soup = BeautifulSoup(html, "html.parser")
     post_elements = soup.select("shreddit-post")
     return post_elements
 
 
-def extract_post_metadata(post_element):
+def extract_post_details(post_element) -> dict:
     """
     Extracts post information from a BeautifulSoup element representing a post.
 
     Args:
         post_element (bs4.element.Tag): BeautifulSoup element representing a post.
-
-    Returns:
-        dict: A dictionary containing post information.
     """
     post_title_element = post_element.select_one('[slot="title"]')
     post_title = post_title_element.text.strip() if post_title_element else "N/A"
@@ -131,15 +134,12 @@ def extract_post_metadata(post_element):
     return post_data
 
 
-def sanitize_url_for_filename(url):
+def clean_url_for_filename(url) -> str:
     """
-    Sanitizes a URL to create a valid filename by replacing characters that are not allowed in filenames with underscores.
+    Cleans a URL to be used as a filename.
 
     Args:
         url (str): The URL to be sanitized.
-
-    Returns:
-        str: The sanitized filename.
     """
     path = urlparse(url).path  # Use the urlparse function to get the path from the URL
     return re.sub(
@@ -147,31 +147,28 @@ def sanitize_url_for_filename(url):
     )  # Replace characters that are not allowed in filenames with underscores
 
 
-def fetch_reddit_url(reddit_url, max_retry=10, retry_delay=3):
+def scrape_subreddit_metadata(reddit_url, max_retry=10, retry_delay=3):
     """
-    Scrapes a Reddit URL, extracts post information, and saves the results to a JSON file.
+    Attempts to scrape post metadata from a subreddit page and save it as JSON.
 
     Args:
         reddit_url (str): The Reddit URL to scrape.
         max_retry (int, optional): Maximum number of retry attempts. Defaults to 10.
         retry_delay (int, optional): Delay in seconds between retries. Defaults to 3.
-
-    Returns:
-        None
     """
-    filename = f"json_data_folder/{sanitize_url_for_filename(reddit_url)}.json"
+    filename = f"json_data_folder/{clean_url_for_filename(reddit_url)}.json"
 
     retry_count = 0
     homepage_post_list = []
 
     while retry_count < max_retry:
         try:
-            html_data = save_reddit_html_to_variable(reddit_url)
-            post_elements = parse_reddit_html(html_data)
+            html_data = scrape_subreddit_page_html(reddit_url)
+            post_elements = extract_posts_from_html(html_data)
 
             homepage_post_list = []
             for element in post_elements:
-                post_data = extract_post_metadata(element)
+                post_data = extract_post_details(element)
                 homepage_post_list.append(post_data)
 
             if homepage_post_list:
@@ -191,22 +188,23 @@ def fetch_reddit_url(reddit_url, max_retry=10, retry_delay=3):
         print(f"Failed to scrape {reddit_url} even after retries.")
 
 
-def fetch_reddit_with_threads(
-    url_list: list, max_retry=10, retry_delay=3, num_threads=6
+def scrape_multiple_subreddits_concurrently(
+    url_list: list, max_attempts=10, wait_between_attempts=3, concurrency_limit=6
 ):
     """
     Scrapes multiple Reddit URLs concurrently using threads.
 
     Args:
         urls (list): A list of Reddit URLs to scrape.
-        max_retry (int, optional): Maximum number of retry attempts. Defaults to 10.
-        retry_delay (int, optional): Delay in seconds between retries. Defaults to 3.
+        max_attempts (int, optional): Maximum number of retry attempts. Defaults to 10.
+        wait_between_attempts (int, optional): Delay in seconds between retries. Defaults to 3.
         num_threads (int, optional): Number of threads to use for concurrent scraping. Defaults to 4.
-
-    Returns:
-        None
+        concurrency_limit (int, optional): Number of concurrent scraping tasks. Defaults to 6.
     """
-    with ThreadPoolExecutor(max_workers=num_threads) as executor:
+    with ThreadPoolExecutor(max_workers=concurrency_limit) as executor:
         executor.map(
-            lambda url: fetch_reddit_url(url, max_retry, retry_delay), url_list
+            lambda url: scrape_subreddit_metadata(
+                url, max_attempts, wait_between_attempts
+            ),
+            url_list,
         )

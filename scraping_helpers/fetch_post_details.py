@@ -1,3 +1,13 @@
+"""
+fetch_post_details.py
+
+This script is designed to scrape detailed content from individual Reddit posts.
+The process includes:
+- Fetching the content of a post given its permalink.
+- Parsing HTML to extract specific details like post content and timestamp.
+- Processing JSON files that contain post metadata to augment them with detailed post content.
+"""
+
 import json
 import os
 import requests
@@ -5,16 +15,13 @@ from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor
 
 
-
-def extract_individual_post_info(html_code: str):
+def extract_post_content_from_html(html_code: str) -> dict:
     """
-    Extracts post content and timestamp from HTML code using BeautifulSoup.
+    Parses the given HTML to extract post content and its timestamp.
 
     Args:
         html_code (str): The HTML code of the post page.
 
-    Returns:
-        dict: A dictionary containing the extracted post content and timestamp.
     """
     soup = BeautifulSoup(html_code, "html.parser")
     parent_div = soup.select_one("div.mb-sm.mb-xs.px-md.xs\\:px-0")
@@ -45,7 +52,7 @@ def extract_individual_post_info(html_code: str):
     return post_info
 
 
-def fetch_permalink_content(permalink: str):
+def fetch_post_content_from_permalink(permalink: str) -> dict:
     """
     Scrapes post content from a given permalink.
 
@@ -60,7 +67,7 @@ def fetch_permalink_content(permalink: str):
         response = requests.get(permalink)
         response.raise_for_status()
 
-        post_info = extract_individual_post_info(response.content)
+        post_info = extract_post_content_from_html(response.content)
         return post_info
 
     except requests.exceptions.RequestException as e:
@@ -68,22 +75,19 @@ def fetch_permalink_content(permalink: str):
         return None
 
 
-def process_json_file(json_file_path: str):
+def update_post_content_in_json(json_file_path: str):
     """
-    Processes a JSON file containing post details and updates post content.
+    Enhances a given JSON file with content details of the Reddit posts.
 
     Args:
         json_file_path (str): The path to the JSON file.
-
-    Returns:
-        None
     """
     with open(json_file_path, "r") as json_file:
         original_posts = json.load(json_file)
 
-    with ThreadPoolExecutor(max_workers=4) as executor:
+    with ThreadPoolExecutor(max_workers=10) as executor:
         futures = [
-            executor.submit(fetch_permalink_content, post["Permalink"])
+            executor.submit(fetch_post_content_from_permalink, post["Permalink"])
             for post in original_posts
         ]
 
@@ -96,18 +100,14 @@ def process_json_file(json_file_path: str):
         json.dump(original_posts, json_file, indent=4)
 
 
-def process_all_json_files(folder_path: str):
+def process_all_json_files_in_folder(folder_path: str):
     """
     Processes all JSON files in a folder.
 
     Args:
         folder_path (str): The path to the folder containing JSON files.
-
-    Returns:
-        None
     """
     for filename in os.listdir(folder_path):
         if filename.endswith(".json"):
             json_file_path = os.path.join(folder_path, filename)
-            process_json_file(json_file_path)
-
+            update_post_content_in_json(json_file_path)
