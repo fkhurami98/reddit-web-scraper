@@ -1,4 +1,5 @@
 import os
+import csv
 import json
 from sqlalchemy import (
     create_engine,
@@ -12,7 +13,6 @@ from sqlalchemy import (
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import inspect
-from pprint import pprint
 
 Base = declarative_base()
 
@@ -113,10 +113,22 @@ def get_column_from_table(column: str, table: str):
 
 
 if __name__ == "__main__":
+    permalink_list = get_column_from_table(column="permalink", table="posts")
 
+    # Get the current directory
+    current_directory = os.getcwd()
 
+    # Specify the file path in the current directory
+    file_path = "output.csv"
 
-    permalink_list = get_column_from_table(column='permalink', table='posts')
+    # Open the CSV file in write mode
+    with open(file_path, "w", newline="") as file:
+        # Create a CSV writer object
+        csv_writer = csv.writer(file)
 
-    pprint(permalink_list)
+        # Write the header row (optional)
+        csv_writer.writerow(["Permalink"])
 
+        # Write each item from the list as a row in the CSV file
+        for permalink in permalink_list:
+            csv_writer.writerow([permalink])
