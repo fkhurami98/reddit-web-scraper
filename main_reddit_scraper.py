@@ -21,7 +21,7 @@ Run the script directly to initiate the scraping process: `python3 main_reddit_s
 import os
 from fake_useragent import UserAgent
 from db_handler.db import insert_to_db
-from utils.constants import URL_LIST, DATABASE_URL
+from utils.constants import URL_LIST, DATABASE_URL_HOME, DATABASE_URL_VPN
 from utils.functions import get_save_path
 from scraping_helpers.fetch_post_details import process_all_json_files_in_folder
 from scraping_helpers.fetch_subreddit_metadata import (
@@ -47,4 +47,4 @@ if __name__ == "__main__":
     process_all_json_files_in_folder(folder_path=JSON_SAVE_PATH)
 
     # Reads JSON files from /json_data_folder and sends to db
-    insert_to_db(database_url=DATABASE_URL, json_folder_path=JSON_SAVE_PATH)
+    insert_to_db(database_url=DATABASE_URL_HOME, json_folder_path=JSON_SAVE_PATH)
