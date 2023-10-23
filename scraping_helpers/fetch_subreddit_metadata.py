@@ -14,7 +14,8 @@ import os
 import re
 import time
 from urllib.parse import urlparse
-from utils.functions import get_random_user_agent
+from utils.functions import get_random_user_agent, check_browser_installation
+from utils.constants import MAX_ATTEMPTS, CONCURRENCEY_LIMIT, WAIT_BETWEEN_ATTEMPTS
 
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor
@@ -69,7 +70,7 @@ def scrape_subreddit_page_html(url: str) -> str:
         )  # Wait for the page to load completely after accepting cookies
 
         page.evaluate(
-            "window.scrollBy(0, window.innerHeight);"
+            "window.scrollBy(0, window.innerHeight * 60);"
         )  # Scroll down by the height of the viewport
 
         page.wait_for_load_state(
@@ -188,23 +189,24 @@ def scrape_subreddit_metadata(reddit_url, max_retry=10, retry_delay=3):
         print(f"Failed to scrape {reddit_url} even after retries.")
 
 
-def scrape_multiple_subreddits_concurrently(
-    url_list: list, max_attempts=10, wait_between_attempts=3, concurrency_limit=6
-):
+def scrape_multiple_subreddits_concurrently(url_list: list):
     """
-    Scrapes multiple Reddit URLs concurrently using threads.
+    Concurrently scrapes multiple Reddit URLs for metadata.
 
     Args:
-        urls (list): A list of Reddit URLs to scrape.
-        max_attempts (int, optional): Maximum number of retry attempts. Defaults to 10.
-        wait_between_attempts (int, optional): Delay in seconds between retries. Defaults to 3.
-        num_threads (int, optional): Number of threads to use for concurrent scraping. Defaults to 4.
-        concurrency_limit (int, optional): Number of concurrent scraping tasks. Defaults to 6.
+        urls (list): List of Reddit URLs to scrape.
     """
-    with ThreadPoolExecutor(max_workers=concurrency_limit) as executor:
-        executor.map(
-            lambda url: scrape_subreddit_metadata(
-                url, max_attempts, wait_between_attempts
-            ),
-            url_list,
-        )
+    # Ensure the browser is installed before proceeding
+    check_browser_installation()
+
+    # Start concurrent scraping tasks
+    with ThreadPoolExecutor(max_workers=CONCURRENCEY_LIMIT) as executor:
+        # Submit tasks and store the futures
+        futures = [executor.submit(scrape_subreddit_metadata, url, MAX_ATTEMPTS, WAIT_BETWEEN_ATTEMPTS) for url in url_list]
+
+        # Iterate over futures to ensure all tasks complete and handle potential exceptions
+        for future in futures:
+            try:
+                future.result()  # Wait for the task to complete
+            except Exception as e:
+                print(f"An error occurred: {e}")
