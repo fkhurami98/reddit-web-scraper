@@ -2,27 +2,23 @@ import socket
 import threading
 from queue import Queue
 from pprint import pprint
+import sys
+
+sys.path.append('.')
+from utils.constants import URL_LIST
 
 # Constants
 HOST: str = '0.0.0.0'
 PORT: int = 12345
 BUFFER_SIZE: int = 1024
 
-URLS: list = [
-'https://www.reddit.com/r/LifeProTips/comments/15f2fdl/lpt_a_competition_and_final_goodbye_to_awards_on/'
-'https://www.reddit.com/r/LifeProTips/comments/15il78f/lpt_always_peel_boiled_eggs_underwater/',
-'https://www.reddit.com/r/LifeProTips/comments/15iqc04/lpt_request_today_i_wore_a_new_pair_of_shoes_and/',
-'https://www.reddit.com/r/LifeProTips/comments/15hn5i0/lpt_visiting_loved_ones_in_the_hospital_bring/',
-'https://www.reddit.com/r/LifeProTips/comments/15irymh/lpt_how_to_stop_having_a_resting_anxious_face/',
-'https://www.reddit.com/r/LifeProTips/comments/15isah2/lpt_preventing_egg_from_cracking_during_boiling/',
-'https://www.reddit.com/r/LifeProTips/comments/15iti8q/lpt_urgent_request/'
-]
+
 
 # Instintaniate a task_queue using the Queue() class
 task_queue = Queue()
 
 # Populating the task queue
-for url in URLS:
+for url in URL_LIST:
     task_queue.put(url)
 
 # Instintaniate a empty result list

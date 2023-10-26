@@ -1,15 +1,15 @@
 
 
-DATABASE_URL_VPN = "postgresql://postgres:password@100.68.124.90:5432/reddit_scraper_1"
-DATABASE_URL_HOME = "postgresql://postgres:password@192.168.1.129:5432/reddit_scraper_1"
+DATABASE_URL_VPN: str = "postgresql://postgres:password@100.68.124.90:5432/reddit_scraper_1"
+DATABASE_URL_HOME: str = "postgresql://postgres:password@192.168.1.129:5432/reddit_scraper_1"
 
-MAX_ATTEMPTS = 2
-WAIT_BETWEEN_ATTEMPTS = 3
-CONCURRENCEY_LIMIT = 6
+MAX_ATTEMPTS: int = 2
+WAIT_BETWEEN_ATTEMPTS: int = 3
+CONCURRENCEY_LIMIT: int = 6
 
 
 
-URL_LIST = [
+URL_LIST: str = [
     "https://www.reddit.com/r/Jokes/",
     "https://www.reddit.com/r/explainlikeimfive/",
     "https://www.reddit.com/r/LifeProTips/",
