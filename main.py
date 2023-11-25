@@ -1,37 +1,44 @@
-from scraping_scripts.scrape_subreddit import scrape_subreddits
-from scraping_scripts.scrape_post_info import scrape_post_info
-from database.db import insert_to_db
-import time
+import os
+import sys
+from db_handler.db import insert_to_db
+from utils.constants import URL_LIST
+from utils.functions import (
+    get_save_path,
+    get_ip_addresses,
+    setup_data_folder,
+    determine_access_path,
+)
+from scraping_helpers.fetch_post_details import process_all_json_files_in_folder
+from scraping_helpers.fetch_subreddit_metadata import (
+    scrape_multiple_subreddits_concurrently,
+    clear_json_files_in_folder,
+)
+
 
 if __name__ == "__main__":
-    PATH = "/home/farhadkhurami/reddit-web-scraper/subreddit_page_data"
-    DATABASE_URL = "postgresql://postgres:password@localhost:5432/reddit_scraper_1"
-    scrape_subreddits(
-        url_list=[
-            "https://www.reddit.com/r/Jokes/",
-            "https://www.reddit.com/r/explainlikeimfive/",
-            "https://www.reddit.com/r/LifeProTips/",
-            "https://www.reddit.com/r/TrueOffMyChest/",
-            "https://www.reddit.com/r/talesfromtechsupport/",
-            "https://www.reddit.com/r/AskUK/",
-            "https://www.reddit.com/r/tifu/",
-            "https://www.reddit.com/r/tifu/",
-            "https://www.reddit.com/r/AmItheAsshole/",
-            "https://www.reddit.com/r/legaladvice/",
-            "https://www.reddit.com/r/whowouldwin/",
-            "https://www.reddit.com/r/AskReddit/",
-            "https://www.reddit.com/r/HFY/",
-            "https://www.reddit.com/r/AskHistorians/",
-            "https://www.reddit.com/r/talesfromretail/",
-            "https://www.reddit.com/r/talesfromtechsupport/",
-            "https://www.reddit.com/r/wouldyourather/",
-        ]
-    )
+    JSON_SAVE_PATH = get_save_path(__file__)
 
-    scrape_post_info(folder_path=PATH)
+    current_tailscale_ip = get_ip_addresses()["tailscale_ipv4"]
+    print(current_tailscale_ip)
 
+    # Determine the database URL based on the machine's IP
+    database_url = determine_access_path(current_tailscale_ip)
+
+    print(database_url)
+    # Creates /json_data_folder folder if not exists
+    setup_data_folder("json_data_folder")
+
+    # Clean up JSON files before initiating scraping
+    clear_json_files_in_folder(folder_path=JSON_SAVE_PATH)
+
+    # Scrapes a Reddit URL, extracts post information, and saves the results to a JSON file.
+    scrape_multiple_subreddits_concurrently(url_list=URL_LIST)
+
+    # Processes all JSON files in /json_data_folder
+    process_all_json_files_in_folder(folder_path=JSON_SAVE_PATH)
+
+    # Reads JSON files from /json_data_folder and sends to db
     insert_to_db(
-        database_url = DATABASE_URL,
-        json_folder_path = PATH
+        database_url="postgresql://postgres:password@localhost:5432/reddit_scraper_1",
+        json_folder_path=JSON_SAVE_PATH,
     )
-# Need to handle private communities

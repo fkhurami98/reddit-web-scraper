@@ -1,4 +1,3 @@
-# Use a base image with Python 3.9
 FROM python:3.9
 
 # Set the working directory inside the container
@@ -23,5 +22,4 @@ RUN pip install -r requirements.txt
 RUN pip install playwright
 RUN playwright install --with-deps chromium
 
-# Set the entry point for your application
 CMD ["python", "main.py"]
